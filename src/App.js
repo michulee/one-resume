@@ -7,6 +7,7 @@ const MobileLayout = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
+  padding: 0 20px 35px 20px;
 `
 
 export default function App() {
@@ -28,7 +29,6 @@ export default function App() {
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe"/>
         <TextInput name="GitHub" placeholder="www.somewebsite.com"/>
 
-        {/* <ButtonRound>Submit</ButtonRound> */}
         <ButtonRound name="Submit"/>
       </MobileLayout>
 
