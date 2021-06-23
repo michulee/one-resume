@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-import {TextInput, SectionHeader, Layout, TextArea, Nav} from 'components/index';
+import {TextInput, SectionHeader, Layout, TextArea, Nav, ButtonRound} from 'components/index';
 
 const MobileLayout = styled.div`
   display: flex;
@@ -27,6 +27,9 @@ export default function App() {
         <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe"/>
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe"/>
         <TextInput name="GitHub" placeholder="www.somewebsite.com"/>
+
+        {/* <ButtonRound>Submit</ButtonRound> */}
+        <ButtonRound name="Submit"/>
       </MobileLayout>
 
 

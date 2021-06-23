@@ -5,6 +5,7 @@ import Nav from 'components/Nav';
 import TextInput from 'components/TextInput';
 import SectionHeader from 'components/SectionHeader';
 import TextArea from 'components/TextArea';
+import ButtonRound from 'components/ButtonRound';
 
 export {
     TextInput,
@@ -12,4 +13,5 @@ export {
     Layout,
     TextArea,
     Nav,
+    ButtonRound,
 }
