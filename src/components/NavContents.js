@@ -41,10 +41,11 @@ const ButtonActiveSection = styled.button`
 
 export default function NavContents(props) {
     const [section, setSection] = useState('basic');
-    const handleSectionClick = (e) => {
+    const handleSectionClick = (props) => {
         // if click on <ButtonSection/> then render <ButtonSectionContents/> with Nav, or maybe replace bottom section???
-        console.log('hey');
+        console.log(props.name)
     }
+
     return (
         <>
             <Container>
@@ -52,10 +53,11 @@ export default function NavContents(props) {
                     <AiFillPrinter/>
                 </FixedArea>
                 <VerticalLine/>
-                <ButtonArea onClick={ handleSectionClick() }>
+                <ButtonArea>
                     {/* <AiOutlinePlus/> */}
-                    <ButtonSection>B</ButtonSection>
-                    <ButtonSection>E</ButtonSection>
+                    <ButtonSection name="B" onClick={ handleSectionClick } />
+                    {/* <ButtonSection>B</ButtonSection> */}
+                    {/* <ButtonSection>E</ButtonSection> */}
                 </ButtonArea>
             </Container>
         </>
