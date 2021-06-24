@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {AiFillPrinter, AiOutlinePlus} from 'react-icons/ai';
+import {SectionBasic} from 'sections/index';
 
 const Container = styled.div`
     display: flex;
@@ -38,16 +39,11 @@ const ButtonActiveSection = styled.button`
 
 `
 
-function Section(props) {
-    switch() {
-
-    }
-}
-
 export default function NavContents(props) {
-    const getSection = (e) => {
-        e.preventDefault();
+    const [section, setSection] = useState('basic');
+    const handleSectionClick = (e) => {
         // if click on <ButtonSection/> then render <ButtonSectionContents/> with Nav, or maybe replace bottom section???
+        console.log('hey');
     }
     return (
         <>
@@ -56,11 +52,10 @@ export default function NavContents(props) {
                     <AiFillPrinter/>
                 </FixedArea>
                 <VerticalLine/>
-                <ButtonArea>
+                <ButtonArea onClick={ handleSectionClick() }>
                     {/* <AiOutlinePlus/> */}
-                    <Section/>
-                    <ButtonSection onClick={ getSection }>B</ButtonSection>
-                    <ButtonSection onClick={ getSection }>E</ButtonSection>
+                    <ButtonSection>B</ButtonSection>
+                    <ButtonSection>E</ButtonSection>
                 </ButtonArea>
             </Container>
         </>
