@@ -21,7 +21,7 @@ const Button = styled.button`
   letter-spacing: 1px;
 `;
 
-export default function SectionBasic(props) {
+export default function Basic(props) {
   return (
     <>
       <SectionHeader name="Basic Information" />
