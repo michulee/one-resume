@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {
   TextInput,
@@ -22,10 +22,15 @@ const Button = styled.button`
 `;
 
 export default function Basic(props) {
+  const [text, setText] = useState('name');
+  const handleNameChange = (e) => {
+    e.preventDefault();
+    setText(e.target.value);
+  }
   return (
     <>
-      <SectionHeader name="Basic Information" />
-      <TextInput name="First Name" placeholder="John" />
+      <SectionHeader name="Basic Information"/>
+      <TextInput name="First Name" placeholder="John" value={text} onChange={ handleNameChange }/>
       <TextInput name="Middle Name" placeholder="C" />
       <TextInput name="Last Name" placeholder="Doe" />
       <TextInput name="Phone Number" placeholder="(626) 123 - 4567" />
@@ -38,7 +43,7 @@ export default function Basic(props) {
       <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" />
       <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
       <TextInput name="GitHub" placeholder="www.somewebsite.com" />
-      <ButtonRound name="Submit" />
+      <ButtonRound name="Save" />
     </>
   );
 }

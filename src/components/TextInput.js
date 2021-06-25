@@ -26,11 +26,13 @@ const Container = styled.div`
 `
 
 export default function TextInput(props) {
+    // https://ankurito.medium.com/how-to-set-the-default-value-of-a-text-input-in-react-329fb66991c9
+    // example shows this component to have its own state
     return (
         <>
             <Container>
                 <Label>{props.name}</Label>
-                <Input placeholder={props.placeholder}/>
+                <Input type={props.type} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
             </Container>
         </>
     );
