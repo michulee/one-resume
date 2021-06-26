@@ -46,9 +46,9 @@ export default function Basic(props) {
     <>
       <SectionHeader name="Basic Information"/>
 
-      {/* callback doesn't work with styled-components <Form>, use HTML <form> */}
-      <form onSubmit={ handleSubmit }>
-      {/* <Form onSubmit={ handleSubmit }> */}
+      {/* callback doesn't work with styled-components <Form>, use HTML <form>  - https://www.thetopsites.net/article/53166131.shtml*/}
+      {/* <form onSubmit={ handleSubmit }> */}
+      <Form onSubmit={ handleSubmit }>
         {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleNameChange }/> */}
         {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
         <TextInput name="Last Name" placeholder="Doe" />
@@ -63,8 +63,8 @@ export default function Basic(props) {
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
         <TextInput name="GitHub" placeholder="www.somewebsite.com" />
         <ButtonRound name="Save" type='submit'/>
-      {/* </Form> */}
-      </form>
+      </Form>
+      {/* </form> */}
       {/* <ButtonRound name="Save" onClick={ handleSubmit }/> */}
     </>
   );
