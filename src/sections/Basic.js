@@ -12,7 +12,7 @@ import {
 
 import {Resume} from 'sections/index';
 
-const Form = styled.div`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -40,14 +40,13 @@ export default function Basic(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('handle save click');
+    // console.log('handle save click');
+    alert('submitted');
   }
   return (
     <>
       <SectionHeader name="Basic Information"/>
-
-      {/* callback doesn't work with styled-components <Form>, use HTML <form>  - https://www.thetopsites.net/article/53166131.shtml*/}
-      {/* <form onSubmit={ handleSubmit }> */}
+      
       <Form onSubmit={ handleSubmit }>
         {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleNameChange }/> */}
         {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
@@ -64,8 +63,6 @@ export default function Basic(props) {
         <TextInput name="GitHub" placeholder="www.somewebsite.com" />
         <ButtonRound name="Save" type='submit'/>
       </Form>
-      {/* </form> */}
-      {/* <ButtonRound name="Save" onClick={ handleSubmit }/> */}
     </>
   );
 }
