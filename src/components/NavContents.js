@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
-import { Basic, Education } from "sections/index";
+import { IoIosSave } from 'react-icons/io';
+import { Basic, Education, Resume } from "sections/index";
 import { useEffect } from "react";
 
 const Container = styled.div`
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+
+  border-bottom: 1px solid #e1e1e1;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,6 +41,8 @@ const ButtonArea = styled.div`
 `;
 
 const Section = styled.div`
+  //nav is 70px height
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -44,16 +53,19 @@ const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
 
 export default function NavContents(props) {
-  const [section, setSection] = useState("");
+  const [section, setSection] = useState('basic');
   const handleSectionClick = (e) => {
     setSection("basic");
   };
+
+  const [resume, setResume] = useState('');
 
   return (
     <>
       <Container>
         <FixedArea>
           <AiFillPrinter />
+          <IoIosSave onClick={() => setSection('')}/>
         </FixedArea>
         <VerticalLine />
         <ButtonArea>
@@ -72,7 +84,17 @@ export default function NavContents(props) {
             section === 'basic' ? <Basic/> : 
             section === 'education' ? <Education/> :
             null
-        }
+        } 
+      </Section>
+
+      <hr></hr>
+
+      <Section>
+        <Resume/>
+        {/* {
+          resume === '' ? <Resume/> :
+          null
+        } */}
       </Section>
     </>
   );

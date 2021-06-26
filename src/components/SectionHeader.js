@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Header = styled.h2`
+    padding-top: 20px;
     font-weight: 400;
     font-variant: small-caps;
     margin: 0;

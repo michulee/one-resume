@@ -2,8 +2,10 @@
 
 import Basic from 'sections/Basic';
 import Education from 'sections/Education';
+import Resume from 'sections/Resume';
 
 export {
     Basic,
     Education,
+    Resume,
 }

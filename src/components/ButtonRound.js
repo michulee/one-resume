@@ -15,7 +15,7 @@ const Button = styled.button`
 export default function ButtonRound(props) {
     return (
         <>
-            <Button>{props.name}</Button>
+            <Button onClick={props.onClick}>{props.name}</Button>
         </>
     );
 }

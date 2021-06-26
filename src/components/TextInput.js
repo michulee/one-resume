@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Label = styled.label`
@@ -28,11 +28,20 @@ const Container = styled.div`
 export default function TextInput(props) {
     // https://ankurito.medium.com/how-to-set-the-default-value-of-a-text-input-in-react-329fb66991c9
     // example shows this component to have its own state
+    const [name, setName] = useState('');
+    const handleNameChange = (e) => {
+        e.preventDefault();
+
+        console.log(e.target);
+        setName(e.target.value);
+    }
+
     return (
         <>
             <Container>
-                <Label>{props.name}</Label>
-                <Input type={props.type} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
+                <Label htmlFor={props.name}>{props.name}</Label>
+                {/* <Input type={props.type} value={props.value} placeholder={props.placeholder} onChange={handleNameChange}/> */}
+                <Input id={props.name} type="text" value={name} placeholder={props.placeholder} onChange={handleNameChange}/>
             </Container>
         </>
     );

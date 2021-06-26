@@ -32,7 +32,7 @@ export default function Education(props) {
       <TextInput name="Degree" placeholder="B.S." />
       <TextInput name="Year Start" placeholder="Jan 2010" />
       <TextInput name="Year End" placeholder="Jan 2014" />
-      <ButtonRound name="Save" />
+      {/* <ButtonRound name="Save" /> */}
     </>
   );
 }
