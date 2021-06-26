@@ -60,6 +60,12 @@ export default function NavContents(props) {
 
   const [resume, setResume] = useState('');
 
+  const handleCallback = (childData) => {
+    // setResume()
+    console.log('test callback');
+    console.log(childData);
+  }
+
   return (
     <>
       <Container>
@@ -81,7 +87,7 @@ export default function NavContents(props) {
       </Container>
       <Section>
         {
-            section === 'basic' ? <Basic/> : 
+            section === 'basic' ? <Basic parentCallback={ handleCallback }/> : 
             section === 'education' ? <Education/> :
             null
         } 

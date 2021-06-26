@@ -16,7 +16,6 @@ const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 0 20px 35px 20px;
 `
 
 const Button = styled.button`
@@ -39,14 +38,17 @@ export default function Basic(props) {
 
   const [resume, setResume] = useState('');
 
-  const handleSaveClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    return <Resume/>
+    console.log('handle save click');
   }
   return (
     <>
       <SectionHeader name="Basic Information"/>
-      {/* <Form> */}
+
+      {/* callback doesn't work with styled-components <Form>, use HTML <form> */}
+      <form onSubmit={ handleSubmit }>
+      {/* <Form onSubmit={ handleSubmit }> */}
         {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleNameChange }/> */}
         {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
         <TextInput name="Last Name" placeholder="Doe" />
@@ -60,9 +62,10 @@ export default function Basic(props) {
         <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" />
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
         <TextInput name="GitHub" placeholder="www.somewebsite.com" />
+        <ButtonRound name="Save" type='submit'/>
       {/* </Form> */}
-      {/* <ButtonRound name="Save" onClick={ handleSaveClick }/> */}
-      {/* <ButtonRound name="Save" onClick={ handleSaveClick }/> */}
+      </form>
+      {/* <ButtonRound name="Save" onClick={ handleSubmit }/> */}
     </>
   );
 }
