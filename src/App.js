@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
-import {NavContents, Nav} from 'components/index';
+import {
+  Dashboard,
+  TextInput,
+  SectionHeader,
+  ButtonRound,
+  TextArea,
+} from "components/index";
 import {SectionBasic} from 'sections/index';
 
 import { Counter } from './features/counter/Counter';
@@ -15,15 +21,17 @@ const Section = styled.div`
 `
 
 export default function App() {
-  // const toSection = () => {
-  //   return (
+  const [text, setText] = useState("");
 
-  //   );
-  // }
+  const handleTextChange = (e) => {
+    e.preventDefault();
+
+    console.log(e.target);
+    setText(e.target.value);
+  };
   return (
     <>
-        <NavContents/>
-        {/* <Counter/> */}
+        <Dashboard/>
     </>
   )
 }

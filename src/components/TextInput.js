@@ -53,8 +53,6 @@ export default function TextInput(props) {
         <>
             <Container>
                 <Label htmlFor={props.name}>{props.name}</Label>
-                {/* <Input type={props.type} value={props.value} placeholder={props.placeholder} onChange={handleNameChange}/> */}
-                {/* <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={handleTextChange}/> */}
                 <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={handleTextChange}/>
             </Container>
         </>

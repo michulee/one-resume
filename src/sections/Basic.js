@@ -6,8 +6,7 @@ import {
   ButtonRound,
   TextArea,
 } from "components/index";
-import { PreClassic, Classic } from 'templates/index';
-
+import { PreClassic, Classic } from "templates/index";
 
 const Form = styled.form`
   display: flex;
@@ -54,80 +53,92 @@ const Section = styled.div`
   padding: 0 20px 35px 20px;
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export default function Basic(props) {
   const [text, setText] = useState("");
-  const [template, setTemplate] = useState('');
+  const [template, setTemplate] = useState("");
 
-  // const handleTextChange = (e) => {
-  //   e.preventDefault();
-  //   console.log('please text change');
-  //   console.log(e.target);
-  //   setText(e.target.value);
-  // };
-
-  // every time form is submitted dispatch action setText()
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // alert("submitted");
-    // console.log(e.target);
-
-    // setText(e.target.value);
-    // console.log(e.target.value);
-    // console.log(text);
-
-    setTemplate('filled');
+  const initialValues = {
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    phone: "",
+    email: "",
   };
 
-  // useEffect(() => {
-  //   // const trimmedName = props.name.replace(/\s+/g, '');
-  //   let trimmedName = props.name.replaceAll(" ", "");
-  //   const value = document.getElementById(trimmedName);
-  //   if (value !== null) {
-  //     value.innerText = text;
-  //   }
-  // });
+  const [state, setState] = useState({
+    order: "",
+    paid: false,
+    submitting: false,
+    loading: false,
+    data: initialValues,
+  });
+
+  const handleTextChange = (e) => {
+    e.preventDefault();
+
+    console.log(e.target);
+    setText(e.target.value);
+  };
 
   return (
     <>
-    <Section>
-      <SectionHeader name="Basic Information" />
+      <Section>
+        <SectionHeader name="Basic Information" />
 
-      {/* <Form onSubmit={handleSubmit}> */}
-      <Form onChange={handleSubmit}>
-        <TextInput name="First Name" placeholder="John"/>
-        <TextInput name="Middle Name" placeholder="C"/>
-        <TextInput
-          name="Last Name"
-          placeholder="Doe"
-          
-        />
-        <TextInput name="Phone Number" placeholder="(626) 123 - 4567" />
+        {/* <Form onSubmit={handleSubmit}> */}
+        <Form>
+          <Container>
+            <Label htmlFor="">Test</Label>
+            <Input
+              id=""
+              type="text"
+              value={text}
+              placeholder="test"
+              onChange={handleTextChange}
+            />
+          </Container>
+          <Container>
+            <Label htmlFor="">Test2</Label>
+            <Input
+              id=""
+              type="text"
+              value={text}
+              placeholder="test"
+              onChange={handleTextChange}
+            />
+          </Container>
+          <TextInput name="First Name" placeholder="John" />
+          <TextInput name="Middle Name" placeholder="C" />
+          <TextInput name="Last Name" placeholder="Doe" />
+          {/* <TextInput name="Phone Number" placeholder="(626) 123 - 4567" /> */}
 
-        <TextInput name="Email" placeholder="johndoe@email.com" />
-        <TextArea
+          {/* <TextInput name="Email" placeholder="johndoe@email.com" /> */}
+          {/* <TextArea
           name="Objective"
           placeholder="Hello World! My name is John C Doe and I am a developer."
-        />
-        <TextInput name="Skills" placeholder="HTML, CSS, JavaScript" />
-        <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" />
-        <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
-        <TextInput name="GitHub" placeholder="www.somewebsite.com" />
-        {/* <ButtonRound name="Save" type="submit" /> */}
-      </Form>
+        /> */}
+          {/* <TextInput name="Skills" placeholder="HTML, CSS, JavaScript" /> */}
+          {/* <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" /> */}
+          {/* <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" /> */}
+          {/* <TextInput name="GitHub" placeholder="www.somewebsite.com" /> */}
+          {/* <ButtonRound name="Save" type="submit" /> */}
+        </Form>
       </Section>
 
       <hr></hr>
 
-      <Section>
-        {/* <Classic/> */}
+      {/* <Section>
         {
           template === '' ? <PreClassic/> :
-          template === 'filled' ? <Classic/> :
+          template === 'filled' ? <Classic text={text}/> :
           null
         }
-      </Section>
-
+      </Section> */}
     </>
   );
 }
