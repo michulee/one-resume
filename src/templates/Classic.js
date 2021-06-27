@@ -40,7 +40,7 @@ export default function Classic(props) {
           <Title>First Middle Last</Title>
           <Info>
             <InfoItem>johndoe@gmail.com</InfoItem>
-            <InfoItem>(123) 4567 - 7890</InfoItem>
+            <InfoItem id="PhoneNumber">(123) 4567 - 7890</InfoItem>
             <InfoItem>www.johndoe.github.io</InfoItem>
           </Info>
         </Header>
