@@ -41,39 +41,33 @@ export default function Classic(props) {
     <>
       <Container>
         <Header>
-          {/* <Title>First Middle Last</Title> */}
           <Title>
-            <Paragraph id="First">First</Paragraph>
-            <Paragraph id="Middle">Middle</Paragraph>
-            <Paragraph id="Last">Last</Paragraph>
+            <Paragraph id="First"></Paragraph>
+            <Paragraph id="Middle"></Paragraph>
+            <Paragraph id="Last"></Paragraph>
           </Title>
           <Info>
-            <InfoItem id="Email">johndoe@gmail.com</InfoItem>
-            <InfoItem id="PhoneNumber">(123) 4567 - 7890</InfoItem>
-            <InfoItem id="GitHub">www.johndoe.github.io</InfoItem>
+            <InfoItem id="Email"></InfoItem>
+            <InfoItem id="PhoneNumber"></InfoItem>
+            <InfoItem id="GitHub"></InfoItem>
           </Info>
         </Header>
         <Body>
           <Section>
             <SubHeader>Objective</SubHeader>
-            <Paragraph>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
-              quisquam sequi hic commodi voluptatem quidem magnam excepturi
-              ullam necessitatibus explicabo nemo quam illo, cumque sapiente id
-              laborum dolor culpa. Doloremque.
-            </Paragraph>
+            <Paragraph id="Objective"></Paragraph>
           </Section>
           <Section>
             <SubHeader>Education</SubHeader>
-            <Paragraph>BS Computer Science</Paragraph>
+            <Paragraph id="Education"></Paragraph>
           </Section>
           <Section>
             <SubHeader>Work Experience</SubHeader>
-            <Paragraph>Job Title</Paragraph>
+            <Paragraph id="WorkExperience"></Paragraph>
           </Section>
           <Section>
             <SubHeader>Skills</SubHeader>
-            <Paragraph>HTML, CSS, JavaScript</Paragraph>
+            <Paragraph id="Skills"></Paragraph>
           </Section>
         </Body>
       </Container>

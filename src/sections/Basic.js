@@ -4,6 +4,7 @@ import {
   TextInput,
   SectionHeader,
   ButtonRound,
+  TextArea,
 } from "components/index";
 import { PreClassic, Classic } from 'templates/index';
 
@@ -54,20 +55,27 @@ const Section = styled.div`
 `;
 
 export default function Basic(props) {
-  const [text, setText] = useState("text");
+  const [text, setText] = useState("");
   const [template, setTemplate] = useState('');
 
-  const handleTextChange = (e) => {
-    e.preventDefault();
-    setText(e.target.value);
-  };
-
-  const handleTemplateText = () => {};
+  // const handleTextChange = (e) => {
+  //   e.preventDefault();
+  //   console.log('please text change');
+  //   console.log(e.target);
+  //   setText(e.target.value);
+  // };
 
   // every time form is submitted dispatch action setText()
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // alert("submitted");
+    // console.log(e.target);
+
+    // setText(e.target.value);
+    // console.log(e.target.value);
+    // console.log(text);
+
     setTemplate('filled');
   };
 
@@ -87,33 +95,32 @@ export default function Basic(props) {
 
       {/* <Form onSubmit={handleSubmit}> */}
       <Form onChange={handleSubmit}>
-        {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleTextChange }/> */}
-        {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
-
-        {/* returns style in log */}
+        <TextInput name="First Name" placeholder="John"/>
+        <TextInput name="Middle Name" placeholder="C"/>
         <TextInput
           name="Last Name"
           placeholder="Doe"
-          onChange={handleTextChange}
+          
         />
-        {/* returns simple input in log */}
         <TextInput name="Phone Number" placeholder="(626) 123 - 4567" />
 
         <TextInput name="Email" placeholder="johndoe@email.com" />
-        {/* <TextArea
+        <TextArea
           name="Objective"
           placeholder="Hello World! My name is John C Doe and I am a developer."
         />
         <TextInput name="Skills" placeholder="HTML, CSS, JavaScript" />
         <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" />
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
-        <TextInput name="GitHub" placeholder="www.somewebsite.com" /> */}
-        <ButtonRound name="Save" type="submit" />
+        <TextInput name="GitHub" placeholder="www.somewebsite.com" />
+        {/* <ButtonRound name="Save" type="submit" /> */}
       </Form>
       </Section>
 
+      <hr></hr>
+
       <Section>
-        <Classic/>
+        {/* <Classic/> */}
         {
           template === '' ? <PreClassic/> :
           template === 'filled' ? <Classic/> :

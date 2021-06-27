@@ -41,7 +41,6 @@ export default function PreClassic(props) {
     <>
       <Container>
         <Header>
-          {/* <Title>First Middle Last</Title> */}
           <Title>
             <Paragraph id="First">First</Paragraph>
             <Paragraph id="Middle">Middle</Paragraph>

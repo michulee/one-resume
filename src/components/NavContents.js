@@ -67,7 +67,7 @@ export default function NavContents(props) {
       <Container>
         <FixedArea>
           <AiFillPrinter />
-          <IoIosSave onClick={() => setSection('')}/>
+          {/* <IoIosSave onClick={() => setSection('')}/> */}
         </FixedArea>
         <VerticalLine />
         <ButtonArea>
@@ -90,7 +90,7 @@ export default function NavContents(props) {
         }  */}
       {/* </Section> */}
 
-      <hr></hr>
+      {/* <hr></hr> */}
 
       {/* <Section>
         <Classic/>
