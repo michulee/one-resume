@@ -82,12 +82,12 @@ export default function NavContents(props) {
         </ButtonArea>
       </Container>
       <Section>
-        <Basic parentCallback={ handleCallback } test="hey"/>
-        {/* {
+        {/* <Basic parentCallback={ handleCallback } test="hey"/> */}
+        {
             section === 'basic' ? <Basic parentCallback={ handleCallback }/> : 
             section === 'education' ? <Education/> :
             null
-        }  */}
+        } 
       </Section>
 
       <hr></hr>
