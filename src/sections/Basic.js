@@ -29,27 +29,25 @@ const Button = styled.button`
 
 export default function Basic(props) {
   const [text, setText] = useState('text');
-  const handleNameChange = (e) => {
+  const handleTextChange = (e) => {
     e.preventDefault();
     setText(e.target.value);
   }
 
-  const [resume, setResume] = useState('');
-
+  // every time form is submitted dispatch action setText()
   const handleSubmit = (e) => {
     e.preventDefault();
-    // alert('submitted');
-    alert(props.test);
-    props.parentCallback(e.target);
+    alert('submitted');
+    // props.parentCallback(e.target);
   }
   return (
     <>
       <SectionHeader name="Basic Information"/>
       
       <Form onSubmit={ handleSubmit }>
-        {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleNameChange }/> */}
+        {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleTextChange }/> */}
         {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
-        <TextInput name="Last Name" placeholder="Doe" />
+        <TextInput name="Last Name" placeholder="Doe" onChange={handleTextChange}/>
         <TextInput name="Phone Number" placeholder="(626) 123 - 4567" />
         <TextInput name="Email" placeholder="johndoe@email.com" />
         <TextArea

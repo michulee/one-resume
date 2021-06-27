@@ -3,6 +3,8 @@ import { fetchCount } from './resumeAPI';
 
 const initialState = {
   value: 0,
+  data: [],
+  changedData: [],
   status: 'idle',
 };
 
