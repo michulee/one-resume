@@ -105,29 +105,29 @@ export default function NavContents(props) {
     firstName: "",
     middleName: "",
     lastName: "",
-    phone: "",
-    email: "",
   };
-
   const [state, setState] = useState({
-    order: "",
-    paid: false,
-    submitting: false,
-    loading: false,
+    // order: "",
+    // paid: false,
+    // submitting: false,
+    // loading: false,
     data: initialValues,
   });
 
-  const handleCallback = (childData) => {
-    // alert(childData);
-    console.log(childData);
-  }
+  // const handleCallback = (childData) => {
+  //   // alert(childData);
+  //   console.log(childData);
+  // }
 
   const handleTextChange = (e) => {
     e.preventDefault();
-
-    console.log(e.target);
     setText(e.target.value);
+    setState({[e.target.name]: e.target.value})
   };
+
+  const handleForm = (e) => {
+    setTemplate('classic');
+  }
 
   return (
     <>
@@ -155,9 +155,11 @@ export default function NavContents(props) {
       <Section>
         <SectionHeader name="Basic Information" />
 
-        {/* <Form onSubmit={handleSubmit}> */}
-        <Form>
-          <TextInput name="First Name" placeholder="John" />
+        <Form onChange={handleForm}>
+        {/* <Form> */}
+          <input name="firstName" onChange={handleTextChange}></input>
+
+          {/* <TextInput name="First Name" placeholder="John"/> */}
           <TextInput name="Middle Name" placeholder="C" />
           <TextInput name="Last Name" placeholder="Doe" />
         </Form>
@@ -168,7 +170,7 @@ export default function NavContents(props) {
       <Section>
         {
             template === '' ? <PreClassic/> : 
-            template === 'classic' ? <Classic/> : 
+            template === 'classic' ? <Classic data={state}/> : 
             null
         } 
       </Section>

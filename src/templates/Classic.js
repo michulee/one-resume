@@ -42,7 +42,7 @@ export default function Classic(props) {
       <Container>
         <Header>
           <Title>
-            <Paragraph id="First"></Paragraph>
+            <Paragraph id="First">{props.data.firstName}</Paragraph>
             <Paragraph id="Middle"></Paragraph>
             <Paragraph id="Last"></Paragraph>
           </Title>
