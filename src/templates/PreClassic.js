@@ -36,7 +36,7 @@ const Section = styled.section``;
 const Paragraph = styled.p`
 `;
 
-export default function Classic(props) {
+export default function PreClassic(props) {
   return (
     <>
       <Container>

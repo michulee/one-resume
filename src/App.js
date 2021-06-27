@@ -23,7 +23,7 @@ export default function App() {
   return (
     <>
         <NavContents/>
-        <Counter/>
+        {/* <Counter/> */}
     </>
   )
 }

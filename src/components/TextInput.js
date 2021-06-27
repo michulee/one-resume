@@ -42,7 +42,7 @@ export default function TextInput(props) {
 
     useEffect(() => {
         // const trimmedName = props.name.replace(/\s+/g, '');
-        let trimmedName = props.name.replaceAll(" ", "");
+        const trimmedName = props.name.replaceAll(" ", "");
         const value = document.getElementById(trimmedName);
         if(value !== null) {
             value.innerText = text;

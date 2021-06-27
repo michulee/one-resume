@@ -55,7 +55,7 @@ const ButtonActiveSection = styled.button``;
 
 export default function NavContents(props) {
   const [section, setSection] = useState('basic');
-  const [resume, setResume] = useState('');
+  const [template, setTemplate] = useState('');
 
   const handleCallback = (childData) => {
     // alert(childData);
@@ -76,29 +76,25 @@ export default function NavContents(props) {
           <ButtonSection onClick={() => setSection("basic")}>
             Basic
           </ButtonSection>
-          <ButtonSection onClick={() => setSection("education")}>
+          {/* <ButtonSection onClick={() => setSection("education")}>
             Education
-          </ButtonSection>
+          </ButtonSection> */}
         </ButtonArea>
       </Container>
-      <Section>
+      {/* <Section> */}
         <Basic parentCallback={ handleCallback } test="hey"/>
         {/* {
             section === 'basic' ? <Basic parentCallback={ handleCallback }/> : 
             section === 'education' ? <Education/> :
             null
         }  */}
-      </Section>
+      {/* </Section> */}
 
       <hr></hr>
 
-      <Section>
+      {/* <Section>
         <Classic/>
-        {/* {
-          resume === '' ? <Resume/> :
-          null
-        } */}
-      </Section>
+      </Section> */}
     </>
   );
 }

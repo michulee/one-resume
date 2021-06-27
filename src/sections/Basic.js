@@ -1,20 +1,18 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import {
   TextInput,
   SectionHeader,
-  Layout,
-  TextArea,
-  NavContents,
-  Nav,
   ButtonRound,
 } from "components/index";
+import { PreClassic, Classic } from 'templates/index';
+
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 35px;
-`
+`;
 
 const Button = styled.button`
   background-color: #0071bc;
@@ -28,51 +26,76 @@ const Button = styled.button`
 `;
 
 const Label = styled.label`
-    color: #0071BC;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    // font-variant: small-caps;
-`
+  color: #0071bc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  // font-variant: small-caps;
+`;
 
 const Input = styled.input`
-    border: 1px solid #E1E1E1;
-    padding: 10px 15px;
-    border-radius: 5px;
+  border: 1px solid #e1e1e1;
+  padding: 10px 15px;
+  border-radius: 5px;
 
-    :focus {
-        outline: none;
-        border-color: #0071BC;
-        box-shadow: 0 0 3px #0071BC;
-    }
-`
+  :focus {
+    outline: none;
+    border-color: #0071bc;
+    box-shadow: 0 0 3px #0071bc;
+  }
+`;
+
+const Section = styled.div`
+  //nav is 70px height
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0 20px 35px 20px;
+`;
 
 export default function Basic(props) {
-  const [text, setText] = useState('text');
+  const [text, setText] = useState("text");
+  const [template, setTemplate] = useState('');
+
   const handleTextChange = (e) => {
     e.preventDefault();
     setText(e.target.value);
-  }
+  };
 
-  const handleTemplateText = () => {
-
-  }
+  const handleTemplateText = () => {};
 
   // every time form is submitted dispatch action setText()
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('submitted');
-    // props.parentCallback(e.target);
-  }
+    // alert("submitted");
+    setTemplate('filled');
+  };
+
+  // useEffect(() => {
+  //   // const trimmedName = props.name.replace(/\s+/g, '');
+  //   let trimmedName = props.name.replaceAll(" ", "");
+  //   const value = document.getElementById(trimmedName);
+  //   if (value !== null) {
+  //     value.innerText = text;
+  //   }
+  // });
+
   return (
     <>
-      <SectionHeader name="Basic Information"/>
-      
-      <Form onSubmit={ handleSubmit }>
+    <Section>
+      <SectionHeader name="Basic Information" />
+
+      {/* <Form onSubmit={handleSubmit}> */}
+      <Form onChange={handleSubmit}>
         {/* <TextInput name="First Name" placeholder="John" value={text} onChange={ handleTextChange }/> */}
         {/* <TextInput name="Middle Name" placeholder="C" value={text}/> */}
 
         {/* returns style in log */}
-        <TextInput name="Last Name" placeholder="Doe" onChange={handleTextChange}/>
+        <TextInput
+          name="Last Name"
+          placeholder="Doe"
+          onChange={handleTextChange}
+        />
         {/* returns simple input in log */}
         <TextInput name="Phone Number" placeholder="(626) 123 - 4567" />
 
@@ -85,8 +108,19 @@ export default function Basic(props) {
         <TextInput name="Website" placeholder="www.linkedin.com/in/johndoe" />
         <TextInput name="LinkedIn" placeholder="www.github.com/johndoe" />
         <TextInput name="GitHub" placeholder="www.somewebsite.com" /> */}
-        <ButtonRound name="Save" type='submit'/>
+        <ButtonRound name="Save" type="submit" />
       </Form>
+      </Section>
+
+      <Section>
+        <Classic/>
+        {
+          template === '' ? <PreClassic/> :
+          template === 'filled' ? <Classic/> :
+          null
+        }
+      </Section>
+
     </>
   );
 }
