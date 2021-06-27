@@ -22,12 +22,8 @@ export default function App() {
   // }
   return (
     <>
-        {/* <Nav/> */}
         <NavContents/>
         <Counter/>
-        {/* <Section>
-          <SectionBasic/>
-        </Section> */}
     </>
   )
 }

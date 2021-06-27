@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 import { IoIosSave } from 'react-icons/io';
-import { Basic, Education, Resume } from "sections/index";
+import { Basic, Education } from "sections/index";
+import { Classic } from 'templates/index';
 import { useEffect } from "react";
 
 const Container = styled.div`
@@ -96,7 +97,7 @@ export default function NavContents(props) {
       <hr></hr>
 
       <Section>
-        <Resume/>
+        <Classic/>
         {/* {
           resume === '' ? <Resume/> :
           null
