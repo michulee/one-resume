@@ -10,8 +10,6 @@ import {
   ButtonRound,
 } from "components/index";
 
-import {Resume} from 'sections/index';
-
 const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -40,8 +38,9 @@ export default function Basic(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log('handle save click');
-    alert('submitted');
+    // alert('submitted');
+    alert(props.test);
+    props.parentCallback(e.target);
   }
   return (
     <>

@@ -55,15 +55,10 @@ const ButtonActiveSection = styled.button``;
 
 export default function NavContents(props) {
   const [section, setSection] = useState('basic');
-  const handleSectionClick = (e) => {
-    setSection("basic");
-  };
-
   const [resume, setResume] = useState('');
 
   const handleCallback = (childData) => {
-    // setResume()
-    console.log('test callback');
+    // alert(childData);
     console.log(childData);
   }
 
@@ -87,11 +82,12 @@ export default function NavContents(props) {
         </ButtonArea>
       </Container>
       <Section>
-        {
+        <Basic parentCallback={ handleCallback } test="hey"/>
+        {/* {
             section === 'basic' ? <Basic parentCallback={ handleCallback }/> : 
             section === 'education' ? <Education/> :
             null
-        } 
+        }  */}
       </Section>
 
       <hr></hr>
