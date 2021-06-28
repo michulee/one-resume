@@ -42,9 +42,9 @@ export default function Classic(props) {
       <Container>
         <Header>
           <Title>
-            <Paragraph id="First">{props.data.firstName}</Paragraph>
-            <Paragraph id="Middle"></Paragraph>
-            <Paragraph id="Last"></Paragraph>
+            <Paragraph>{props.data.firstName}</Paragraph>
+            <Paragraph>{props.data.middleName}</Paragraph>
+            <Paragraph>{props.data.lastName}</Paragraph>
           </Title>
           <Info>
             <InfoItem id="Email"></InfoItem>

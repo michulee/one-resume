@@ -92,6 +92,11 @@ const Input = styled.input`
   }
 `;
 
+const Item = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
 
@@ -121,8 +126,12 @@ export default function NavContents(props) {
 
   const handleTextChange = (e) => {
     e.preventDefault();
-    setText(e.target.value);
-    setState({[e.target.name]: e.target.value})
+    // setText(e.target.value);
+
+    // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
+    setState({...state, [e.target.name]: e.target.value})
+    console.log(e.target);
+
   };
 
   const handleForm = (e) => {
@@ -156,12 +165,18 @@ export default function NavContents(props) {
         <SectionHeader name="Basic Information" />
 
         <Form onChange={handleForm}>
-        {/* <Form> */}
-          <input name="firstName" onChange={handleTextChange}></input>
-
-          {/* <TextInput name="First Name" placeholder="John"/> */}
-          <TextInput name="Middle Name" placeholder="C" />
-          <TextInput name="Last Name" placeholder="Doe" />
+          <Item>
+            <Label htmlFor="firstName">First Name</Label>
+            <Input name="firstName" type="text" onChange={handleTextChange}/>
+          </Item>
+          <Item>
+            <Label htmlFor="middleName">Middle Name</Label>
+            <Input name="middleName" type="text" onChange={handleTextChange}/>
+          </Item>
+          <Item>
+            <Label htmlFor="lastName">Last Name</Label>
+            <Input name="lastName" type="text" onChange={handleTextChange}/>
+          </Item>
         </Form>
       </Section>
 

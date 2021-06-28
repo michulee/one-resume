@@ -20,7 +20,7 @@ const Input = styled.input`
     }
 `
 
-const Container = styled.div`
+const Item = styled.div`
     display: flex;
     flex-direction: column;
 `
@@ -32,29 +32,30 @@ export default function TextInput(props) {
     const handleTextChange = (e) => {
         e.preventDefault();
 
-        console.log(e.target);
+        // console.log(e.target);
         setText(e.target.value);
+
+        // props.onChange(e.target.value);
+        props.onChange(e); //this works - pass whole event
     }
 
-    // useEffect({
-        
-    // }), [name];
-
-    useEffect(() => {
-        // const trimmedName = props.name.replace(/\s+/g, '');
-        const trimmedName = props.name.replaceAll(" ", "");
-        const value = document.getElementById(trimmedName);
-        if(value !== null) {
-            value.innerText = text;
-        }
-    })
+    // useEffect(() => {
+    //     const trimmedName = props.name.replaceAll(" ", "");
+    //     const value = document.getElementById(trimmedName);
+    //     if(value !== null) {
+    //         value.innerText = text;
+    //     }
+    // })
 
     return (
         <>
-            <Container>
+            <Item>
                 <Label htmlFor={props.name}>{props.name}</Label>
-                <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={handleTextChange}/>
-            </Container>
+                <Input id={props.name} name={props.name} type="text" value={text} placeholder={props.placeholder} onChange={handleTextChange}/>
+
+                {/* can't call the prop.onChange function directly, must call function within child that calls parent function */}
+                {/* <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={props.onChange}/> */}
+            </Item>
         </>
     );
 }
