@@ -51,46 +51,18 @@ const Section = styled.div`
   padding: 0 20px 35px 20px;
 `;
 
+const Container = styled.div`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+`
+
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 35px;
 `;
-
-const Button = styled.button`
-  background-color: #0071bc;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  padding: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-`;
-
-const Label = styled.label`
-  color: #0071bc;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  // font-variant: small-caps;
-`;
-
-const Input = styled.input`
-  border: 1px solid #e1e1e1;
-  padding: 10px 15px;
-  border-radius: 5px;
-
-  :focus {
-    outline: none;
-    border-color: #0071bc;
-    box-shadow: 0 0 3px #0071bc;
-  }
-`;
-
-const Item = styled.div`
-    display: flex;
-    flex-direction: column;
-`
 
 const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
@@ -105,7 +77,7 @@ export default function NavContents(props) {
     firstName: "",
     middleName: "",
     lastName: "",
-    work: "f",
+    work: "",
     skills: "",
   };
   const [state, setState] = useState({
@@ -113,7 +85,8 @@ export default function NavContents(props) {
     // paid: false,
     // submitting: false,
     // loading: false,
-    data: initialValues,
+
+    // data: initialValues,
   });
 
   const handleForm = (e) => {
@@ -147,45 +120,50 @@ export default function NavContents(props) {
         } 
       </Section> */}
       
-      <Section>
-        <SectionHeader name="Basic Information" />
-
-        <Form onChange={handleForm}>
-          <TextInput name="firstName" label="First Name"/>
-          {/* <Item>
-            <Label htmlFor="firstName">First Name</Label>
-            <Input name="firstName" type="text"/>
-          </Item> */}
-
-          <Item>
-            <Label htmlFor="middleName">Middle Name</Label>
-            <Input name="middleName" type="text"/>
-          </Item>
-          <Item>
-            <Label htmlFor="lastName">Last Name</Label>
-            <Input name="lastName" type="text"/>
-          </Item>
-          <Item>
-            <Label htmlFor="work">Work Experience</Label>
-            <Input name="work" type="text"/>
-          </Item>
-          <Item>
-            <Label htmlFor="skills">Skills</Label>
-            <Input name="skills" type="text"/>
-          </Item>
-        </Form>
-      </Section>
-
-      <hr></hr>
-
-      <Section>
-        {console.log()}
-        {
-            template === '' ? <PreClassic/> : 
-            template === 'classic' ? <Classic id="print" data={state}/> : 
-            null
-        } 
-      </Section>
+      <Container>
+        <Section className="scroll">
+          <SectionHeader name="Basic Information" />
+          <Form onChange={handleForm}>
+            <TextInput name="firstName" label="First Name"/>
+            {/* <Item>
+              <Label htmlFor="firstName">First Name</Label>
+              <Input name="firstName" type="text"/>
+            </Item> */}
+            <TextInput name="middleName" label="Middle Name"/>
+            <TextInput name="lastName" label="Last Name"/>
+            <TextInput name="email" label="Email"/>
+            <TextInput name="objective"/>
+            <TextInput name="github" label="GitHub"/>
+            <TextInput name="website" label="Website"/>
+            <TextInput name="linkedin" label="LinkedIn"/>
+            <TextInput name="work" label="Work Experience"/>
+            <TextInput name="skills" label="Skills"/>
+            <TextInput name="schoolName"/>
+            <TextInput name="schoolState"/>
+            <TextInput name="schoolCity"/>
+            <TextInput name="schoolMajorName"/>
+            <TextInput name="schoolDegree"/>
+            <TextInput name="schoolYearStart"/>
+            <TextInput name="schoolYearEnd"/>
+            <TextInput name="companyJobTitle"/>
+            <TextInput name="companyJobDescription"/>
+            <TextInput name="companyName"/>
+            <TextInput name="companyState"/>
+            <TextInput name="companyCity"/>
+            <TextInput name="companyYearStart"/>
+            <TextInput name="companyYearEnd"/>
+          </Form>
+        </Section>
+        <hr></hr>
+        <Section className="scroll">
+          {console.log()}
+          {
+              template === '' ? <PreClassic/> :
+              template === 'classic' ? <Classic id="print" data={state}/> :
+              null
+          }
+        </Section>
+      </Container>
     </>
   );
 }

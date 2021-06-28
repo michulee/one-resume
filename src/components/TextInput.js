@@ -10,15 +10,23 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
-    border: 1px solid #E1E1E1;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border: none;
+    // border: 1px solid #E1E1E1;
+    border-bottom: 1px solid #e1e1e1;
+    // padding: 10px 15px;
+    padding: 10px 0px;
+    // border-radius: 5px;
 
     :focus {
         outline: none;
         border-color: #0071BC;
-        box-shadow: 0 0 3px #0071BC;
+        // box-shadow: 0 0 3px #0071BC;
     }
+
+    ::placeholder {
+        color: #e1e1e1;
+    }
+
 `
 
 const Item = styled.div`
@@ -52,7 +60,7 @@ export default function TextInput(props) {
         <>
             <Item>
                 <Label htmlFor={props.name}>{props.label}</Label>
-                <Input id={props.name} name={props.name} type="text" placeholder={props.placeholder}/>
+                <Input id={props.name} name={props.name} type="text" placeholder={props.label}/>
 
                 {/* can't call the prop.onChange function directly, must call function within child that calls parent function */}
                 {/* <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={props.onChange}/> */}
