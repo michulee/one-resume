@@ -5,6 +5,7 @@ const Label = styled.label`
     color: #0071BC;
     text-transform: uppercase;
     letter-spacing: 1px;
+    // font-weight: 500;
     // font-variant: small-caps;
 `
 

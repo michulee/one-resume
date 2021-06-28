@@ -105,7 +105,7 @@ export default function NavContents(props) {
     firstName: "",
     middleName: "",
     lastName: "",
-    work: "",
+    work: "f",
     skills: "",
   };
   const [state, setState] = useState({
@@ -128,7 +128,7 @@ export default function NavContents(props) {
     <>
       <Nav>
         <FixedArea>
-          <AiFillPrinter />
+          <AiFillPrinter/>
         </FixedArea>
         <VerticalLine />
         <ButtonArea>
@@ -156,6 +156,7 @@ export default function NavContents(props) {
             <Label htmlFor="firstName">First Name</Label>
             <Input name="firstName" type="text"/>
           </Item> */}
+
           <Item>
             <Label htmlFor="middleName">Middle Name</Label>
             <Input name="middleName" type="text"/>
@@ -181,7 +182,7 @@ export default function NavContents(props) {
         {console.log()}
         {
             template === '' ? <PreClassic/> : 
-            template === 'classic' ? <Classic data={state}/> : 
+            template === 'classic' ? <Classic id="print" data={state}/> : 
             null
         } 
       </Section>

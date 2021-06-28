@@ -69,22 +69,15 @@ export default function Classic(props) {
             <Paragraph id="Education"></Paragraph>
           </Section> */}
           <Section>
-            {console.log(props.data.work)}
-            {console.log(props.data.skills)}
             {
-              props.data.work === '' ? '' :
-              props.data.work !== '' ? <SubHeader>Work Experience</SubHeader> :
-              null
+              props.data.work === undefined ? null : <SubHeader>Work Experience</SubHeader>
             }
             <Paragraph>{props.data.work}</Paragraph>
           </Section>
           <Section>
             {
-              // props.data.skills === '' ? <SubHeader>Skills</SubHeader> :
-              props.data.skills !== '' ? <SubHeader>Skills</SubHeader> :
-              null
+              props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader>
             }
-            {/* <SubHeader>Skills</SubHeader> */}
             <Paragraph>{props.data.skills}</Paragraph>
           </Section>
         </Body>
