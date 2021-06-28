@@ -50,8 +50,8 @@ export default function TextInput(props) {
     return (
         <>
             <Item>
-                <Label htmlFor={props.name}>{props.name}</Label>
-                <Input id={props.name} name={props.name} type="text" value={text} placeholder={props.placeholder} onChange={handleTextChange}/>
+                <Label htmlFor={props.name}>{props.label}</Label>
+                <Input id={props.name} name={props.name} type="text" placeholder={props.placeholder}/>
 
                 {/* can't call the prop.onChange function directly, must call function within child that calls parent function */}
                 {/* <Input id={props.name} type="text" value={text} placeholder={props.placeholder} onChange={props.onChange}/> */}

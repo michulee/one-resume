@@ -4,6 +4,7 @@ import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 import { PreClassic, Classic } from 'templates/index';
 import {
   SectionHeader,
+  TextInput,
 } from "components/index";
 
 const Nav = styled.div`
@@ -150,10 +151,11 @@ export default function NavContents(props) {
         <SectionHeader name="Basic Information" />
 
         <Form onChange={handleForm}>
-          <Item>
+          <TextInput name="firstName" label="First Name"/>
+          {/* <Item>
             <Label htmlFor="firstName">First Name</Label>
             <Input name="firstName" type="text"/>
-          </Item>
+          </Item> */}
           <Item>
             <Label htmlFor="middleName">Middle Name</Label>
             <Input name="middleName" type="text"/>
@@ -176,6 +178,7 @@ export default function NavContents(props) {
       <hr></hr>
 
       <Section>
+        {console.log()}
         {
             template === '' ? <PreClassic/> : 
             template === 'classic' ? <Classic data={state}/> : 
