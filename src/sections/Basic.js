@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   TextInput,
   SectionHeader,
-  ButtonRound,
-  TextArea,
 } from "components/index";
-import { PreClassic, Classic } from "templates/index";
 
 const Form = styled.form`
   display: flex;
@@ -68,6 +65,7 @@ export default function Basic(props) {
     lastName: "",
     phone: "",
     email: "",
+    skills: "",
   };
 
   const [state, setState] = useState({

@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
-import { IoIosSave } from 'react-icons/io';
-import { Basic, Education } from "sections/index";
 import { PreClassic, Classic } from 'templates/index';
 import {
-  TextInput,
   SectionHeader,
-  ButtonRound,
-  TextArea,
 } from "components/index";
-import { useEffect } from "react";
 
 const Nav = styled.div`
   position: fixed;
@@ -110,6 +104,8 @@ export default function NavContents(props) {
     firstName: "",
     middleName: "",
     lastName: "",
+    work: "",
+    skills: "",
   };
   const [state, setState] = useState({
     // order: "",
@@ -118,20 +114,6 @@ export default function NavContents(props) {
     // loading: false,
     data: initialValues,
   });
-
-  // const handleCallback = (childData) => {
-  //   // alert(childData);
-  //   console.log(childData);
-  // }
-
-  // const handleTextChange = (e) => {
-  //   e.preventDefault();
-  //   // setText(e.target.value);
-
-  //   // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
-  //   setState({...state, [e.target.name]: e.target.value})
-  //   console.log(e.target);
-  // };
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -179,6 +161,14 @@ export default function NavContents(props) {
           <Item>
             <Label htmlFor="lastName">Last Name</Label>
             <Input name="lastName" type="text"/>
+          </Item>
+          <Item>
+            <Label htmlFor="work">Work Experience</Label>
+            <Input name="work" type="text"/>
+          </Item>
+          <Item>
+            <Label htmlFor="skills">Skills</Label>
+            <Input name="skills" type="text"/>
           </Item>
         </Form>
       </Section>
