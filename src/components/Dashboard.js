@@ -124,18 +124,21 @@ export default function NavContents(props) {
   //   console.log(childData);
   // }
 
-  const handleTextChange = (e) => {
+  // const handleTextChange = (e) => {
+  //   e.preventDefault();
+  //   // setText(e.target.value);
+
+  //   // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
+  //   setState({...state, [e.target.name]: e.target.value})
+  //   console.log(e.target);
+  // };
+
+  const handleForm = (e) => {
     e.preventDefault();
-    // setText(e.target.value);
+    setTemplate('classic');
 
     // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
     setState({...state, [e.target.name]: e.target.value})
-    console.log(e.target);
-
-  };
-
-  const handleForm = (e) => {
-    setTemplate('classic');
   }
 
   return (
@@ -167,15 +170,15 @@ export default function NavContents(props) {
         <Form onChange={handleForm}>
           <Item>
             <Label htmlFor="firstName">First Name</Label>
-            <Input name="firstName" type="text" onChange={handleTextChange}/>
+            <Input name="firstName" type="text"/>
           </Item>
           <Item>
             <Label htmlFor="middleName">Middle Name</Label>
-            <Input name="middleName" type="text" onChange={handleTextChange}/>
+            <Input name="middleName" type="text"/>
           </Item>
           <Item>
             <Label htmlFor="lastName">Last Name</Label>
-            <Input name="lastName" type="text" onChange={handleTextChange}/>
+            <Input name="lastName" type="text"/>
           </Item>
         </Form>
       </Section>
