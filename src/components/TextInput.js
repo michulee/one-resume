@@ -32,6 +32,7 @@ const Input = styled.input`
 const Item = styled.div`
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 `
 
 export default function TextInput(props) {

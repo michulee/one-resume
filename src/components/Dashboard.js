@@ -51,7 +51,7 @@ const Section = styled.div`
   padding: 0 20px 35px 20px;
 
   // width 100% makes items even 
-  width: 100%;
+  // width: 100%;
   // width: 500px;
 `;
 
@@ -63,13 +63,13 @@ const Container = styled.div`
 
 const Form = styled.form`
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
+  // width: 100%;
+  // width: 300px;
+  flex-wrap: wrap;
   gap: 35px;
+  // justify-content: space-between;
 `;
-
-const FlexTextInput = styled(TextInput)`
-  flex-basis: 1;
-`
 
 const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
