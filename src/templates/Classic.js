@@ -64,10 +64,11 @@ export default function Classic(props) {
             { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
             <Paragraph>{props.data.objective}</Paragraph>
           </Section>
-          {/* <Section>
-            { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
-            <Paragraph>{props.data.objective}</Paragraph>
-          </Section> */}
+          <Section>
+            { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
+            {/* <Paragraph>{props.data.education}</Paragraph> */}
+            {/* <Paragraph>{props.data.school.schoolDegree} {props.data.school.schoolMajorName}</Paragraph> */}
+          </Section>
           {/* <Section>
             { props.data.work === undefined ? null : <SubHeader>Work Experience</SubHeader> }
             <Paragraph>{props.data.work}</Paragraph>

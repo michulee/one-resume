@@ -35,6 +35,7 @@ const Body = styled.div``;
 
 const SubHeader = styled.h2`
   border-bottom: 1px solid black;
+  margin-bottom: 0;
 `;
 
 const Section = styled.section``;
@@ -77,11 +78,15 @@ export default function PreClassic(props) {
           </Section>
           <Section>
             <SubHeader>Education</SubHeader>
-            <Paragraph>BS Computer Science</Paragraph>
+            <Paragraph>SchoolName, State, City</Paragraph>
+            <Paragraph>BS Computer Science, YearStart - YearEnd</Paragraph>
           </Section>
           <Section>
             <SubHeader>Work Experience</SubHeader>
-            <Paragraph>Job Title</Paragraph>
+            <Paragraph>CompanyName, State, City</Paragraph>
+            <Paragraph>JobTitle, YearStart - YearEnd</Paragraph>
+            {/* <TextArea>Job Description</TextArea> */}
+            <Paragraph>Job Description</Paragraph>
           </Section>
           <Section>
             <SubHeader>Skills</SubHeader>

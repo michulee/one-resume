@@ -9,6 +9,7 @@ import {
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
 // must import directly from file bc import from index will return undefined which causes run time error
 import TextInput from "components/TextInput";
+import TextArea from "components/TextArea";
 
 const Nav = styled.div`
   position: fixed;
@@ -67,6 +68,9 @@ const Form = styled.form`
 
 // you can't use numbers e.g. <TextInput100>
 const TextInputWide = styled(TextInput)`
+  grid-column: 1 / -1;
+`
+const TextAreaWide = styled(TextArea)`
   grid-column: 1 / -1;
 `
 
@@ -157,8 +161,8 @@ export default function NavContents(props) {
             
             <SectionHeader name="Others" />
             <Card>
-              <TextInput name="skills" label="Skills"/>
-              <TextInput name="objective" label="Objective"/>
+              <TextAreaWide name="skills" label="Skills"/>
+              <TextAreaWide name="objective" label="Objective"/>
             </Card>
 
             <SectionHeader name="Education" />

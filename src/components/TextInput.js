@@ -40,21 +40,9 @@ export default function TextInput(props) {
     const [text, setText] = useState('');
     const handleTextChange = (e) => {
         e.preventDefault();
-
-        // console.log(e.target);
         setText(e.target.value);
-
-        // props.onChange(e.target.value);
         props.onChange(e); //this works - pass whole event
     }
-
-    // useEffect(() => {
-    //     const trimmedName = props.name.replaceAll(" ", "");
-    //     const value = document.getElementById(trimmedName);
-    //     if(value !== null) {
-    //         value.innerText = text;
-    //     }
-    // })
 
     return (
         <>
