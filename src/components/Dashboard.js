@@ -5,6 +5,7 @@ import { PreClassic, Classic } from 'templates/index';
 import {
   SectionHeader,
   TextInput,
+  TextInput100,
 } from "components/index";
 
 const Nav = styled.div`
@@ -138,8 +139,10 @@ export default function NavContents(props) {
             </Item> */}
             <TextInput name="middleName" label="Middle Name"/>
             <TextInput name="lastName" label="Last Name"/>
-            <TextInput name="email" label="Email"/>
-            <TextInput name="objective"/>
+
+            <TextInput100 name="email" label="Email"/>
+
+            <TextInput name="objective" label="Objective"/>
             <TextInput name="github" label="GitHub"/>
             <TextInput name="website" label="Website"/>
             <TextInput name="linkedin" label="LinkedIn"/>

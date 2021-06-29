@@ -11,9 +11,6 @@ const Header = styled.h2`
 const HorizontalLine = styled.hr`
     width: 100%;
     margin: 0;
-    // background-color: red;
-    // color: red;
-    // outline-color: red;
 `
 
 const Container = styled.div`
@@ -26,8 +23,7 @@ export default function SectionHeader(props) {
         <>
             <Container>
                 <Header>{props.name}</Header>
-                {/* <HorizontalLine></HorizontalLine> */}
-                <HorizontalLine/>
+                {/* <HorizontalLine/> */}
             </Container>
         </>
     );

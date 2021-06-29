@@ -32,12 +32,12 @@ const Input = styled.input`
 const Item = styled.div`
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    // flex-basis: 50%;
+    flex-basis: 100%;
+    // flex-grow: 1;
     // width: 100%;
 `
 
-export default function TextInput(props) {
+export default function TextInput100(props) {
     // https://ankurito.medium.com/how-to-set-the-default-value-of-a-text-input-in-react-329fb66991c9
     // example shows this component to have its own state
     const [text, setText] = useState('');

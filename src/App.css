@@ -42,6 +42,23 @@
   height: 100vh;
 }
 
+hr {
+  width: 100%;
+  background-color: #282c34;
+  height: 3px;
+}
+#w100 {
+  flex-basis: 100%;
+}
+.w100 {
+  /* flex-grow: 0 !important; */
+  flex-basis: 100% !important;
+  /* width: 100% !important; */
+  background-color: pink;
+}
+
+#container-info {
+}
 
 /* id has higher priority than classes */
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -67,5 +84,5 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  
+
 }
