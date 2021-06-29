@@ -5,8 +5,9 @@ import { PreClassic, Classic } from 'templates/index';
 import {
   SectionHeader,
   TextInput,
-  TextInput100,
+  // TextInputItem,
 } from "components/index";
+import { Item } from "./TextInput";
 
 const Nav = styled.div`
   position: fixed;
@@ -63,15 +64,15 @@ const Container = styled.div`
 `
 
 const Form = styled.form`
-  display: flex;
-  // width: 100%;
-  // width: 300px;
-  flex-wrap: wrap;
-
-  // gap: 35px;
-  // gap: 1em;
-  // justify-content: space-between;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
+
+// you can't use numbers e.g. <TextInput100>
+const TextInputWide = styled(TextInput)`
+  grid-column: 1 / -1;
+`
 
 const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
@@ -141,7 +142,8 @@ export default function NavContents(props) {
             <TextInput name="middleName" label="Middle Name"/>
             <TextInput name="lastName" label="Last Name"/>
 
-            <TextInput100 name="email" label="Email"/>
+            <TextInputWide name="email" label="Email"/>
+            {/* <TextInput100 className="container" name="email" label="Email"/> */}
 
             <TextInput name="objective" label="Objective"/>
             <TextInput name="github" label="GitHub"/>

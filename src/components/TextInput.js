@@ -31,27 +31,7 @@ const Input = styled.input`
 
 `
 
-const Item = styled.div`
-    display: flex;
-    flex-direction: column;
-    // margin: 10px;
-
-    // can't do 50% because think it's counting padding
-    // flex-basis: 45%;
-
-    // flex-basis: 50%;
-    flex-grow: 1;
-
-    // width: 100%;
-
-    @media (min-width: 375px) {
-        // flex-grow: 0;
-        // flex-basis: 50%;
-    }
-    @media (min-width: 756px) {
-        flex-grow: 0;
-        flex-basis: 50%;
-    }
+export const Item = styled.div`
 `
 
 export default function TextInput(props) {
@@ -78,7 +58,8 @@ export default function TextInput(props) {
 
     return (
         <>
-            <Item>
+            {/* <Item className="container"> */}
+            <Item className={props.className}>
                 <Label htmlFor={props.name}>{props.label}</Label>
                 <Input id={props.name} name={props.name} type="text" placeholder={props.label}/>
 

@@ -2,7 +2,7 @@
 
 import Dashboard from 'components/Dashboard';
 import TextInput from 'components/TextInput';
-import TextInput100 from 'components/TextInput100';
+import {Item as TextInputItem} from 'components/TextInput';
 import SectionHeader from 'components/SectionHeader';
 import TextArea from 'components/TextArea';
 import ButtonRound from 'components/ButtonRound';
@@ -10,7 +10,7 @@ import ButtonRound from 'components/ButtonRound';
 
 export {
     TextInput,
-    TextInput100,
+    // TextInputItem,
     SectionHeader,
     TextArea,
     Dashboard,
