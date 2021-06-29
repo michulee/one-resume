@@ -49,12 +49,15 @@ const Section = styled.div`
   flex-direction: column;
   gap: 35px;
   padding: 0 20px 35px 20px;
+
+  // width 100% makes items even 
+  width: 100%;
+  // width: 500px;
 `;
 
 const Container = styled.div`
   @media (min-width: 768px) {
     display: flex;
-    flex-direction: row;
   }
 `
 
@@ -63,6 +66,10 @@ const Form = styled.form`
   flex-direction: column;
   gap: 35px;
 `;
+
+const FlexTextInput = styled(TextInput)`
+  flex-basis: 1;
+`
 
 const ButtonSection = styled.button``;
 const ButtonActiveSection = styled.button``;
@@ -121,7 +128,7 @@ export default function NavContents(props) {
       </Section> */}
       
       <Container>
-        <Section className="scroll">
+        <Section id="container-info" className="scroll container-info">
           <SectionHeader name="Basic Information" />
           <Form onChange={handleForm}>
             <TextInput name="firstName" label="First Name"/>
@@ -154,8 +161,10 @@ export default function NavContents(props) {
             <TextInput name="companyYearEnd"/>
           </Form>
         </Section>
-        <hr></hr>
-        <Section className="scroll">
+
+        {/* <hr></hr> */}
+
+        <Section id="container-template" className="scroll container-template">
           {console.log()}
           {
               template === '' ? <PreClassic/> :

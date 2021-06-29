@@ -31,7 +31,7 @@ export default function App() {
   };
   return (
     <>
-        <Dashboard/>
+        <Dashboard className="full-height"/>
     </>
   )
 }
