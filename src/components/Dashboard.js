@@ -64,11 +64,12 @@ const Container = styled.div`
 
 const Form = styled.form`
   display: flex;
-  // flex-direction: column;
   // width: 100%;
   // width: 300px;
   flex-wrap: wrap;
-  gap: 35px;
+
+  // gap: 35px;
+  // gap: 1em;
   // justify-content: space-between;
 `;
 
@@ -129,7 +130,7 @@ export default function NavContents(props) {
       </Section> */}
       
       <Container>
-        <Section id="container-info" className="scroll container-info">
+        <Section id="container-info" className="scroll">
           <SectionHeader name="Basic Information" />
           <Form onChange={handleForm}>
             <TextInput name="firstName" label="First Name"/>
@@ -167,7 +168,7 @@ export default function NavContents(props) {
 
         {/* <hr></hr> */}
 
-        <Section id="container-template" className="scroll container-template">
+        <Section id="container-template" className="scroll">
           {console.log()}
           {
               template === '' ? <PreClassic/> :

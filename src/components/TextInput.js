@@ -5,11 +5,13 @@ const Label = styled.label`
     color: #0071BC;
     text-transform: uppercase;
     letter-spacing: 1px;
+    width: 100%;
     // font-weight: 500;
     // font-variant: small-caps;
 `
 
 const Input = styled.input`
+    width: 100%;
     border: none;
     // border: 1px solid #E1E1E1;
     border-bottom: 1px solid #e1e1e1;
@@ -32,9 +34,24 @@ const Input = styled.input`
 const Item = styled.div`
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    // margin: 10px;
+
+    // can't do 50% because think it's counting padding
+    // flex-basis: 45%;
+
     // flex-basis: 50%;
+    flex-grow: 1;
+
     // width: 100%;
+
+    @media (min-width: 375px) {
+        // flex-grow: 0;
+        // flex-basis: 50%;
+    }
+    @media (min-width: 756px) {
+        flex-grow: 0;
+        flex-basis: 50%;
+    }
 `
 
 export default function TextInput(props) {
