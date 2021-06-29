@@ -23,7 +23,7 @@ const Nav = styled.div`
   align-items: center;
   padding: 0 20px;
   width: 100%;
-  height: 70px;
+  height: 50px;
   gap: 32px;
 `;
 
@@ -47,8 +47,8 @@ const ButtonArea = styled.div`
 `;
 
 const Section = styled.div`
-  //nav is 70px height
-  margin-top: 70px;
+  //nav is 50px height
+  // margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -56,6 +56,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
+ margin-top: 50px;
   @media (min-width: 768px) {
     display: flex;
   }
@@ -78,6 +79,11 @@ const Card = styled.div`
   display: grid;
   gap: 35px;
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+`
+
+const SeparateNavFromContents = styled.div`
+  margin-top: 70px;
+
 `
 
 const ButtonSection = styled.button``;
@@ -137,6 +143,7 @@ export default function NavContents(props) {
       </Section> */}
       
       <Container>
+
         <Section id="container-info" className="scroll">
           <Form onChange={handleForm}>
               <SectionHeader name="Basic Information" />
