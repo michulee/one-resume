@@ -10,6 +10,10 @@ const Header = styled.div`
   text-align: center;
 `;
 
+const VerticalLine = styled.div`
+  border: 1px solid #e1e1e1;
+`;
+
 const Title = styled.h1`
   margin: 0;
   display: flex;
@@ -21,6 +25,8 @@ const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 const InfoItem = styled.div``;
@@ -34,6 +40,7 @@ const SubHeader = styled.h2`
 const Section = styled.section``;
 
 const Paragraph = styled.p`
+  margin: 0;
 `;
 
 export default function PreClassic(props) {
@@ -42,14 +49,20 @@ export default function PreClassic(props) {
       <Container>
         <Header>
           <Title>
-            <Paragraph id="First">First</Paragraph>
-            <Paragraph id="Middle">Middle</Paragraph>
-            <Paragraph id="Last">Last</Paragraph>
+            <Paragraph>First</Paragraph>
+            <Paragraph>Middle</Paragraph>
+            <Paragraph>Last</Paragraph>
           </Title>
           <Info>
-            <InfoItem id="Email">johndoe@gmail.com</InfoItem>
-            <InfoItem id="PhoneNumber">(123) 4567 - 7890</InfoItem>
-            <InfoItem id="GitHub">www.johndoe.github.io</InfoItem>
+            <InfoItem>johndoe@gmail.com</InfoItem>
+            <VerticalLine/>
+            <InfoItem>(123) 4567 - 7890</InfoItem>
+            <VerticalLine/>
+            <InfoItem>www.johndoe.github.io</InfoItem>
+            <VerticalLine/>
+            <InfoItem>www.website.com</InfoItem>
+            <VerticalLine/>
+            <InfoItem>www.linkedin.com/in/johndoe</InfoItem>
           </Info>
         </Header>
         <Body>
