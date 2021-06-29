@@ -4,9 +4,8 @@ import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 import { PreClassic, Classic } from 'templates/index';
 import {
   SectionHeader,
-  TextInput,
-  // TextInputItem,
 } from "components/index";
+import TextInput from "components/TextInput";
 import { Item } from "./TextInput";
 
 const Nav = styled.div`
@@ -143,7 +142,6 @@ export default function NavContents(props) {
             <TextInput name="lastName" label="Last Name"/>
 
             <TextInputWide name="email" label="Email"/>
-            {/* <TextInput100 className="container" name="email" label="Email"/> */}
 
             <TextInput name="objective" label="Objective"/>
             <TextInput name="github" label="GitHub"/>
