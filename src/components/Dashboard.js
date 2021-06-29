@@ -52,10 +52,6 @@ const Section = styled.div`
   flex-direction: column;
   gap: 35px;
   padding: 0 20px 35px 20px;
-
-  // width 100% makes items even 
-  // width: 100%;
-  // width: 500px;
 `;
 
 const Container = styled.div`
@@ -67,7 +63,6 @@ const Container = styled.div`
 const Form = styled.form`
   display: grid;
   gap: 35px;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
 
 // you can't use numbers e.g. <TextInput100>
@@ -76,9 +71,9 @@ const TextInputWide = styled(TextInput)`
 `
 
 const Card = styled.div`
-  background-color: pink;
-  border: 1px solid; gray;
-  border-radius: 10px;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `
 
 const ButtonSection = styled.button``;
@@ -140,47 +135,55 @@ export default function NavContents(props) {
       <Container>
         <Section id="container-info" className="scroll">
           <Form onChange={handleForm}>
-            <SectionHeader name="Basic Information" />
-            {/* <Item>
-              <Label htmlFor="firstName">First Name</Label>
-              <Input name="firstName" type="text"/>
-            </Item> */}
-            <TextInput name="firstName" label="First Name"/>
-            <TextInput name="middleName" label="Middle Name"/>
-            <TextInput name="lastName" label="Last Name"/>
-            <TextInput name="email" label="Email"/>
-            <TextInput name="phone" label="Phone"/>
+              <SectionHeader name="Basic Information" />
+            <Card>
+              {/* <Item>
+                <Label htmlFor="firstName">First Name</Label>
+                <Input name="firstName" type="text"/>
+              </Item> */}
+              <TextInput name="firstName" label="First Name"/>
+              <TextInput name="middleName" label="Middle Name"/>
+              <TextInput name="lastName" label="Last Name"/>
+              <TextInput name="email" label="Email"/>
+              <TextInput name="phone" label="Phone"/>
+            </Card>
 
-            <SectionHeader name="Links" />
-            <TextInput name="github" label="GitHub"/>
-            <TextInput name="website" label="Website"/>
-            <TextInput name="linkedin" label="LinkedIn"/>
+              <SectionHeader name="Links" />
+            <Card>
+              <TextInput name="github" label="GitHub"/>
+              <TextInput name="website" label="Website"/>
+              <TextInput name="linkedin" label="LinkedIn"/>
+            </Card>
             
             <SectionHeader name="Others" />
-            <TextInput name="skills" label="Skills"/>
-            <TextInput name="objective" label="Objective"/>
+            <Card>
+              <TextInput name="skills" label="Skills"/>
+              <TextInput name="objective" label="Objective"/>
+            </Card>
 
             <SectionHeader name="Education" />
-            <TextInput name="schoolName" label="School Name"/>
-            <TextInput name="schoolState" label="State"/>
-            <TextInput name="schoolCity" label="City"/>
-            <TextInput name="schoolMajorName" label="Major Name"/>
-            <TextInput name="schoolDegree" label="Degree"/>
-            <TextInput name="schoolYearStart" label="Year Start"/>
-            <TextInput name="schoolYearEnd" label="Year End"/>
+            <Card>
+              <TextInput name="schoolName" label="School Name"/>
+              <TextInput name="schoolState" label="State"/>
+              <TextInput name="schoolCity" label="City"/>
+              <TextInput name="schoolMajorName" label="Major Name"/>
+              <TextInput name="schoolDegree" label="Degree"/>
+              <TextInput name="schoolYearStart" label="Year Start"/>
+              <TextInput name="schoolYearEnd" label="Year End"/>
+            </Card>
 
             <SectionHeader name="Company" />
-            <TextInput name="companyJobTitle" label="Job Title"/>
-            <TextInput name="companyJobDescription" label="Job Description"/>
-            <TextInput name="companyName" label="Company Name"/>
-            <TextInput name="companyState" label="State"/>
-            <TextInput name="companyCity" label="City"/>
-            <TextInput name="companyYearStart" label="Year Start"/>
-            <TextInput name="companyYearEnd" label="Year End"/>
+            <Card>
+              <TextInput name="companyJobTitle" label="Job Title"/>
+              <TextInput name="companyJobDescription" label="Job Description"/>
+              <TextInput name="companyName" label="Company Name"/>
+              <TextInput name="companyState" label="State"/>
+              <TextInput name="companyCity" label="City"/>
+              <TextInput name="companyYearStart" label="Year Start"/>
+              <TextInput name="companyYearEnd" label="Year End"/>
+            </Card>
           </Form>
         </Section>
-
-        {/* <hr></hr> */}
 
         <Section id="container-template" className="scroll">
           {console.log()}
