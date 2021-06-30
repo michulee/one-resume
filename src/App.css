@@ -62,13 +62,21 @@ hr {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 764px) {
   #container-info {
-    width: 40%;
+    width: 20%;
   }
-
   #container-template {
-    width: 60%;
+    width: 80%;
+  }
+}
+
+@media (min-width: 987px) {
+  #container-info {
+    width: 35%;
+  }
+  #container-template {
+    width: 65%;
   }
 }
 

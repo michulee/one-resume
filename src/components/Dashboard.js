@@ -172,7 +172,6 @@ export default function NavContents(props) {
 
               <SectionHeader name="Links" />
             <Card>
-              <TextInput name="github" label="GitHub"/>
               <TextInput name="website" label="Website"/>
               <TextInput name="linkedin" label="LinkedIn"/>
             </Card>

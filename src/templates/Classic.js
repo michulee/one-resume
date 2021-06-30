@@ -56,7 +56,7 @@ export default function Classic(props) {
           <Info>
             <InfoItem id="Email"></InfoItem>
             <InfoItem id="PhoneNumber"></InfoItem>
-            <InfoItem id="GitHub"></InfoItem>
+            <InfoItem id="Website"></InfoItem>
           </Info>
         </Header>
         <Body>
@@ -66,7 +66,8 @@ export default function Classic(props) {
           </Section>
           <Section>
             { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
-            {/* <Paragraph>{props.data.education}</Paragraph> */}
+            {/* <Paragraph>{props.data.school}</Paragraph> */}
+            <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph>
             {/* <Paragraph>{props.data.school.schoolDegree} {props.data.school.schoolMajorName}</Paragraph> */}
           </Section>
           {/* <Section>

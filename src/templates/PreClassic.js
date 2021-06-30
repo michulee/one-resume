@@ -50,6 +50,11 @@ const SubHeader = styled.h2`
 `;
 
 const Section = styled.section``;
+const Row = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
 const Paragraph = styled.p`
   margin: 0;
@@ -76,11 +81,7 @@ export default function PreClassic(props) {
               <VerticalLine/>
               <InfoItem>(123) 4567 - 7890</InfoItem>
               <VerticalLine/>
-              <InfoItem>www.johndoe.github.io</InfoItem>
-              <VerticalLine/>
               <InfoItem>www.website.com</InfoItem>
-              <VerticalLine/>
-              <InfoItem>www.linkedin.com/in/johndoe</InfoItem>
             </Info>
           </Header>
           <Body>
@@ -95,13 +96,19 @@ export default function PreClassic(props) {
             </Section>
             <Section>
               <SubHeader>Education</SubHeader>
-              <Paragraph>SchoolName, State, City</Paragraph>
-              <Paragraph>BS Computer Science, YearStart - YearEnd</Paragraph>
+              <Row>
+                <Paragraph>SchoolName, State, City</Paragraph>
+                <Paragraph>YearStart - YearEnd</Paragraph>
+              </Row>
+              <Paragraph>BS Computer Science</Paragraph>
             </Section>
             <Section>
               <SubHeader>Work Experience</SubHeader>
-              <Paragraph>CompanyName, State, City</Paragraph>
-              <Paragraph>JobTitle, YearStart - YearEnd</Paragraph>
+              <Row>
+                <Paragraph>CompanyName, State, City</Paragraph>
+                <Paragraph>YearStart - YearEnd</Paragraph>
+              </Row>
+              <Paragraph>JobTitle</Paragraph>
               {/* <TextArea>Job Description</TextArea> */}
               <Paragraph>Job Description</Paragraph>
             </Section>
