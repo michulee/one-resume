@@ -4,6 +4,10 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 51rem;
+  height: 66rem;
+  background-color: white;
+  font-size: 1em;
 `;
 
 const Header = styled.div`

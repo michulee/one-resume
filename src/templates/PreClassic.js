@@ -4,16 +4,9 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-
   width: 51rem;
   height: 66rem;
   background-color: white;
-
-  // padding: 6rem;
-  // overflow: hidden;
-
   font-size: 1em;
 `;
 
