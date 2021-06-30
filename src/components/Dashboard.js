@@ -64,7 +64,6 @@ const Template = styled(Section)`
   // background-color: #282828;
   // background-color: #4E4E4E;
   background-color: #747474;
-
 ` 
 
 const Container = styled.div`

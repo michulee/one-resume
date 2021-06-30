@@ -7,12 +7,14 @@ const Container = styled.div`
   // justify-content: center;
   // align-items: center;
 
-  width: 37.1875em;
-  height: 52.625em;
+  width: 51rem;
+  height: 66rem;
   background-color: white;
 
   // padding: 6rem;
   // overflow: hidden;
+
+  font-size: 1em;
 `;
 
 const Header = styled.div`
