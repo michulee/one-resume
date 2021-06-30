@@ -53,7 +53,20 @@ const Section = styled.div`
   flex-direction: column;
   gap: 35px;
   padding: 0 20px 35px 20px;
+
+  // background-color: pink;
+  // align-items: center;
+
+  // font-size: 0.75rem;
+  // font-size: 12px;
 `;
+
+const Template = styled(Section)`
+  align-items: center;
+  // background-color: #282828;
+  // background-color: #4E4E4E;
+  background-color: #747474;
+` 
 
 const Container = styled.div`
  margin-top: 50px;
@@ -196,14 +209,14 @@ export default function NavContents(props) {
           </Form>
         </Section>
 
-        <Section id="container-template" className="scroll">
+        <Template id="container-template" className="scroll">
           {console.log()}
           {
               template === '' ? <PreClassic/> :
               template === 'classic' ? <Classic id="print" data={state}/> :
               null
           }
-        </Section>
+        </Template>
       </Container>
     </>
   );

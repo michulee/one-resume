@@ -4,6 +4,12 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  width: 37.1875em;
+  height: 52.625em;
+  background-color: white;
 `;
 
 const Header = styled.div`
