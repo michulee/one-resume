@@ -57,8 +57,6 @@ const Section = styled.div`
   // background-color: pink;
   // align-items: center;
 
-  // font-size: 0.75rem;
-  // font-size: 12px;
 `;
 
 const Template = styled(Section)`
@@ -66,6 +64,7 @@ const Template = styled(Section)`
   // background-color: #282828;
   // background-color: #4E4E4E;
   background-color: #747474;
+
 ` 
 
 const Container = styled.div`
