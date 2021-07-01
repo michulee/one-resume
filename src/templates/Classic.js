@@ -47,7 +47,7 @@ const Row = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`
+`;
 
 const Paragraph = styled.p`
   margin: 0;
@@ -56,25 +56,28 @@ const Paragraph = styled.p`
 const Margin = styled.div`
   margin: 6rem;
   overflow: hidden;
-`
-
+`;
 
 export default function Classic(props) {
   const [state, setState] = useState({
     toggleOn: true,
-  })
-  const toggleSection = (e) => {
-
-  }
+  });
   const data = props.data.values;
   const dummyData = props.data.initialValues;
+
+  const addVerticalLines = () => {
+
+    console.log("personal: " + data.personal);
+  };
   return (
     <>
       <Container>
         <Margin>
           <Header>
             <Title>
-              <Paragraph>{data.firstName} {data.middleName} {data.lastName}</Paragraph>
+              <Paragraph>
+                {data.firstName} {data.middleName} {data.lastName}
+              </Paragraph>
             </Title>
             <Info>
               <InfoItem id="Email"></InfoItem>
@@ -82,14 +85,16 @@ export default function Classic(props) {
               <InfoItem id="Website"></InfoItem>
             </Info>
           </Header>
-          
+
           <Body>
             <Section>
-              { data.objective === '' ? null : <SubHeader>Objective</SubHeader> }
+              {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
-              { data.school.schoolName === '' ? null : <SubHeader>Education</SubHeader> }
+              {data.school.schoolName === "" ? null : (
+                <SubHeader>Education</SubHeader>
+              )}
               <Paragraph>{data.school.schoolName}</Paragraph>
               {/* {console.log("data: " + data.school.schoolName)} */}
               {/* <Paragraph>{data.school.schoolName === undefined ? null : null}</Paragraph> */}
@@ -99,11 +104,10 @@ export default function Classic(props) {
               {/* <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
             </Section>
             <Section>
-              { data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
+              {data.skills === undefined ? null : <SubHeader>Skills</SubHeader>}
               <Paragraph>{data.skills}</Paragraph>
             </Section>
           </Body>
-
         </Margin>
       </Container>
     </>

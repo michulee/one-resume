@@ -121,8 +121,11 @@ export default function NavContents(props) {
     firstName: "John",
     middleName: "C",
     lastName: "Doe",
-    email: "johncdoe@gmail.com",
-    phone: "(123) 456 - 7890",
+    personal: {
+      email: "johncdoe@gmail.com",
+      phone: "(123) 456 - 7890",
+      website: "johndoe.com",
+    },
     skills: "Office Management, Records Management, Database Administration, Travel Coordination, Event Management",
     objective: "Administrative support professional offering versatile office management skills and proficiency in Microsoft Office programs. Strong planner and problem solver who readily adapts to change, works independently and exceeds expectations. Able to juggle multiple priorities and meet tight deadlines without compromising quality.",
     school: {
@@ -151,8 +154,11 @@ export default function NavContents(props) {
       firstName: "",
       middleName: "",
       lastName: "",
-      email: "",
-      phone: "",
+      personal: {
+        personalEmail: "",
+        personalPhone: "",
+        personalWebsite: "",
+      },
       skills: "",
       objective: "",
       school: {
@@ -185,20 +191,9 @@ export default function NavContents(props) {
     // setTemplate(obj);
 
     setTemplate("classic");
-    const setStateForNestedObj = ["school", "company"];
+    const setStateForNestedObj = ["school", "company", "personal"];
 
-    // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
-    // setState({ ...state, [e.target.name]: e.target.value });
-    // Modify nested objects https://medium.com/@kkranthi438/dont-mutate-state-in-react-6b25d5e06f42
-
-    // this modifies nested object but doesn't keep previous values of state
-    // setState({ ...state, values: { [e.target.name]: e.target.value } });
-
-    // this modifies nested object and keep previous values of state
-    // setState({
-    //   ...state,
-    //   values: { ...state.values, [e.target.name]: e.target.value },
-    // });
+    console.log(Object.values(state.values.personal))
 
     // state.values.school returns undefined, but state.values.school.schoolName gives error
     // the destructuring [name] turns the "school" string into an object
@@ -316,7 +311,6 @@ export default function NavContents(props) {
         </Section>
 
         <Template id="container-template" className="scroll">
-          {console.log()}
           {template === "preclassic" ? (
             <PreClassic />
           ) : template === "classic" ? (
