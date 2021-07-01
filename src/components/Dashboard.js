@@ -116,17 +116,31 @@ export default function NavContents(props) {
 
   const [text, setText] = useState("");
 
+  // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
   const initialValues = {
-    firstName: "Michelle",
-    middleName: "Chung",
-    last: "Lee",
-    work: "",
-    skills: "",
+    firstName: "John",
+    middleName: "C",
+    lastName: "Doe",
+    email: "johncdoe@gmail.com",
+    phone: "(123) 456 - 7890",
     school: {
       schoolName: "University of California, Los Angeles",
-      schoolState: "",
-      schoolCity: "",
+      schoolState: "CA",
+      schoolCity: "Los Angeles",
+      schoolMajorName: "Business Administration",
+      schoolDegree: "BS",
+      schoolYearStart: "2010",
+      SchoolYearEnd: "2014",
     },
+    company: {
+      companyJobTitle: "Administrative Assistant",
+      companyJobDescription: "Handle multifaceted clerical tasks (e.g., data entry, filing, records management and billing) as the assistant to the registrar and admissions offices. Coordinate travel arrangements, maintain database and ensure the delivery of premium service to students.",
+      companyName: "REmote",
+      companyState: "CA",
+      companyCity: "Los Angeles",
+      companyYearStart: "Jan 2015",
+      companyYearEnd: "Jan 2016",
+    }
   };
   const [state, setState] = useState({
     // order: "",
