@@ -90,6 +90,7 @@ export default function Classic(props) {
             </Section>
             <Section>
               { data.school.schoolName === undefined ? null : <SubHeader>Education</SubHeader> }
+              {console.log(data.school.schoolName)}
               <Paragraph>{data.school.schoolName}</Paragraph>
               {/* {console.log("data: " + data.school.schoolName)} */}
               {/* <Paragraph>{data.school.schoolName === undefined ? null : null}</Paragraph> */}

@@ -147,6 +147,7 @@ export default function NavContents(props) {
     paid: false,
     // submitting: false,
     // loading: false,
+    initialValues: initialValues,
     values: {
       firstName: "",
       middleName: "",
@@ -172,9 +173,6 @@ export default function NavContents(props) {
         companyYearEnd: "",
       }
     },
-    initialValues: initialValues,
-
-    // setState() in handleForm() is adding objects in here
   });
 
   const handleForm = (e) => {
@@ -198,18 +196,18 @@ export default function NavContents(props) {
     // console.log(state.values.school.schoolName)
 
     const nestTheseNames = ["school", "company"];
-    // nestTheseNames.map((name) => {
-    //   if (e.target.name.includes(name)) {
-    //     setState({
-    //       ...state,
-    //       values: {
-    //         ...state.values,
-    //         name: { ...state.values.name, [e.target.name]: e.target.value },
-    //       },
-    //     });
-    //     console.log(name);
-    //   }
-    // });
+    nestTheseNames.map((name) => {
+      if (e.target.name.includes(name)) {
+        setState({
+          ...state,
+          values: {
+            ...state.values,
+            [name]: { ...state.values.name, [e.target.name]: e.target.value },
+          },
+        });
+        console.log(state.values.school.schoolName);
+      }
+    });
     // if(e.target.name.includes('school')) {
     //   console.log('education was here');
     // }
