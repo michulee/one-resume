@@ -147,7 +147,31 @@ export default function NavContents(props) {
     paid: false,
     // submitting: false,
     // loading: false,
-    values: {},
+    values: {
+      firstName: "",
+      middleName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      school: {
+        schoolName: "",
+        schoolState: "",
+        schoolCity: "",
+        schoolMajorName: "",
+        schoolDegree: "",
+        schoolYearStart: "",
+        SchoolYearEnd: "",
+      },
+      company: {
+        companyJobTitle: "",
+        companyJobDescription: "",
+        companyName: "",
+        companyState: "",
+        companyCity: "",
+        companyYearStart: "",
+        companyYearEnd: "",
+      }
+    },
     initialValues: initialValues,
 
     // setState() in handleForm() is adding objects in here
@@ -172,7 +196,6 @@ export default function NavContents(props) {
 
     // state.values.school returns undefined, but state.values.school.schoolName gives error
     // console.log(state.values.school.schoolName)
-    console.log(state.values.school.schoolName)
 
     const nestTheseNames = ["school", "company"];
     // nestTheseNames.map((name) => {
