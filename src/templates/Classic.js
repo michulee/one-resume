@@ -14,6 +14,10 @@ const Header = styled.div`
   text-align: center;
 `;
 
+const VerticalLine = styled.div`
+  border: 1px solid #e1e1e1;
+`;
+
 const Title = styled.h1`
   margin: 0;
   display: flex;
@@ -25,6 +29,8 @@ const Info = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 const InfoItem = styled.div``;
@@ -33,12 +39,24 @@ const Body = styled.div``;
 
 const SubHeader = styled.h2`
   border-bottom: 1px solid black;
+  margin-bottom: 0;
 `;
 
 const Section = styled.section``;
+const Row = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
 const Paragraph = styled.p`
+  margin: 0;
 `;
+
+const Margin = styled.div`
+  margin: 6rem;
+  overflow: hidden;
+`
 
 
 export default function Classic(props) {
@@ -51,38 +69,40 @@ export default function Classic(props) {
   return (
     <>
       <Container>
-        <Header>
-          <Title>
-            <Paragraph>{props.data.firstName} {props.data.middleName} {props.data.lastName}</Paragraph>
-            {/* <Paragraph>{props.data.middleName}</Paragraph> */}
-            {/* <Paragraph>{props.data.lastName}</Paragraph> */}
-          </Title>
-          <Info>
-            <InfoItem id="Email"></InfoItem>
-            <InfoItem id="PhoneNumber"></InfoItem>
-            <InfoItem id="Website"></InfoItem>
-          </Info>
-        </Header>
-        <Body>
-          <Section>
-            { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
-            <Paragraph>{props.data.objective}</Paragraph>
-          </Section>
-          <Section>
-            { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
-            {/* <Paragraph>{props.data.school}</Paragraph> */}
-            <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph>
-            {/* <Paragraph>{props.data.school.schoolDegree} {props.data.school.schoolMajorName}</Paragraph> */}
-          </Section>
-          {/* <Section>
-            { props.data.work === undefined ? null : <SubHeader>Work Experience</SubHeader> }
-            <Paragraph>{props.data.work}</Paragraph>
-          </Section> */}
-          <Section>
-            { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
-            <Paragraph>{props.data.skills}</Paragraph>
-          </Section>
-        </Body>
+        <Margin>
+          <Header>
+            <Title>
+              <Paragraph>{props.data.firstName} {props.data.middleName} {props.data.lastName}</Paragraph>
+              {/* <Paragraph>{props.data.middleName}</Paragraph> */}
+              {/* <Paragraph>{props.data.lastName}</Paragraph> */}
+            </Title>
+            <Info>
+              <InfoItem id="Email"></InfoItem>
+              <InfoItem id="PhoneNumber"></InfoItem>
+              <InfoItem id="Website"></InfoItem>
+            </Info>
+          </Header>
+          <Body>
+            <Section>
+              { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
+              <Paragraph>{props.data.objective}</Paragraph>
+            </Section>
+            <Section>
+              { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
+              {/* <Paragraph>{props.data.school}</Paragraph> */}
+              <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph>
+              {/* <Paragraph>{props.data.school.schoolDegree} {props.data.school.schoolMajorName}</Paragraph> */}
+            </Section>
+            {/* <Section>
+              { props.data.work === undefined ? null : <SubHeader>Work Experience</SubHeader> }
+              <Paragraph>{props.data.work}</Paragraph>
+            </Section> */}
+            <Section>
+              { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
+              <Paragraph>{props.data.skills}</Paragraph>
+            </Section>
+          </Body>
+        </Margin>
       </Container>
     </>
   );

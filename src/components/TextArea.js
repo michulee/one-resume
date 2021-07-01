@@ -59,6 +59,20 @@ export const Item = styled.div`
 `
 
 export default function TextArea(props) {
+    const NewlineText = (e) => {
+        // e.preventDefault();
+        const text = e.target.value;
+        if(e.keyCode === 13) {
+            if(e.ctrlKey) {
+                text.concat('\n');
+            } else {
+                text.concat('\n');
+            }
+        }
+        console.log("text: "+ text);
+        const newText = text.split('\n').map(str => <p>{str}</p>);
+        return newText;
+    }
     return (
         <>
             {/* <Item>
@@ -67,7 +81,7 @@ export default function TextArea(props) {
             </Item> */}
             <Item className={props.className}>
                 <Label htmlFor={props.name}>{props.label}</Label>
-                <Input id={props.name} name={props.name} type="text" placeholder={props.label} rows="3"/>
+                <Input id={props.name} name={props.name} type="text" placeholder={props.label} rows="3" onKeyPress={NewlineText}/>
             </Item>
         </>
     );
