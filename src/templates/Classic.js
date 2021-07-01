@@ -75,15 +75,6 @@ export default function Classic(props) {
           <Header>
             <Title>
               <Paragraph>{data.firstName} {data.middleName} {data.lastName}</Paragraph>
-
-              <Paragraph>
-                {
-                  // props.data.firstName === 'undefined' ? 
-                }
-              </Paragraph>
-              {/* <Paragraph>{props.data.firstName} {props.data.middleName} {props.data.lastName}</Paragraph> */}
-              {/* <Paragraph>{props.data.middleName}</Paragraph> */}
-              {/* <Paragraph>{props.data.lastName}</Paragraph> */}
             </Title>
             <Info>
               <InfoItem id="Email"></InfoItem>
@@ -92,7 +83,7 @@ export default function Classic(props) {
             </Info>
           </Header>
           
-          {/* <Body>
+          <Body>
             <Section>
               { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
               <Paragraph>{props.data.objective}</Paragraph>
@@ -105,7 +96,7 @@ export default function Classic(props) {
               { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
               <Paragraph>{props.data.skills}</Paragraph>
             </Section>
-          </Body> */}
+          </Body>
 
         </Margin>
       </Container>

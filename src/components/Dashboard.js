@@ -117,11 +117,16 @@ export default function NavContents(props) {
   const [text, setText] = useState("");
 
   const initialValues = {
-    firstName: "Michelle",
-    middleName: "Chung",
-    last: "Lee",
-    work: "",
-    skills: "",
+    firstName: 'Michelle',
+    middleName: 'Chung',
+    last: 'Lee',
+    work: '',
+    skills: '',
+    school: {
+      schoolName: '',
+      schoolState: '',
+      schoolCity: '',
+    }
   };
   const [state, setState] = useState({
     // order: "",
@@ -138,7 +143,6 @@ export default function NavContents(props) {
     e.preventDefault();
     setTemplate("classic");
 
-
     // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
     // setState({ ...state, [e.target.name]: e.target.value });
     // Modify nested objects https://medium.com/@kkranthi438/dont-mutate-state-in-react-6b25d5e06f42
@@ -148,6 +152,17 @@ export default function NavContents(props) {
 
     // this modifies nested object and keep previous values of state
     setState({ ...state, values: { ...state.values, [e.target.name]: e.target.value } });
+
+    const nestedObjList = ['school', 'company'];
+    nestedObjList.map((i) => {
+      if(e.target.name.includes(i)) {
+        console.log(i);
+        console.log('nest this object')
+      }
+    })
+    // if(e.target.name.includes('school')) {
+    //   console.log('education was here');
+    // }
   };
 
   return (
