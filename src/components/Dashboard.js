@@ -111,10 +111,10 @@ const ButtonActive = styled(Button)`
 `;
 
 export default function NavContents(props) {
-  const [section, setSection] = useState("basic");
+  // const [section, setSection] = useState("basic");
   const [template, setTemplate] = useState("preclassic");
 
-  const [text, setText] = useState("");
+  // const [text, setText] = useState("");
 
   // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
   const initialValues = {
@@ -123,6 +123,8 @@ export default function NavContents(props) {
     lastName: "Doe",
     email: "johncdoe@gmail.com",
     phone: "(123) 456 - 7890",
+    skills: "Office Management, Records Management, Database Administration, Travel Coordination, Event Management",
+    objective: "Administrative support professional offering versatile office management skills and proficiency in Microsoft Office programs. Strong planner and problem solver who readily adapts to change, works independently and exceeds expectations. Able to juggle multiple priorities and meet tight deadlines without compromising quality.",
     school: {
       schoolName: "University of California, Los Angeles",
       schoolState: "CA",
@@ -144,10 +146,6 @@ export default function NavContents(props) {
     },
   };
   const [state, setState] = useState({
-    // order: "",
-    paid: false,
-    // submitting: false,
-    // loading: false,
     initialValues: initialValues,
     values: {
       firstName: "",
@@ -155,6 +153,8 @@ export default function NavContents(props) {
       lastName: "",
       email: "",
       phone: "",
+      skills: "",
+      objective: "",
       school: {
         schoolName: "",
         schoolState: "",
@@ -178,6 +178,12 @@ export default function NavContents(props) {
 
   const handleForm = (e) => {
     e.preventDefault();
+
+    // const start = ("pre").length;
+    // const obj = template.substring(start, template.length)
+    // console.log(obj)
+    // setTemplate(obj);
+
     setTemplate("classic");
     const setStateForNestedObj = ["school", "company"];
 

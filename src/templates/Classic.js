@@ -85,12 +85,11 @@ export default function Classic(props) {
           
           <Body>
             <Section>
-              { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
+              { data.objective === '' ? null : <SubHeader>Objective</SubHeader> }
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
-              { data.school.schoolName === undefined ? null : <SubHeader>Education</SubHeader> }
-              {console.log(data.school.schoolName)}
+              { data.school.schoolName === '' ? null : <SubHeader>Education</SubHeader> }
               <Paragraph>{data.school.schoolName}</Paragraph>
               {/* {console.log("data: " + data.school.schoolName)} */}
               {/* <Paragraph>{data.school.schoolName === undefined ? null : null}</Paragraph> */}
@@ -100,8 +99,8 @@ export default function Classic(props) {
               {/* <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
             </Section>
             <Section>
-              { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
-              <Paragraph>{props.data.skills}</Paragraph>
+              { data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
+              <Paragraph>{data.skills}</Paragraph>
             </Section>
           </Body>
 
