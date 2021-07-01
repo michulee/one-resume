@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+// import { Route, BrowserRouter as Router, Link, ActiveLink } from 'react-router-dom';
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 import { PreClassic, Classic } from "templates/index";
 import { SectionHeader } from "components/index";
@@ -116,46 +117,64 @@ export default function NavContents(props) {
   const [text, setText] = useState("");
 
   const initialValues = {
-    firstName: "",
-    middleName: "",
-    lastName: "",
+    firstName: "Michelle",
+    middleName: "Chung",
+    last: "Lee",
     work: "",
     skills: "",
   };
   const [state, setState] = useState({
     // order: "",
-    // paid: false,
+    paid: false,
     // submitting: false,
     // loading: false,
-    // data: initialValues,
+    values: {},
+    initialValues: initialValues,
+
+    // setState() in handleForm() is adding objects in here
   });
 
   const handleForm = (e) => {
     e.preventDefault();
     setTemplate("classic");
 
+
     // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
-    setState({ ...state, [e.target.name]: e.target.value });
+    // setState({ ...state, [e.target.name]: e.target.value });
+    // Modify nested objects https://medium.com/@kkranthi438/dont-mutate-state-in-react-6b25d5e06f42
+
+    // this modifies nested object but doesn't keep previous values of state
+    // setState({ ...state, values: { [e.target.name]: e.target.value } });
+
+    // this modifies nested object and keep previous values of state
+    setState({ ...state, values: { ...state.values, [e.target.name]: e.target.value } });
   };
 
   return (
     <>
-      <Nav>
-        <FixedArea>
-          <AiFillPrinter />
-        </FixedArea>
-        <VerticalLine />
-        <ButtonArea>
-          {template === "preclassic" || template === "classic" ? (
-            <ButtonActive>Classic</ButtonActive>
-          ) : null}
-          {/* <Button onClick={() => setTemplate("classic")}>
-            Classic
-          </Button> */}
+      {/* <Router> */}
+        <Nav>
+          <FixedArea>
+            <AiFillPrinter />
+          </FixedArea>
+          <VerticalLine />
+          <ButtonArea>
+            {template === "preclassic" || template === "classic" ? (
+              <ButtonActive>Classic</ButtonActive>
+            ) : null}
+            {/* <Button onClick={() => setTemplate("classic")}>
+              Classic
+            </Button> */}
+            {/* <Button onClick={() => setTemplate("classic2")}>Classic2</Button> */}
+          </ButtonArea>
+        </Nav>
 
-          {/* <Button onClick={() => setTemplate("classic2")}>Classic2</Button> */}
-        </ButtonArea>
-      </Nav>
+        {/* <Switch>
+          <Route path='preclassic'>
+
+          </Route>
+        </Switch> */}
+      {/* </Router> */}
 
       {/* <Section>
         {
@@ -175,6 +194,8 @@ export default function NavContents(props) {
                 <Input name="firstName" type="text"/>
               </Item> */}
               <TextInput name="firstName" label="First Name" />
+              {/* <TextInput name="firstName" label="First Name" /> */}
+
               <TextInput name="middleName" label="Middle Name" />
               <TextInput name="lastName" label="Last Name" />
               <TextInput name="email" label="Email" />

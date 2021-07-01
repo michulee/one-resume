@@ -66,13 +66,22 @@ export default function Classic(props) {
   const toggleSection = (e) => {
 
   }
+  const data = props.data.values;
+  const dummyData = props.data.initialValues;
   return (
     <>
       <Container>
         <Margin>
           <Header>
             <Title>
-              <Paragraph>{props.data.firstName} {props.data.middleName} {props.data.lastName}</Paragraph>
+              <Paragraph>{data.firstName} {data.middleName} {data.lastName}</Paragraph>
+
+              <Paragraph>
+                {
+                  // props.data.firstName === 'undefined' ? 
+                }
+              </Paragraph>
+              {/* <Paragraph>{props.data.firstName} {props.data.middleName} {props.data.lastName}</Paragraph> */}
               {/* <Paragraph>{props.data.middleName}</Paragraph> */}
               {/* <Paragraph>{props.data.lastName}</Paragraph> */}
             </Title>
@@ -82,26 +91,22 @@ export default function Classic(props) {
               <InfoItem id="Website"></InfoItem>
             </Info>
           </Header>
-          <Body>
+          
+          {/* <Body>
             <Section>
               { props.data.objective === undefined ? null : <SubHeader>Objective</SubHeader> }
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
               { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
-              {/* <Paragraph>{props.data.school}</Paragraph> */}
               <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph>
-              {/* <Paragraph>{props.data.school.schoolDegree} {props.data.school.schoolMajorName}</Paragraph> */}
             </Section>
-            {/* <Section>
-              { props.data.work === undefined ? null : <SubHeader>Work Experience</SubHeader> }
-              <Paragraph>{props.data.work}</Paragraph>
-            </Section> */}
             <Section>
               { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }
               <Paragraph>{props.data.skills}</Paragraph>
             </Section>
-          </Body>
+          </Body> */}
+
         </Margin>
       </Container>
     </>
