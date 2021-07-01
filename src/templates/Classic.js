@@ -89,8 +89,11 @@ export default function Classic(props) {
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
-              { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> }
-              <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph>
+              {/* { props.data.school === undefined ? null : <SubHeader>Education</SubHeader> } */}
+              {/* <Paragraph>{data.school.schoolName}</Paragraph> */}
+
+              {/* <Paragraph>{data.school.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
+              {/* <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
             </Section>
             <Section>
               { props.data.skills === undefined ? null : <SubHeader>Skills</SubHeader> }

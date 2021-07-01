@@ -117,16 +117,16 @@ export default function NavContents(props) {
   const [text, setText] = useState("");
 
   const initialValues = {
-    firstName: 'Michelle',
-    middleName: 'Chung',
-    last: 'Lee',
-    work: '',
-    skills: '',
+    firstName: "Michelle",
+    middleName: "Chung",
+    last: "Lee",
+    work: "",
+    skills: "",
     school: {
-      schoolName: '',
-      schoolState: '',
-      schoolCity: '',
-    }
+      schoolName: "University of California, Los Angeles",
+      schoolState: "",
+      schoolCity: "",
+    },
   };
   const [state, setState] = useState({
     // order: "",
@@ -151,15 +151,28 @@ export default function NavContents(props) {
     // setState({ ...state, values: { [e.target.name]: e.target.value } });
 
     // this modifies nested object and keep previous values of state
-    setState({ ...state, values: { ...state.values, [e.target.name]: e.target.value } });
+    setState({
+      ...state,
+      values: { ...state.values, [e.target.name]: e.target.value },
+    });
 
-    const nestedObjList = ['school', 'company'];
-    nestedObjList.map((i) => {
-      if(e.target.name.includes(i)) {
-        console.log(i);
-        console.log('nest this object')
-      }
-    })
+    // state.values.school returns undefined, but state.values.school.schoolName gives error
+    // console.log(state.values.school.schoolName)
+    console.log(state.values.school.schoolName)
+
+    const nestTheseNames = ["school", "company"];
+    // nestTheseNames.map((name) => {
+    //   if (e.target.name.includes(name)) {
+    //     setState({
+    //       ...state,
+    //       values: {
+    //         ...state.values,
+    //         name: { ...state.values.name, [e.target.name]: e.target.value },
+    //       },
+    //     });
+    //     console.log(name);
+    //   }
+    // });
     // if(e.target.name.includes('school')) {
     //   console.log('education was here');
     // }
@@ -168,23 +181,23 @@ export default function NavContents(props) {
   return (
     <>
       {/* <Router> */}
-        <Nav>
-          <FixedArea>
-            <AiFillPrinter />
-          </FixedArea>
-          <VerticalLine />
-          <ButtonArea>
-            {template === "preclassic" || template === "classic" ? (
-              <ButtonActive>Classic</ButtonActive>
-            ) : null}
-            {/* <Button onClick={() => setTemplate("classic")}>
+      <Nav>
+        <FixedArea>
+          <AiFillPrinter />
+        </FixedArea>
+        <VerticalLine />
+        <ButtonArea>
+          {template === "preclassic" || template === "classic" ? (
+            <ButtonActive>Classic</ButtonActive>
+          ) : null}
+          {/* <Button onClick={() => setTemplate("classic")}>
               Classic
             </Button> */}
-            {/* <Button onClick={() => setTemplate("classic2")}>Classic2</Button> */}
-          </ButtonArea>
-        </Nav>
+          {/* <Button onClick={() => setTemplate("classic2")}>Classic2</Button> */}
+        </ButtonArea>
+      </Nav>
 
-        {/* <Switch>
+      {/* <Switch>
           <Route path='preclassic'>
 
           </Route>
