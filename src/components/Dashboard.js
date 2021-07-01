@@ -134,13 +134,14 @@ export default function NavContents(props) {
     },
     company: {
       companyJobTitle: "Administrative Assistant",
-      companyJobDescription: "Handle multifaceted clerical tasks (e.g., data entry, filing, records management and billing) as the assistant to the registrar and admissions offices. Coordinate travel arrangements, maintain database and ensure the delivery of premium service to students.",
+      companyJobDescription:
+        "Handle multifaceted clerical tasks (e.g., data entry, filing, records management and billing) as the assistant to the registrar and admissions offices. Coordinate travel arrangements, maintain database and ensure the delivery of premium service to students.",
       companyName: "REmote",
       companyState: "CA",
       companyCity: "Los Angeles",
       companyYearStart: "Jan 2015",
       companyYearEnd: "Jan 2016",
-    }
+    },
   };
   const [state, setState] = useState({
     // order: "",
@@ -171,13 +172,14 @@ export default function NavContents(props) {
         companyCity: "",
         companyYearStart: "",
         companyYearEnd: "",
-      }
+      },
     },
   });
 
   const handleForm = (e) => {
     e.preventDefault();
     setTemplate("classic");
+    const setStateForNestedObj = ["school", "company"];
 
     // need to have ...state to keep prev array states, else it will overwrite entire arr with one state
     // setState({ ...state, [e.target.name]: e.target.value });
@@ -187,30 +189,36 @@ export default function NavContents(props) {
     // setState({ ...state, values: { [e.target.name]: e.target.value } });
 
     // this modifies nested object and keep previous values of state
-    setState({
-      ...state,
-      values: { ...state.values, [e.target.name]: e.target.value },
-    });
+    // setState({
+    //   ...state,
+    //   values: { ...state.values, [e.target.name]: e.target.value },
+    // });
 
     // state.values.school returns undefined, but state.values.school.schoolName gives error
-    // console.log(state.values.school.schoolName)
-
-    const nestTheseNames = ["school", "company"];
-    nestTheseNames.map((name) => {
-      if (e.target.name.includes(name)) {
+    // the destructuring [name] turns the "school" string into an object
+    let isNested = false;
+    setStateForNestedObj.map((nestedObj) => {
+      if (e.target.name.includes(nestedObj)) {
         setState({
           ...state,
           values: {
             ...state.values,
-            [name]: { ...state.values.name, [e.target.name]: e.target.value },
+            [nestedObj]: {
+              ...state.values.nestedObj,
+              [e.target.name]: e.target.value,
+            },
           },
         });
-        console.log(state.values.school.schoolName);
+        isNested = true;
       }
     });
-    // if(e.target.name.includes('school')) {
-    //   console.log('education was here');
-    // }
+
+    if (!isNested) {
+      setState({
+        ...state,
+        values: { ...state.values, [e.target.name]: e.target.value },
+      });
+    }
   };
 
   return (
