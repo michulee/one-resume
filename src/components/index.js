@@ -5,6 +5,7 @@ import TextInput from 'components/TextInput';
 import SectionHeader from 'components/SectionHeader';
 import TextArea from 'components/TextArea';
 import ButtonRound from 'components/ButtonRound';
+import ToggleButton from 'components/ToggleButton';
 
 
 export {
@@ -13,4 +14,5 @@ export {
     TextArea,
     Dashboard,
     ButtonRound,
+    ToggleButton,
 }

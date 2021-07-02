@@ -60,15 +60,26 @@ const Margin = styled.div`
 
 export default function Classic(props) {
   const [state, setState] = useState({
-    toggleOn: true,
+    personalString: "",
   });
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
-  const addVerticalLines = () => {
+  const str = () => {
+    for(let i = 0; i < data.personal.length; i++) {
+      console.log('length: ' + data.personal.length)
+    }
+  }
 
-    console.log("personal: " + data.personal);
-  };
+  const education = () => {
+    console.log('log: ' + Object.values(data.school).forEach((item) => item))
+    Object.values(data.school).forEach((item) => {
+      console.log('item: ' + item)
+      if(item !== "") {
+        setState('education');
+      }
+    })
+  }
   return (
     <>
       <Container>
@@ -80,10 +91,10 @@ export default function Classic(props) {
               </Paragraph>
             </Title>
             <Info>
-              <InfoItem id="Email"></InfoItem>
-              <InfoItem id="PhoneNumber"></InfoItem>
-              <InfoItem id="Website"></InfoItem>
-              {data.personal.personalString}
+              <InfoItem>{data.personal.personalEmail}</InfoItem>
+              <InfoItem>{data.personal.personalPhone}</InfoItem>
+              <InfoItem>{data.personal.personalWebsite}</InfoItem>
+              <InfoItem>{data.personal.personalLinkedin}</InfoItem>
             </Info>
           </Header>
 
@@ -93,16 +104,11 @@ export default function Classic(props) {
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
-              {data.school.schoolName === "" ? null : (
+              {/* {data.school === "" ? null : (
                 <SubHeader>Education</SubHeader>
-              )}
+              )} */}
+              {/* {Object.values(data.school) !== "" ? <SubHeader>Education</SubHeader> : null} */}
               <Paragraph>{data.school.schoolName}</Paragraph>
-              {/* {console.log("data: " + data.school.schoolName)} */}
-              {/* <Paragraph>{data.school.schoolName === undefined ? null : null}</Paragraph> */}
-              {/* <Paragraph>{data.school.schoolName === undefined ? null : data.school.schoolName}</Paragraph> */}
-
-              {/* <Paragraph>{data.school.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
-              {/* <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
             </Section>
 
           </Body>

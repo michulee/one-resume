@@ -9,6 +9,7 @@ import { SectionHeader } from "components/index";
 // must import directly from file bc import from index will return undefined which causes run time error
 import TextInput from "components/TextInput";
 import TextArea from "components/TextArea";
+import ToggleButton from "./ToggleButton";
 
 const Nav = styled.div`
   position: fixed;
@@ -152,6 +153,7 @@ export default function NavContents(props) {
 
   const [state, setState] = useState({
     initialValues: initialValues,
+    toggle: false,
     values: {
       firstName: "",
       middleName: "",
@@ -188,139 +190,40 @@ export default function NavContents(props) {
   const handleForm = (e) => {
     e.preventDefault();
 
-    // const start = ("pre").length;
-    // const obj = template.substring(start, template.length)
-    // console.log(obj)
-    // setTemplate(obj);
-
     setTemplate("classic");
     const setStateForNestedObj = ["school", "company", "personal"];
-    // const setStateForNestedObj = ["school"];
 
+    for(let i = 0; i < setStateForNestedObj.length; i++) {
+      let obj = setStateForNestedObj[i];
+      if (e.target.name.includes(obj)) {
+        setState({
+          ...state,
+          values: {
+            ...state.values,
+            [obj]: {
+              ...state.values.[obj],
+              [e.target.name]: e.target.value,
+            },
+          },
+        });
+        break;
+      } 
+      else {
+        setState({
+          ...state,
+          values: { 
+            ...state.values, 
+            [e.target.name]: e.target.value 
+          },
+        });
 
-
-    // bad, every time a personal input is typed, it runs the map for all items
-    if(e.target.name.includes('personal')) {
-
-      // initially ["", "", ""], but typing makes the object return only one element
-      // console.log(Object.values(state.values.personal))
-      const personalValues = Object.values(state.values.personal);
-
-      // let personalCount = 0;
-      // let personalString = state.values.personal.personalString;
-      // personalValues.map((item) => {
-      //   if(item !== "") {
-      //     console.log('item: ' + item)
-      //     if(personalCount === 0) {
-      //       personalString = personalString.concat(item);
-      //       // console.log('count = 0: ' + item + ' ' + personalString)
-      //     }
-      //     else if(personalCount > 0) {
-      //       personalString = personalString.concat(" | " + item);
-      //       // console.log('count > 0: ' + item +  ' ' + personalString)
-      //     }
-      //     else {
-      //       personalString.concat('ERROR')
-      //     }
-      //     personalCount++;
-      //     setState({...state, personal : {...state, personalString}})
-      //     console.log('state: ' + state.values.personal.personalString)
-      //   }
-      // })
-      // console.log('personalString: ' + personalString)
+      }
     }
-
-
-    // state.values.school returns undefined, but state.values.school.schoolName gives error
-    // the destructuring [name] turns the "school" string into an object
-    let isNested = false;
-    // setStateForNestedObj.map((nestedObj) => {
-    //   if (e.target.name.includes(nestedObj)) {
-    //     setState({
-    //       ...state,
-    //       values: {
-    //         ...state.values,
-    //         [nestedObj]: {
-    //           ...state.values.nestedObj,
-    //           [e.target.name]: e.target.value,
-    //         },
-    //       },
-    //     });
-    //     isNested = true;
-    //   }
-    // });
-
-    // needed for loop for break
-    // for(let i = 0; i < setStateForNestedObj.length; i++) {
-    //   console.log('is nested')
-    //   console.log('e.target.name: ' + e.target.name)
-    //   console.log('nestedObj: ' + setStateForNestedObj[i])
-    //   let obj = setStateForNestedObj[i];
-    //   console.log('e.target.name === nestedobj: ' + e.target.name.includes(obj))
-    //   if (e.target.name.includes(obj)) {
-    //     isNested = true;
-    //     // setState({
-    //     //   ...state,
-    //     //   values: {
-    //     //     ...state.values,
-    //     //     [obj]: {
-    //     //       ...state.values.[obj],
-    //     //       [e.target.name]: e.target.value,
-    //     //     },
-    //     //   },
-    //     // });
-    //     setState({
-    //       ...state,
-    //       values: {
-    //         ...state.values,
-    //         school: {
-    //           ...state.values.school,
-    //           [e.target.name]: e.target.value,
-    //         },
-    //       },
-    //     });
-    //     // doesn't work
-    //     // console.log('state.values.obj ? ' + Object.keys(state.values.obj))
-
-    //     // works
-    //     console.log('state.values.obj ? ' + Object.keys(state.values.[obj]))
-
-    //     break;
-    //   }
-    // }
-
-    console.log('is nested')
-    setState({
-      ...state,
-      values: {
-        ...state.values,
-        school: {
-          ...state.values.school,
-          [e.target.name]: e.target.value,
-        },
-      },
-    });
-
-    // if (!isNested) {
-      console.log('not nested')
-      setState({
-        ...state,
-        values: { 
-          ...state.values, 
-          [e.target.name]: e.target.value 
-        },
-      });
-    // }
-
-    //nestedObj setState not returning prev values
-    console.log(Object.keys(state.values))
-    console.log(Object.keys(state.values.school))
-
+    console.log(Object.values(state.values))
   };
 
   return (
     <>
-      {/* <Router> */}
       <Nav>
         <FixedArea>
           <AiFillPrinter />
@@ -337,21 +240,6 @@ export default function NavContents(props) {
         </ButtonArea>
       </Nav>
 
-      {/* <Switch>
-          <Route path='preclassic'>
-
-          </Route>
-        </Switch> */}
-      {/* </Router> */}
-
-      {/* <Section>
-        {
-            section === 'basic' ? <Basic parentCallback={ handleCallback }/> : 
-            section === 'education' ? <Education/> :
-            null
-        } 
-      </Section> */}
-
       <Container>
         <Section id="container-info" className="scroll">
           <Form onChange={handleForm}>
@@ -362,8 +250,6 @@ export default function NavContents(props) {
                 <Input name="firstName" type="text"/>
               </Item> */}
               <TextInput name="firstName" label="First Name" />
-              {/* <TextInput name="firstName" label="First Name" /> */}
-
               <TextInput name="middleName" label="Middle Name" />
               <TextInput name="lastName" label="Last Name" />
               <TextInput name="personalEmail" label="Email" />
