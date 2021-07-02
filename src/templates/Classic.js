@@ -87,6 +87,7 @@ export default function Classic(props) {
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
+              {console.log(input)}
               {input.includes('school') ? <SubHeader>Education</SubHeader> : null}
               <Paragraph>{data.school.schoolName}</Paragraph>
             </Section>

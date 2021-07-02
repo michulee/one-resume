@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // import { Route, BrowserRouter as Router, Link, ActiveLink } from 'react-router-dom';
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
@@ -200,16 +200,6 @@ export default function NavContents(props) {
       obj = nestedObj[i];
       console.log(obj)
       if(e.target.name.includes(obj)) {
-        // setState({
-        //   ...state,
-        //   values: {
-        //     ...state.values,
-        //     [obj]: {
-        //       ...state.values.obj,
-        //       [e.target.name]: e.target.value,
-        //     },
-        //   },
-        // });
         setState({
           ...state,
           values: {
@@ -226,12 +216,19 @@ export default function NavContents(props) {
 
     // setState({...state, input: e.target.name})
 
-    console.log(state.values)
+    console.log(state)
   }
 
   const handleOuterObj = (e) => {
-    handleInputName(e);
+    // handleInputName(e);
     setTemplate('classic')
+    // setState({
+    //   ...state,
+    //   values: { 
+    //     ...state.values, 
+    //     [e.target.name]: e.target.value 
+    //   },
+    // });
     setState({
       ...state,
       values: { 
@@ -262,7 +259,7 @@ export default function NavContents(props) {
 
       <Container>
         <Section id="container-info" className="scroll">
-          <Form>
+          <Form onChange={handleInputName}>
             <SectionHeader name="Basic Information" />
             <Card onChange={handleOuterObj}>
               <TextInput name="firstName" label="First Name" />
