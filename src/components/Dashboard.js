@@ -205,7 +205,6 @@ export default function NavContents(props) {
     let obj = "";
     for(let i = 0; i < nestedObj.length; i++) {
       obj = nestedObj[i];
-      console.log(obj)
       if(e.target.name.includes(obj)) {
         setState({
           ...state,
@@ -220,7 +219,6 @@ export default function NavContents(props) {
         break;
      }
     }
-    console.log(state)
   }
 
   const handleOuterObj = (e) => {
@@ -233,7 +231,6 @@ export default function NavContents(props) {
         [e.target.name]: e.target.value 
       },
     });
-    console.log(state.values)
   }
 
   return (
@@ -244,6 +241,7 @@ export default function NavContents(props) {
         </FixedArea>
         <VerticalLine />
         <ButtonArea>
+          {/* if user clicks twice, they can see template with dummy data */}
           {template === "preclassic" || template === "classic" ? (
             <ButtonActive onClick={() => setTemplate('preclassic')}>Classic</ButtonActive>
           ) : <Button onClick={() => setTemplate('classic')}>Classic</Button>}
@@ -252,11 +250,6 @@ export default function NavContents(props) {
             <ButtonActive onClick={() => setTemplate('preclassic2')}>Classic2</ButtonActive>
           ) : <Button onClick={() => setTemplate('classic2')}>Classic2</Button>}
 
-
-          {/* <Button onClick={() => setTemplate("classic")}>
-              Classic
-            </Button> */}
-          {/* <Button onClick={() => setTemplate("classic2")}>Classic2</Button> */}
         </ButtonArea>
       </Nav>
 
@@ -280,7 +273,7 @@ export default function NavContents(props) {
             <SectionHeader name="Others" />
             <Card onChange={handleOuterObj}>
               <TextAreaWide name="skills" label="Skills" />
-              <TextAreaWide name="objective" label="Objective" />
+              <TextArea name="objective" label="Objective" />
             </Card>
 
             <SectionHeader name="Education" />
