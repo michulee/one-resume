@@ -83,6 +83,7 @@ export default function Classic(props) {
               <InfoItem id="Email"></InfoItem>
               <InfoItem id="PhoneNumber"></InfoItem>
               <InfoItem id="Website"></InfoItem>
+              {data.personal.personalString}
             </Info>
           </Header>
 
@@ -103,10 +104,7 @@ export default function Classic(props) {
               {/* <Paragraph>{data.school.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
               {/* <Paragraph>{props.data.schoolName}, {props.data.schoolState}, {props.data.schoolCity}</Paragraph> */}
             </Section>
-            <Section>
-              {data.skills === undefined ? null : <SubHeader>Skills</SubHeader>}
-              <Paragraph>{data.skills}</Paragraph>
-            </Section>
+
           </Body>
         </Margin>
       </Container>
