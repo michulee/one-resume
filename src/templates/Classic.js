@@ -59,6 +59,7 @@ const Margin = styled.div`
 `;
 
 export default function Classic(props) {
+  const input = props.data.input;
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
@@ -86,10 +87,7 @@ export default function Classic(props) {
               <Paragraph>{props.data.objective}</Paragraph>
             </Section>
             <Section>
-              {/* {data.school === "" ? null : (
-                <SubHeader>Education</SubHeader>
-              )} */}
-              {/* {Object.values(data.school) !== "" ? <SubHeader>Education</SubHeader> : null} */}
+              {input.includes('school') ? <SubHeader>Education</SubHeader> : null}
               <Paragraph>{data.school.schoolName}</Paragraph>
             </Section>
 

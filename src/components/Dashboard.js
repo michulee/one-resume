@@ -153,7 +153,7 @@ export default function NavContents(props) {
 
   const [state, setState] = useState({
     initialValues: initialValues,
-    toggle: false,
+    input: "",
     values: {
       firstName: "",
       middleName: "",
@@ -208,6 +208,9 @@ export default function NavContents(props) {
         break;
      }
     }
+    setState({...state, input: e.target.name})
+
+    console.log(state.values)
   }
 
   const handleOuterObj = (e) => {
@@ -219,44 +222,7 @@ export default function NavContents(props) {
         [e.target.name]: e.target.value 
       },
     });
-
-    console.log(state);
   }
-
-  const handleForm = (e) => {
-    e.preventDefault();
-
-    setTemplate("classic");
-    const setStateForNestedObj = ["school", "company", "personal"];
-
-    for(let i = 0; i < setStateForNestedObj.length; i++) {
-      let obj = setStateForNestedObj[i];
-      if (e.target.name.includes(obj)) {
-        setState({
-          ...state,
-          values: {
-            ...state.values,
-            [obj]: {
-              ...state.values.[obj],
-              [e.target.name]: e.target.value,
-            },
-          },
-        });
-        break;
-      } 
-      else {
-        setState({
-          ...state,
-          values: { 
-            ...state.values, 
-            [e.target.name]: e.target.value 
-          },
-        });
-
-      }
-    }
-    console.log(Object.values(state.values))
-  };
 
   return (
     <>
@@ -325,8 +291,6 @@ export default function NavContents(props) {
         </Section>
 
         <Template id="container-template" className="scroll">
-            {console.log(template)}
-
           {template === "preclassic" ? (
             <PreClassic />
           ) : template === "classic" ? (
