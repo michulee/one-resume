@@ -59,7 +59,8 @@ const Margin = styled.div`
 `;
 
 export default function Classic(props) {
-  const input = props.data.input;
+  // const input = props.data.input;
+  const input = props.input;
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
@@ -84,12 +85,15 @@ export default function Classic(props) {
           <Body>
             <Section>
               {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
-              <Paragraph>{props.data.objective}</Paragraph>
+              <Paragraph>{data.objective}</Paragraph>
             </Section>
             <Section>
-              {console.log(input)}
               {input.includes('school') ? <SubHeader>Education</SubHeader> : null}
-              <Paragraph>{data.school.schoolName}</Paragraph>
+              <Paragraph>{data.school.schoolName}, {data.school.schoolState}, {data.school.schoolCity}</Paragraph>
+            </Section>
+            <Section>
+              {input.includes('company') ? <SubHeader>Work Experience</SubHeader> : null}
+              <Paragraph>{data.company.companyJobTitle}</Paragraph>
             </Section>
 
           </Body>

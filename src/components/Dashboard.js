@@ -114,6 +114,7 @@ const ButtonActive = styled(Button)`
 export default function NavContents(props) {
   // const [section, setSection] = useState("basic");
   const [template, setTemplate] = useState("preclassic");
+  const [input, setInput] = useState('');
 
   // const [text, setText] = useState("");
 
@@ -192,8 +193,8 @@ export default function NavContents(props) {
   }
 
   const handleNestedObj = (e) => {
-    // handleInputName(e);
     setTemplate('classic')
+    setInput(e.target.name);
     const nestedObj = ["school", "company", "personal"];
     let obj = "";
     for(let i = 0; i < nestedObj.length; i++) {
@@ -213,22 +214,12 @@ export default function NavContents(props) {
         break;
      }
     }
-
-    // setState({...state, input: e.target.name})
-
     console.log(state)
   }
 
   const handleOuterObj = (e) => {
-    // handleInputName(e);
     setTemplate('classic')
-    // setState({
-    //   ...state,
-    //   values: { 
-    //     ...state.values, 
-    //     [e.target.name]: e.target.value 
-    //   },
-    // });
+    setInput(e.target.name);
     setState({
       ...state,
       values: { 
@@ -259,7 +250,7 @@ export default function NavContents(props) {
 
       <Container>
         <Section id="container-info" className="scroll">
-          <Form onChange={handleInputName}>
+          <Form>
             <SectionHeader name="Basic Information" />
             <Card onChange={handleOuterObj}>
               <TextInput name="firstName" label="First Name" />
@@ -309,7 +300,7 @@ export default function NavContents(props) {
           {template === "preclassic" ? (
             <PreClassic />
           ) : template === "classic" ? (
-            <Classic id="print" data={state}/>
+            <Classic id="print" data={state} input={input}/>
           ) : null}
         </Template>
       </Container>
