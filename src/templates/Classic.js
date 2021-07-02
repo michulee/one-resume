@@ -8,6 +8,10 @@ const Container = styled.div`
   height: 66rem;
   background-color: white;
   font-size: 1em;
+
+  @media (min-width: 764px) {
+    // TODO resize for responsive design
+  }
 `;
 
 const Header = styled.div`

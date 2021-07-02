@@ -186,6 +186,14 @@ export default function NavContents(props) {
     },
   });
 
+  const print = () => {
+    let printwin = window.open("");
+    printwin.document.write(document.getElementById("toprint").innerHTML);
+    printwin.stop();
+    printwin.print();
+    printwin.close();
+  }
+
   const handleInputName = (e) => {
     setState({...state, input: e.target.name})
   }
@@ -237,8 +245,14 @@ export default function NavContents(props) {
         <VerticalLine />
         <ButtonArea>
           {template === "preclassic" || template === "classic" ? (
-            <ButtonActive>Classic</ButtonActive>
-          ) : null}
+            <ButtonActive onClick={() => setTemplate('preclassic')}>Classic</ButtonActive>
+          ) : <Button onClick={() => setTemplate('classic')}>Classic</Button>}
+
+          {template === "preclassic2" || template === "classic2" ? (
+            <ButtonActive onClick={() => setTemplate('preclassic2')}>Classic2</ButtonActive>
+          ) : <Button onClick={() => setTemplate('classic2')}>Classic2</Button>}
+
+
           {/* <Button onClick={() => setTemplate("classic")}>
               Classic
             </Button> */}
