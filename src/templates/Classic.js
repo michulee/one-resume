@@ -87,13 +87,56 @@ export default function Classic(props) {
               {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
               <Paragraph>{data.objective}</Paragraph>
             </Section>
-            <Section>
+
+            {/* <Section>
               {input.includes('school') ? <SubHeader>Education</SubHeader> : null}
-              <Paragraph>{data.school.schoolName}, {data.school.schoolState}, {data.school.schoolCity}</Paragraph>
-            </Section>
+              <Row>
+                <Paragraph>{data.school.schoolName}, {data.school.schoolState}, {data.school.schoolCity}</Paragraph>
+                <Paragraph>{data.school.schoolYearStart} - {data.school.schoolYearEnd}</Paragraph>
+              </Row>
+              <Paragraph>{data.school.schoolDegree} {data.school.schoolMajorName}</Paragraph>
+            </Section> */}
+
+            {input.includes("school") ? (
+              <Section>
+                <SubHeader>Education</SubHeader>
+                <Row>
+                  <Paragraph>
+                    {data.school.schoolName}, {data.school.schoolState},{" "}
+                    {data.school.schoolCity}
+                  </Paragraph>
+                  <Paragraph>
+                    {data.school.schoolYearStart} - {data.school.schoolYearEnd}
+                  </Paragraph>
+                </Row>
+                <Paragraph>
+                  {data.school.schoolDegree} {data.school.schoolMajorName}
+                </Paragraph>
+              </Section>
+            ) : null}
+
+            {input.includes("company") ? (            
+              <Section>
+                <SubHeader>Work Experience</SubHeader>
+              <Row>
+                <Paragraph>
+                  {data.company.companyName}, {data.company.companyState},{" "}
+                  {data.company.companyCity}
+                </Paragraph>
+                <Paragraph>
+                  {data.company.companyYearStart} -{" "}
+                  {data.company.companyYearEnd}
+                </Paragraph>
+              </Row>
+                <Paragraph>{data.company.companyJobTitle}</Paragraph>
+                <Paragraph>{data.company.companyJobDescription}</Paragraph>
+              </Section>
+            ) : null}
+
+
             <Section>
-              {input.includes('company') ? <SubHeader>Work Experience</SubHeader> : null}
-              <Paragraph>{data.company.companyJobTitle}</Paragraph>
+              {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
+              <Paragraph>{data.skills}</Paragraph>
             </Section>
 
           </Body>

@@ -127,7 +127,6 @@ export default function NavContents(props) {
       email: "johncdoe@gmail.com",
       phone: "(123) 456 - 7890",
       website: "johndoe.com",
-      string: "",
     },
     skills: "Office Management, Records Management, Database Administration, Travel Coordination, Event Management",
     objective: "Administrative support professional offering versatile office management skills and proficiency in Microsoft Office programs. Strong planner and problem solver who readily adapts to change, works independently and exceeds expectations. Able to juggle multiple priorities and meet tight deadlines without compromising quality.",
@@ -163,7 +162,6 @@ export default function NavContents(props) {
         personalEmail: "",
         personalPhone: "",
         personalWebsite: "",
-        personalString: "",
       },
       skills: "",
       objective: "",
@@ -251,19 +249,18 @@ export default function NavContents(props) {
       <Container>
         <Section id="container-info" className="scroll">
           <Form>
-            <SectionHeader name="Basic Information" />
+            <SectionHeader name="Name" />
             <Card onChange={handleOuterObj}>
               <TextInput name="firstName" label="First Name" />
               <TextInput name="middleName" label="Middle Name" />
               <TextInput name="lastName" label="Last Name" />
-              <TextInput name="personalEmail" label="Email" />
-              <TextInput name="personalPhone" label="Phone" />
             </Card>
 
-            <SectionHeader name="Links" />
-            <Card onChange={handleOuterObj}>
+            <SectionHeader name="Personal Information" />
+            <Card onChange={handleNestedObj}>
+              <TextInput name="personalEmail" label="Email" />
+              <TextInput name="personalPhone" label="Phone" />
               <TextInput name="personalWebsite" label="Website" />
-              <TextInput name="personalLinkedin" label="LinkedIn" />
             </Card>
 
             <SectionHeader name="Others" />
