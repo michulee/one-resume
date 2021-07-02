@@ -187,14 +187,29 @@ export default function NavContents(props) {
     },
   });
 
+  const handleInputName = (e) => {
+    setState({...state, input: e.target.name})
+  }
+
   const handleNestedObj = (e) => {
+    // handleInputName(e);
     setTemplate('classic')
     const nestedObj = ["school", "company", "personal"];
     let obj = "";
-
     for(let i = 0; i < nestedObj.length; i++) {
       obj = nestedObj[i];
+      console.log(obj)
       if(e.target.name.includes(obj)) {
+        // setState({
+        //   ...state,
+        //   values: {
+        //     ...state.values,
+        //     [obj]: {
+        //       ...state.values.obj,
+        //       [e.target.name]: e.target.value,
+        //     },
+        //   },
+        // });
         setState({
           ...state,
           values: {
@@ -208,12 +223,14 @@ export default function NavContents(props) {
         break;
      }
     }
-    setState({...state, input: e.target.name})
+
+    // setState({...state, input: e.target.name})
 
     console.log(state.values)
   }
 
   const handleOuterObj = (e) => {
+    handleInputName(e);
     setTemplate('classic')
     setState({
       ...state,
@@ -222,6 +239,7 @@ export default function NavContents(props) {
         [e.target.name]: e.target.value 
       },
     });
+    console.log(state.values)
   }
 
   return (
