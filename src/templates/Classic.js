@@ -97,6 +97,7 @@ export default function Classic(props) {
               <Paragraph>{data.school.schoolDegree} {data.school.schoolMajorName}</Paragraph>
             </Section> */}
 
+            {/* TODO school and company sharing same state, need separate states */}
             {input.includes("school") ? (
               <Section>
                 <SubHeader>Education</SubHeader>
@@ -132,7 +133,6 @@ export default function Classic(props) {
                 <Paragraph>{data.company.companyJobDescription}</Paragraph>
               </Section>
             ) : null}
-
 
             <Section>
               {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}

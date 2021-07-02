@@ -64,7 +64,7 @@ hr {
 /* Medium devices (landscape tablets, 768px and up) */
 @media (min-width: 764px) {
   #container-info {
-    width: 20%;
+    width: 30%;
   }
   #container-template {
     width: 80%;
