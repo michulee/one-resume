@@ -59,27 +59,9 @@ const Margin = styled.div`
 `;
 
 export default function Classic(props) {
-  const [state, setState] = useState({
-    personalString: "",
-  });
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
-  const str = () => {
-    for(let i = 0; i < data.personal.length; i++) {
-      console.log('length: ' + data.personal.length)
-    }
-  }
-
-  const education = () => {
-    console.log('log: ' + Object.values(data.school).forEach((item) => item))
-    Object.values(data.school).forEach((item) => {
-      console.log('item: ' + item)
-      if(item !== "") {
-        setState('education');
-      }
-    })
-  }
   return (
     <>
       <Container>

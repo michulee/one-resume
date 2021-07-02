@@ -187,6 +187,42 @@ export default function NavContents(props) {
     },
   });
 
+  const handleNestedObj = (e) => {
+    setTemplate('classic')
+    const nestedObj = ["school", "company", "personal"];
+    let obj = "";
+
+    for(let i = 0; i < nestedObj.length; i++) {
+      obj = nestedObj[i];
+      if(e.target.name.includes(obj)) {
+        setState({
+          ...state,
+          values: {
+            ...state.values,
+            [obj]: {
+              ...state.values.[obj],
+              [e.target.name]: e.target.value,
+            },
+          },
+        });
+        break;
+     }
+    }
+  }
+
+  const handleOuterObj = (e) => {
+    setTemplate('classic')
+    setState({
+      ...state,
+      values: { 
+        ...state.values, 
+        [e.target.name]: e.target.value 
+      },
+    });
+
+    console.log(state);
+  }
+
   const handleForm = (e) => {
     e.preventDefault();
 
@@ -242,13 +278,9 @@ export default function NavContents(props) {
 
       <Container>
         <Section id="container-info" className="scroll">
-          <Form onChange={handleForm}>
+          <Form>
             <SectionHeader name="Basic Information" />
-            <Card>
-              {/* <Item>
-                <Label htmlFor="firstName">First Name</Label>
-                <Input name="firstName" type="text"/>
-              </Item> */}
+            <Card onChange={handleOuterObj}>
               <TextInput name="firstName" label="First Name" />
               <TextInput name="middleName" label="Middle Name" />
               <TextInput name="lastName" label="Last Name" />
@@ -257,19 +289,19 @@ export default function NavContents(props) {
             </Card>
 
             <SectionHeader name="Links" />
-            <Card>
+            <Card onChange={handleOuterObj}>
               <TextInput name="personalWebsite" label="Website" />
               <TextInput name="personalLinkedin" label="LinkedIn" />
             </Card>
 
             <SectionHeader name="Others" />
-            <Card>
+            <Card onChange={handleOuterObj}>
               <TextAreaWide name="skills" label="Skills" />
               <TextAreaWide name="objective" label="Objective" />
             </Card>
 
             <SectionHeader name="Education" />
-            <Card>
+            <Card onChange={handleNestedObj}>
               <TextInput name="schoolName" label="School Name" />
               <TextInput name="schoolState" label="State" />
               <TextInput name="schoolCity" label="City" />
@@ -280,7 +312,7 @@ export default function NavContents(props) {
             </Card>
 
             <SectionHeader name="Company" />
-            <Card>
+            <Card onChange={handleNestedObj}>
               <TextInput name="companyJobTitle" label="Job Title" />
               <TextInput name="companyJobDescription" label="Job Description" />
               <TextInput name="companyName" label="Company Name" />
@@ -293,10 +325,12 @@ export default function NavContents(props) {
         </Section>
 
         <Template id="container-template" className="scroll">
+            {console.log(template)}
+
           {template === "preclassic" ? (
             <PreClassic />
           ) : template === "classic" ? (
-            <Classic id="print" data={state} />
+            <Classic id="print" data={state}/>
           ) : null}
         </Template>
       </Container>
