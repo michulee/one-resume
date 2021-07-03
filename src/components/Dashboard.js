@@ -231,7 +231,41 @@ export default function NavContents(props) {
         [e.target.name]: e.target.value 
       },
     });
+
+    console.log(state.values)
   }
+
+  const [text, setText] = useState("");
+  const handleTextArea = (e) => {
+    // e.preventDefault();
+
+    setTemplate('classic')
+    setInput(e.target.name);
+
+    const text = e.target.value;
+    if (e.keyCode === 13) {
+      if (e.ctrlKey) {
+        text.concat("\n");
+      } else {
+        text.concat("\n");
+      }
+    }
+    // setText(value);
+
+
+    const newText = text.split("\n").map((str) => {
+        // <p>{str}</p>
+        // console.log('str: ' + str)
+        return `<p>${str}</p>`
+    });
+    console.log('newText: ' + newText);
+    setState({...state, values: {
+      ...state.values, 
+        [e.target.name]: newText
+    }})
+    
+    // return newText;
+  };
 
   return (
     <>
@@ -272,7 +306,8 @@ export default function NavContents(props) {
 
             <SectionHeader name="Others" />
             <Card onChange={handleOuterObj}>
-              <TextAreaWide name="skills" label="Skills" />
+            {/* <Card onChange={handleTextArea}> */}
+              <TextAreaWide name="skills" label="Skills"/>
               <TextArea name="objective" label="Objective" />
             </Card>
 

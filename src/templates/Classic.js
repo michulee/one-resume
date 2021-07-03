@@ -68,6 +68,13 @@ export default function Classic(props) {
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
+  const Objective = () => {
+    const text = data.objective;
+    const newText = text.split('\n').map(str => <Paragraph>{str}</Paragraph>);
+    
+    return newText;
+  };
+
   return (
     <>
       <Container>
@@ -89,7 +96,7 @@ export default function Classic(props) {
           <Body>
             <Section>
               {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
-              <Paragraph>{data.objective}</Paragraph>
+              <Objective/>
             </Section>
 
             {/* <Section>

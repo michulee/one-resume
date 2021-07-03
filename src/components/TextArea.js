@@ -61,7 +61,7 @@ const P = styled.p``;
 
 export default function TextArea(props) {
   const [text, setText] = useState("");
-  const NewlineText = (e) => {
+  const handleTextArea = (e) => {
     // e.preventDefault();
 
     const value = e.target.value;
@@ -76,7 +76,6 @@ export default function TextArea(props) {
     console.log(value)
 
     const newText = text.split("\n").map((str) => {
-        // `<p>${str}</p>`
         <P>{str}</P>
     });
     return newText;
@@ -112,7 +111,7 @@ export default function TextArea(props) {
           type="text"
           placeholder={props.label}
           rows="3"
-          onKeyPress={NewlineText}
+        //   onKeyPress={handleTextArea}
         />
 
         {/* <Input
