@@ -68,11 +68,67 @@ export default function Classic(props) {
   const data = props.data.values;
   const dummyData = props.data.initialValues;
 
+  const [school, setSchool] = useState("");
+  const [company, setCompany] = useState("");
+
   const Objective = () => {
     const text = data.objective;
-    const newText = text.split('\n').map(str => <Paragraph>{str}</Paragraph>);
-    
+    const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
+
     return newText;
+  };
+
+  const Education = () => {
+    if (input.includes("school")) {
+      setSchool("toggleOn");
+    }
+    return (
+      <>
+        {school === "toggleOn" ? (
+          <Section>
+            <SubHeader>Education</SubHeader>
+            <Row>
+              <Paragraph>
+                {data.school.schoolName}, {data.school.schoolState},{" "}
+                {data.school.schoolCity}
+              </Paragraph>
+              <Paragraph>
+                {data.school.schoolYearStart} - {data.school.schoolYearEnd}
+              </Paragraph>
+            </Row>
+            <Paragraph>
+              {data.school.schoolDegree} {data.school.schoolMajorName}
+            </Paragraph>
+          </Section>
+        ) : null}
+      </>
+    );
+  };
+
+  const Company = () => {
+    if (input.includes("company")) {
+      setCompany("toggleOn");
+    }
+    return (
+      <>
+        {company === 'toggleOn' ? (
+          <Section>
+            <SubHeader>Work Experience</SubHeader>
+            <Row>
+              <Paragraph>
+                {data.company.companyName}, {data.company.companyState},{" "}
+                {data.company.companyCity}
+              </Paragraph>
+              <Paragraph>
+                {data.company.companyYearStart} - {data.company.companyYearEnd}
+              </Paragraph>
+            </Row>
+            <Paragraph>{data.company.companyJobTitle}</Paragraph>
+            <Paragraph>{data.company.companyJobDescription}</Paragraph>
+          </Section>
+        ) : null}
+      </>
+    );
   };
 
   return (
@@ -96,7 +152,7 @@ export default function Classic(props) {
           <Body>
             <Section>
               {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
-              <Objective/>
+              <Objective />
             </Section>
 
             {/* <Section>
@@ -109,47 +165,58 @@ export default function Classic(props) {
             </Section> */}
 
             {/* TODO school and company sharing same state, need separate states */}
-            {input.includes("school") ? (
-              <Section>
-                <SubHeader>Education</SubHeader>
-                <Row>
-                  <Paragraph>
-                    {data.school.schoolName}, {data.school.schoolState},{" "}
-                    {data.school.schoolCity}
-                  </Paragraph>
-                  <Paragraph>
-                    {data.school.schoolYearStart} - {data.school.schoolYearEnd}
-                  </Paragraph>
-                </Row>
-                <Paragraph>
-                  {data.school.schoolDegree} {data.school.schoolMajorName}
-                </Paragraph>
-              </Section>
-            ) : null}
+            {/* {() => {
+                if(input.includes('school')) {
+                  setSchool('toggleOn')
+                  console.log(school)
+                }
+              }} */}
 
-            {input.includes("company") ? (            
+            {/* {
+              school === 'toggleOn' ? (
+                <Section>
+                  <SubHeader>Education</SubHeader>
+                  <Row>
+                    <Paragraph>
+                      {data.school.schoolName}, {data.school.schoolState},{" "}
+                      {data.school.schoolCity}
+                    </Paragraph>
+                    <Paragraph>
+                      {data.school.schoolYearStart} - {data.school.schoolYearEnd}
+                    </Paragraph>
+                  </Row>
+                  <Paragraph>
+                    {data.school.schoolDegree} {data.school.schoolMajorName}
+                  </Paragraph>
+                </Section>
+              ) : null
+            } */}
+
+            <Education />
+
+            {/* {input.includes("company") ? (
               <Section>
                 <SubHeader>Work Experience</SubHeader>
-              <Row>
-                <Paragraph>
-                  {data.company.companyName}, {data.company.companyState},{" "}
-                  {data.company.companyCity}
-                </Paragraph>
-                <Paragraph>
-                  {data.company.companyYearStart} -{" "}
-                  {data.company.companyYearEnd}
-                </Paragraph>
-              </Row>
+                <Row>
+                  <Paragraph>
+                    {data.company.companyName}, {data.company.companyState},{" "}
+                    {data.company.companyCity}
+                  </Paragraph>
+                  <Paragraph>
+                    {data.company.companyYearStart} -{" "}
+                    {data.company.companyYearEnd}
+                  </Paragraph>
+                </Row>
                 <Paragraph>{data.company.companyJobTitle}</Paragraph>
                 <Paragraph>{data.company.companyJobDescription}</Paragraph>
               </Section>
-            ) : null}
+            ) : null} */}
+            <Company />
 
             <Section>
               {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
               <Paragraph>{data.skills}</Paragraph>
             </Section>
-
           </Body>
         </Margin>
       </Container>
