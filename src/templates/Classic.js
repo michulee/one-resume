@@ -74,14 +74,24 @@ export default function Classic(props) {
   const Objective = () => {
     const text = data.objective;
     const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
-    return newText;
+    return(
+      <>
+        {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
+        {newText}
+      </>
+    );
   };
 
   const Skills = () => {
     const text = data.skills;
     const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
-    return newText;
-  };
+    return (
+      <>
+        {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
+        {newText}
+      </>
+    );
+  }
 
   const Education = () => {
     if (input.includes("school")) {
@@ -140,11 +150,10 @@ export default function Classic(props) {
     <>
       <Container>
         <Margin>
+
           <Header>
             <Title>
-              {/* <Paragraph> */}
-                {data.firstName} {data.middleName} {data.lastName}
-              {/* </Paragraph> */}
+              {data.firstName} {data.middleName} {data.lastName}
             </Title>
             <Info>
               {data.personal.personalEmail} {data.personal.personalPhone}{" "}
@@ -153,20 +162,12 @@ export default function Classic(props) {
           </Header>
 
           <Body>
-            <Section>
-              {data.objective === "" ? null : <SubHeader>Objective</SubHeader>}
-              <Objective />
-            </Section>
-
+            <Objective/>
             <Education />
-
             <Company />
-
-            <Section>
-              {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
-              <Skills />
-            </Section>
+            <Skills/>
           </Body>
+          
         </Margin>
       </Container>
     </>
