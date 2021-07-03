@@ -74,9 +74,14 @@ export default function Classic(props) {
   const Objective = () => {
     const text = data.objective;
     const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
-
     return newText;
   };
+
+  const Skills = () => {
+    const text = data.skills;
+    const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
+    return newText;
+  }
 
   const Education = () => {
     if (input.includes("school")) {
@@ -104,6 +109,8 @@ export default function Classic(props) {
       </>
     );
   };
+
+
 
   const Company = () => {
     if (input.includes("company")) {
@@ -155,67 +162,14 @@ export default function Classic(props) {
               <Objective />
             </Section>
 
-            {/* <Section>
-              {input.includes('school') ? <SubHeader>Education</SubHeader> : null}
-              <Row>
-                <Paragraph>{data.school.schoolName}, {data.school.schoolState}, {data.school.schoolCity}</Paragraph>
-                <Paragraph>{data.school.schoolYearStart} - {data.school.schoolYearEnd}</Paragraph>
-              </Row>
-              <Paragraph>{data.school.schoolDegree} {data.school.schoolMajorName}</Paragraph>
-            </Section> */}
-
-            {/* TODO school and company sharing same state, need separate states */}
-            {/* {() => {
-                if(input.includes('school')) {
-                  setSchool('toggleOn')
-                  console.log(school)
-                }
-              }} */}
-
-            {/* {
-              school === 'toggleOn' ? (
-                <Section>
-                  <SubHeader>Education</SubHeader>
-                  <Row>
-                    <Paragraph>
-                      {data.school.schoolName}, {data.school.schoolState},{" "}
-                      {data.school.schoolCity}
-                    </Paragraph>
-                    <Paragraph>
-                      {data.school.schoolYearStart} - {data.school.schoolYearEnd}
-                    </Paragraph>
-                  </Row>
-                  <Paragraph>
-                    {data.school.schoolDegree} {data.school.schoolMajorName}
-                  </Paragraph>
-                </Section>
-              ) : null
-            } */}
-
             <Education />
 
-            {/* {input.includes("company") ? (
-              <Section>
-                <SubHeader>Work Experience</SubHeader>
-                <Row>
-                  <Paragraph>
-                    {data.company.companyName}, {data.company.companyState},{" "}
-                    {data.company.companyCity}
-                  </Paragraph>
-                  <Paragraph>
-                    {data.company.companyYearStart} -{" "}
-                    {data.company.companyYearEnd}
-                  </Paragraph>
-                </Row>
-                <Paragraph>{data.company.companyJobTitle}</Paragraph>
-                <Paragraph>{data.company.companyJobDescription}</Paragraph>
-              </Section>
-            ) : null} */}
             <Company />
 
             <Section>
               {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
-              <Paragraph>{data.skills}</Paragraph>
+              <Skills/>
+              {/* <Paragraph>{data.skills}</Paragraph> */}
             </Section>
           </Body>
         </Margin>
