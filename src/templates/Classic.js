@@ -81,7 +81,7 @@ export default function Classic(props) {
     const text = data.skills;
     const newText = text.split("\n").map((str) => <Paragraph>{str}</Paragraph>);
     return newText;
-  }
+  };
 
   const Education = () => {
     if (input.includes("school")) {
@@ -110,15 +110,13 @@ export default function Classic(props) {
     );
   };
 
-
-
   const Company = () => {
     if (input.includes("company")) {
       setCompany("toggleOn");
     }
     return (
       <>
-        {company === 'toggleOn' ? (
+        {company === "toggleOn" ? (
           <Section>
             <SubHeader>Work Experience</SubHeader>
             <Row>
@@ -144,15 +142,13 @@ export default function Classic(props) {
         <Margin>
           <Header>
             <Title>
-              <Paragraph>
+              {/* <Paragraph> */}
                 {data.firstName} {data.middleName} {data.lastName}
-              </Paragraph>
+              {/* </Paragraph> */}
             </Title>
             <Info>
-              <InfoItem>{data.personal.personalEmail}</InfoItem>
-              <InfoItem>{data.personal.personalPhone}</InfoItem>
-              <InfoItem>{data.personal.personalWebsite}</InfoItem>
-              <InfoItem>{data.personal.personalLinkedin}</InfoItem>
+              {data.personal.personalEmail} {data.personal.personalPhone}{" "}
+              {data.personal.personalWebsite} {data.personal.personalLinkedin}
             </Info>
           </Header>
 
@@ -168,8 +164,7 @@ export default function Classic(props) {
 
             <Section>
               {data.skills === "" ? null : <SubHeader>Skills</SubHeader>}
-              <Skills/>
-              {/* <Paragraph>{data.skills}</Paragraph> */}
+              <Skills />
             </Section>
           </Body>
         </Margin>
