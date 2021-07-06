@@ -14,6 +14,11 @@ const Container = styled.div`
   }
 `;
 
+const Margin = styled.div`
+  margin: 6rem;
+  overflow: hidden;
+`;
+
 const Header = styled.div`
   text-align: center;
 `;
@@ -29,7 +34,7 @@ const Title = styled.h1`
   gap: 0.5rem;
 `;
 
-const Info = styled.div`
+const Contact = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -57,10 +62,7 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
-const Margin = styled.div`
-  margin: 6rem;
-  overflow: hidden;
-`;
+
 
 export default function Classic(props) {
   // const input = props.data.input;
@@ -155,10 +157,10 @@ export default function Classic(props) {
             <Title>
               {data.firstName} {data.middleName} {data.lastName}
             </Title>
-            <Info>
+            <Contact>
               {data.personal.personalEmail} {data.personal.personalPhone}{" "}
               {data.personal.personalWebsite} {data.personal.personalLinkedin}
-            </Info>
+            </Contact>
           </Header>
 
           <Body>
@@ -167,7 +169,7 @@ export default function Classic(props) {
             <Company />
             <Skills/>
           </Body>
-          
+
         </Margin>
       </Container>
     </>

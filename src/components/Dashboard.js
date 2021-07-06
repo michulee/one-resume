@@ -119,7 +119,7 @@ export default function NavContents(props) {
   // const [text, setText] = useState("");
 
   // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
-  const initialValues = {
+  const dummyValues = {
     firstName: "John",
     middleName: "C",
     lastName: "Doe",
@@ -152,7 +152,7 @@ export default function NavContents(props) {
   };
 
   const [state, setState] = useState({
-    initialValues: initialValues,
+    dummyValues: dummyValues,
     input: "",
     values: {
       firstName: "",
@@ -185,14 +185,6 @@ export default function NavContents(props) {
       },
     },
   });
-
-  const print = () => {
-    let printwin = window.open("");
-    printwin.document.write(document.getElementById("toprint").innerHTML);
-    printwin.stop();
-    printwin.print();
-    printwin.close();
-  }
 
   const handleInputName = (e) => {
     setState({...state, input: e.target.name})
@@ -247,7 +239,7 @@ export default function NavContents(props) {
     <>
       <Nav>
         <FixedArea>
-          <AiFillPrinter />
+          <AiFillPrinter/>
         </FixedArea>
         <VerticalLine />
         <ButtonArea>
@@ -313,7 +305,7 @@ export default function NavContents(props) {
 
         <Template id="container-template" className="scroll">
           {template === "preclassic" ? (
-            <PreClassic />
+            <PreClassic data={dummyValues}/>
           ) : template === "classic" ? (
             <Classic id="print" data={state} input={input}/>
           ) : null}
