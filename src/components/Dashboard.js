@@ -239,9 +239,9 @@ export default function NavContents(props) {
     <>
       <Nav>
         <FixedArea>
-          <AiFillPrinter/>
+          {/* <AiFillPrinter/> */}
         </FixedArea>
-        <VerticalLine />
+        {/* <VerticalLine /> */}
         <ButtonArea>
           {/* if user clicks twice, they can see template with dummy data */}
           {template === "preclassic" || template === "classic" ? (
