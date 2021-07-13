@@ -114,6 +114,27 @@ const ButtonActive = styled(Button)`
   border-color: #0087e2;
 `;
 
+const StyledLink = styled(Link)`
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  :hover {
+    opacity: 0.6;
+  }
+`
+const StyledActiveLink = styled(StyledLink)`
+  // background-color: #0071BC;
+  background-color: #0087e2;
+  // color: #E1E1E1;
+  color: white;
+  border-color: #0087e2;
+`
+
 export default function App() {
   const [template, setTemplate] = useState("preclassic");
   const [input, setInput] = useState('');
@@ -235,21 +256,6 @@ export default function App() {
     console.log(state.values)
   }
 
-  // const Template = styled(Section)`
-  // align-items: center;
-  // // background-color: #282828;
-  // // background-color: #4E4E4E;
-  // background-color: #747474;
-  // `;
-
-  // const Template = (props) => {
-  //   return(
-  //     <>
-  //       {props.children}
-  //     </>
-  //   );
-  // }
-
   return (
     <>
       <Router>
@@ -260,8 +266,8 @@ export default function App() {
           </FixedArea>
           {/* <VerticalLine /> */}
           <ButtonArea>
-            <Link to='/classic'>Classic</Link>
-            <Link to='/classic2'>Classic2</Link>
+            <StyledLink to='/classic'>Classic</StyledLink>
+            <StyledLink to='/classic2'>Classic2</StyledLink>
           </ButtonArea>
         </Nav>
 
