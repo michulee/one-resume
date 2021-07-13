@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const Layout = styled.div`
+  // display: flex;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,13 +68,11 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
-
-
 export default function Classic(props) {
   // const input = props.data.input;
   const input = props.input;
   const data = props.data.values;
-  const dummyData = props.data.initialValues;
+  const dummyValues = props.data;
 
   const [school, setSchool] = useState("");
   const [company, setCompany] = useState("");
@@ -150,28 +154,29 @@ export default function Classic(props) {
 
   return (
     <>
-      <Container>
-        <Margin>
-
-          <Header>
-            <Title>
-              {data.firstName} {data.middleName} {data.lastName}
-            </Title>
-            <Contact>
-              {data.personal.personalEmail} {data.personal.personalPhone}{" "}
-              {data.personal.personalWebsite} {data.personal.personalLinkedin}
-            </Contact>
-          </Header>
-
-          <Body>
-            <Objective/>
-            <Education />
-            <Company />
-            <Skills/>
-          </Body>
-
-        </Margin>
-      </Container>
+      <Layout>
+        {/* <Container id="container-template"> */}
+        <Container>
+          <Margin>
+            <Header>
+              <Title>
+                {/* {data.firstName} {data.middleName} {data.lastName} */}
+                {dummyValues.firstName} {dummyValues.middleName} {dummyValues.lastName}
+              </Title>
+              <Contact>
+                {/* {data.personal.personalEmail} {data.personal.personalPhone}{" "}
+                {data.personal.personalWebsite} {data.personal.personalLinkedin} */}
+              </Contact>
+            </Header>
+            <Body>
+              {/* <Objective/> */}
+              {/* <Education /> */}
+              {/* <Company /> */}
+              {/* <Skills/> */}
+            </Body>
+          </Margin>
+        </Container>
+      </Layout>
     </>
   );
 }

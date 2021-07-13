@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const Layout = styled.div`
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -61,73 +66,75 @@ const Margin = styled.div`
 export default function PreClassic(props) {
   return (
     <>
-      <Container>
-        <Margin>
-          <Header>
-            <Title>
-              <Paragraph>First</Paragraph>
-              <Paragraph>Middle</Paragraph>
-              <Paragraph>Last</Paragraph>
-            </Title>
-            <Info>
-              <InfoItem>johndoe@gmail.com</InfoItem>
-              <VerticalLine/>
-              <InfoItem>(123) 4567 - 7890</InfoItem>
-              <VerticalLine/>
-              <InfoItem>www.website.com</InfoItem>
-            </Info>
-          </Header>
-          <Body>
-            <Section>
-              <SubHeader>Objective</SubHeader>
-              <Paragraph>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
-                quisquam sequi hic commodi voluptatem quidem magnam excepturi
-                ullam necessitatibus explicabo nemo quam illo, cumque sapiente id
-                laborum dolor culpa. Doloremque.
-              </Paragraph>
-            </Section>
-            <Section>
-              <SubHeader>Education</SubHeader>
-              <Row>
-                <Paragraph>SchoolName, State, City</Paragraph>
-                <Paragraph>YearStart - YearEnd</Paragraph>
-              </Row>
-              <Paragraph>BS Computer Science</Paragraph>
-            </Section>
-            <Section>
-              <SubHeader>Work Experience</SubHeader>
-              <Row>
-                <Paragraph>CompanyName, State, City</Paragraph>
-                <Paragraph>YearStart - YearEnd</Paragraph>
-              </Row>
-              <Paragraph>JobTitle</Paragraph>
-              {/* <TextArea>Job Description</TextArea> */}
-              <Paragraph>Job Description</Paragraph>
-            </Section>
-            <Section>
-              <SubHeader>Skills</SubHeader>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-            </Section>
-            <Section>
-              <SubHeader>Skills</SubHeader>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              <Paragraph>HTML, CSS, JavaScript</Paragraph>
-            </Section>
-          </Body>
-        </Margin>
-      </Container>
+      <Layout>
+        <Container>
+          <Margin>
+            <Header>
+              <Title>
+                <Paragraph>First</Paragraph>
+                <Paragraph>Middle</Paragraph>
+                <Paragraph>Last</Paragraph>
+              </Title>
+              <Info>
+                <InfoItem>johndoe@gmail.com</InfoItem>
+                <VerticalLine/>
+                <InfoItem>(123) 4567 - 7890</InfoItem>
+                <VerticalLine/>
+                <InfoItem>www.website.com</InfoItem>
+              </Info>
+            </Header>
+            <Body>
+              <Section>
+                <SubHeader>Objective</SubHeader>
+                <Paragraph>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi
+                  quisquam sequi hic commodi voluptatem quidem magnam excepturi
+                  ullam necessitatibus explicabo nemo quam illo, cumque sapiente id
+                  laborum dolor culpa. Doloremque.
+                </Paragraph>
+              </Section>
+              <Section>
+                <SubHeader>Education</SubHeader>
+                <Row>
+                  <Paragraph>SchoolName, State, City</Paragraph>
+                  <Paragraph>YearStart - YearEnd</Paragraph>
+                </Row>
+                <Paragraph>BS Computer Science</Paragraph>
+              </Section>
+              <Section>
+                <SubHeader>Work Experience</SubHeader>
+                <Row>
+                  <Paragraph>CompanyName, State, City</Paragraph>
+                  <Paragraph>YearStart - YearEnd</Paragraph>
+                </Row>
+                <Paragraph>JobTitle</Paragraph>
+                {/* <TextArea>Job Description</TextArea> */}
+                <Paragraph>Job Description</Paragraph>
+              </Section>
+              <Section>
+                <SubHeader>Skills</SubHeader>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+              </Section>
+              <Section>
+                <SubHeader>Skills</SubHeader>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+                <Paragraph>HTML, CSS, JavaScript</Paragraph>
+              </Section>
+            </Body>
+          </Margin>
+        </Container>
+      </Layout>
     </>
   );
 }
