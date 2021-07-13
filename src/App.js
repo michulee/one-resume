@@ -60,7 +60,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 35px;
-  padding: 0 20px 35px 20px;
+  padding: 0 20px 50px 20px;
 
   // background-color: pink;
   // align-items: center;
@@ -339,6 +339,7 @@ export default function App() {
               <Route path='/' exact component={PreClassic} />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
               <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } />
+              {/* <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input}/> } /> */}
             </Switch>
           </Template>
         </Container>
