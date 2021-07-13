@@ -171,10 +171,10 @@ export default function Classic(props) {
               </Contact>
             </Header>
             <Body>
-              <Objective/>
+              {/* <Objective/> */}
               <Education />
               <Company />
-              <Skills/>
+              {/* <Skills/> */}
             </Body>
           </Margin>
         </Container>

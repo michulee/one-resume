@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
-import {
-  Dashboard,
-} from "components/index";
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
 import { PreClassic, Classic } from "templates/index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
@@ -28,6 +25,14 @@ const Nav = styled.div`
   width: 100%;
   height: 50px;
   gap: 32px;
+
+  .active {
+    // background-color: #0071BC;
+    background-color: #0087e2;
+    // color: #E1E1E1;
+    color: white;
+    border-color: #0087e2;
+  }
 `;
 
 const FixedArea = styled.div`
@@ -122,6 +127,21 @@ const StyledLink = styled(Link)`
   font-size: 1rem;
   letter-spacing: 1px;
   text-decoration: none;
+
+  :hover {
+    opacity: 0.6;
+  }
+`
+const StyledNavLink = styled(NavLink)`
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  // have to define activeClassName .active on parent not here
 
   :hover {
     opacity: 0.6;
@@ -266,8 +286,8 @@ export default function App() {
           </FixedArea>
           {/* <VerticalLine /> */}
           <ButtonArea>
-            <StyledLink to='/classic'>Classic</StyledLink>
-            <StyledLink to='/classic2'>Classic2</StyledLink>
+            <StyledNavLink to='/classic' activeClassName="active">Classic</StyledNavLink>
+            <StyledNavLink to='/classic2' activeClassName="active">Classic2</StyledNavLink>
           </ButtonArea>
         </Nav>
 
