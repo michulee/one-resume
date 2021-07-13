@@ -160,8 +160,10 @@ export default function Classic(props) {
           <Margin>
             <Header>
               <Title>
-                {/* {data.firstName} {data.middleName} {data.lastName} */}
-                {dummyValues.firstName} {dummyValues.middleName} {dummyValues.lastName}
+                {data.firstName} {data.middleName} {data.lastName}
+
+                {/* exclusive - use one or the other to test with dummy data or actual data */}
+                {/* {dummyValues.firstName} {dummyValues.middleName} {dummyValues.lastName} */}
               </Title>
               <Contact>
                 {/* {data.personal.personalEmail} {data.personal.personalPhone}{" "}
