@@ -8,7 +8,7 @@ import {
   NavContents,
   Nav,
   ButtonRound,
-} from "components/index";
+} from "components/@index";
 
 const Button = styled.button`
   background-color: #0071bc;

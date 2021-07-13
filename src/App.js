@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
-import { PreClassic, Classic } from "templates/index";
+import { PreClassic, Classic } from "templates/@index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
 // must import directly from file bc import from index will return undefined which causes run time error
 import TextInput from "components/TextInput";
 import TextArea from "components/TextArea";
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
-import { SectionHeader } from "components/index";
+import { SectionHeader } from "components/@index";
 
 const Nav = styled.div`
   position: fixed;

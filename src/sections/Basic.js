@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {
   TextInput,
   SectionHeader,
-} from "components/index";
+} from "components/@index";
 
 const Form = styled.form`
   display: flex;

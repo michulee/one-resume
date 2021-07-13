@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { PreClassic, Classic } from "templates/index";
+import { PreClassic, Classic } from "templates/@index";
 
 const Section = styled.div`
   //nav is 50px height
