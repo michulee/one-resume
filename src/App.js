@@ -308,40 +308,14 @@ export default function App() {
             </Form>
           </Section>
 
-          {/* using props.children don't have to set  */}
-          {/* <Template id="container-template" className="scroll">
-            
-          </Template> */}
-          {/* <Template id="container-template" className="scroll" data={state} input={input}>
-          </Template> */}
-
           <Template>
             <Switch>
               <Route path='/' exact component={PreClassic} />
-              {/* <Route path='/classic' exact component={Classic} /> */}
-              {/* <Route path='/classic' exact render={ (props) => <PreClassic/> } /> */}
-              <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } />
-              {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } /> */}
-              {/* <Route path='/classic' exact render={(props)>
-                <Classic {...props} data={state} input={input}/>}/>
-              </Route> */}
-              {/* <Route path='/classic2' exact component={PreClassic} /> */}
+              {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
+              <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } />
             </Switch>
           </Template>
         </Container>
-
-        
-        {/* <Switch> */}
-          {/* <Route path='/' exact component={PreClassic} /> */}
-          {/* <Route path='/classic' exact component={Classic} /> */}
-          {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
-          {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } /> */}
-          {/* <Route path='/classic' exact render={(props)>
-             <Classic {...props} data={state} input={input}/>}/>
-          </Route> */}
-          {/* <Route path='/classic2' exact component={PreClassic} /> */}
-        {/* </Switch> */}
-
       </Router>
     </>
   )
