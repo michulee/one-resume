@@ -166,15 +166,15 @@ export default function Classic(props) {
                 {/* {dummyValues.firstName} {dummyValues.middleName} {dummyValues.lastName} */}
               </Title>
               <Contact>
-                {/* {data.personal.personalEmail} {data.personal.personalPhone}{" "}
-                {data.personal.personalWebsite} {data.personal.personalLinkedin} */}
+                {data.personal.personalEmail} {data.personal.personalPhone}{" "}
+                {data.personal.personalWebsite} {data.personal.personalLinkedin}
               </Contact>
             </Header>
             <Body>
-              {/* <Objective/> */}
-              {/* <Education /> */}
-              {/* <Company /> */}
-              {/* <Skills/> */}
+              <Objective/>
+              <Education />
+              <Company />
+              <Skills/>
             </Body>
           </Margin>
         </Container>

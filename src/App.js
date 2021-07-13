@@ -308,7 +308,7 @@ export default function App() {
             </Form>
           </Section>
 
-          <Template>
+          <Template id='container-template' className='scroll'>
             <Switch>
               <Route path='/' exact component={PreClassic} />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
