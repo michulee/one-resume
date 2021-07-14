@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.label`
@@ -72,15 +72,17 @@ const Button = styled.label`
 export default function ToggleButton(props) {
   const handleClick = () => {
     // calling parent to setPreview state
-    props.onClick();
+    // props.onClick();
+    props.onChange();
   };
 
   return (
     <>
       {/* <Button onClick={handleClick}/> */}
-      <Button className="switch" onClick={handleClick}>
-      {/* <Button className="switch" onChange={handleClick}> */}
-        <input type="checkbox" defaultChecked={props.preview} />
+      {/* <Button className="switch" onClick={handleClick}> */}
+      <Button className="switch" onChange={handleClick}>
+        <input type="checkbox" defaultChecked={props.isChecked} />
+        {/* <input type="checkbox" defaultChecked={props.preview} /> */}
         <span className="slider round"></span>
       </Button>
     </>

@@ -99,19 +99,6 @@ const Card = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
 
-const StyledLink = styled(Link)`
-  padding: 5px 10px;
-  border-radius: 15px;
-  border: 1px solid black;
-  background-color: #fff;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-
-  :hover {
-    opacity: 0.6;
-  }
-`
 const StyledNavLink = styled(NavLink)`
   padding: 5px 10px;
   border-radius: 15px;
@@ -128,7 +115,6 @@ const StyledNavLink = styled(NavLink)`
   }
 `
 export default function App() {
-  const [template, setTemplate] = useState("preclassic");
   const [preview, setPreview] = useState(true);
   const [input, setInput] = useState('');
 
@@ -201,10 +187,6 @@ export default function App() {
     },
   });
 
-  // const handleInputName = (e) => {
-  //   setState({...state, input: e.target.name})
-  // }
-
   /**
    * Handles states within states.values
    * @param {*} e 
@@ -250,13 +232,8 @@ export default function App() {
     console.log(state.values)
   }
 
-  // const ToggleButton = styled.button`
-
-  // `
-
   const checkPreview = () => {
     setPreview(value => !value);
-    console.log('preview: ' + preview)
   }
 
   return (
@@ -267,12 +244,10 @@ export default function App() {
           <FixedArea>
             {/* <AiFillPrinter/> */}
 
-            <ToggleButton onClick={checkPreview} isChecked={preview}/>
-            {/* <ToggleButton toggle={preview} onChange={checkPreview}/> */}
-
-            {/* <ToggleButton onChange={() => checkPreview}/> */}
+            {/* <ToggleButton onClick={checkPreview} isChecked={preview}/> */}
+            <ToggleButton onChange={checkPreview} isChecked={preview}/>
           </FixedArea>
-          {/* <VerticalLine /> */}
+          <VerticalLine />
           <ButtonArea>
             <StyledNavLink to='/classic' activeClassName="active">Classic</StyledNavLink>
             <StyledNavLink to='/classic2' activeClassName="active">Classic2</StyledNavLink>
