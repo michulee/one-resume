@@ -256,6 +256,7 @@ export default function App() {
 
   const checkPreview = () => {
     setPreview(value => !value);
+    console.log('preview: ' + preview)
   }
 
   return (
@@ -266,8 +267,10 @@ export default function App() {
           <FixedArea>
             {/* <AiFillPrinter/> */}
 
-            {/* <ToggleButton onClick={checkPreview}/> */}
-            <ToggleButton onClick={() => checkPreview}/>
+            <ToggleButton onClick={checkPreview} isChecked={preview}/>
+            {/* <ToggleButton toggle={preview} onChange={checkPreview}/> */}
+
+            {/* <ToggleButton onChange={() => checkPreview}/> */}
           </FixedArea>
           {/* <VerticalLine /> */}
           <ButtonArea>

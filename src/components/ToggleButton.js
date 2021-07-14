@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = styled.div`
+const Button = styled.label`
   // .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    // position: relative;
+    // display: inline-block;
+    // width: 60px;
+    // height: 34px;
   // }
+  & {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
 
   input {
     opacity: 0;
@@ -65,15 +71,17 @@ const Button = styled.div`
 
 export default function ToggleButton(props) {
   const handleClick = () => {
+    // calling parent to setPreview state
     props.onClick();
   };
+
   return (
     <>
       {/* <Button onClick={handleClick}/> */}
-      <Button class="switch" onClick={handleClick}>
-        <input type="checkbox" checked />
-        {/* <input type="checkbox"/> */}
-        <span class="slider round"></span>
+      <Button className="switch" onClick={handleClick}>
+      {/* <Button className="switch" onChange={handleClick}> */}
+        <input type="checkbox" defaultChecked={props.preview} />
+        <span className="slider round"></span>
       </Button>
     </>
   );
