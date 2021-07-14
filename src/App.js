@@ -9,7 +9,7 @@ import { PreClassic, Classic } from "templates/@index";
 import TextInput from "components/TextInput";
 import TextArea from "components/TextArea";
 import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
-import { SectionHeader } from "components/@index";
+import { SectionHeader, ToggleButton } from "components/@index";
 
 const Nav = styled.div`
   position: fixed;
@@ -99,26 +99,6 @@ const Card = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
 
-const SeparateNavFromContents = styled.div`
-  margin-top: 70px;
-`;
-
-const Button = styled.button`
-  padding: 5px 10px;
-  border-radius: 15px;
-  border: 1px solid black;
-  background-color: #fff;
-  font-size: 1rem;
-  letter-spacing: 1px;
-`;
-const ButtonActive = styled(Button)`
-  // background-color: #0071BC;
-  background-color: #0087e2;
-  // color: #E1E1E1;
-  color: white;
-  border-color: #0087e2;
-`;
-
 const StyledLink = styled(Link)`
   padding: 5px 10px;
   border-radius: 15px;
@@ -147,16 +127,9 @@ const StyledNavLink = styled(NavLink)`
     opacity: 0.6;
   }
 `
-const StyledActiveLink = styled(StyledLink)`
-  // background-color: #0071BC;
-  background-color: #0087e2;
-  // color: #E1E1E1;
-  color: white;
-  border-color: #0087e2;
-`
-
 export default function App() {
   const [template, setTemplate] = useState("preclassic");
+  const [preview, setPreview] = useState(true);
   const [input, setInput] = useState('');
 
   // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
@@ -194,6 +167,7 @@ export default function App() {
 
   const [state, setState] = useState({
     dummyValues: dummyValues,
+    preview: "",
     input: "",
     values: {
       firstName: "",
@@ -227,9 +201,9 @@ export default function App() {
     },
   });
 
-  const handleInputName = (e) => {
-    setState({...state, input: e.target.name})
-  }
+  // const handleInputName = (e) => {
+  //   setState({...state, input: e.target.name})
+  // }
 
   /**
    * Handles states within states.values
@@ -276,6 +250,14 @@ export default function App() {
     console.log(state.values)
   }
 
+  // const ToggleButton = styled.button`
+
+  // `
+
+  const checkPreview = () => {
+    setPreview(value => !value);
+  }
+
   return (
     <>
       <Router>
@@ -283,6 +265,9 @@ export default function App() {
         <Nav>
           <FixedArea>
             {/* <AiFillPrinter/> */}
+
+            {/* <ToggleButton onClick={checkPreview}/> */}
+            <ToggleButton onClick={() => checkPreview}/>
           </FixedArea>
           {/* <VerticalLine /> */}
           <ButtonArea>
