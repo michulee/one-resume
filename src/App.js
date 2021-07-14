@@ -120,7 +120,7 @@ const Card = styled.div`
 
 
 export default function App() {
-  const [template, setTemplate] = useState('classic');
+  // const [template, setTemplate] = useState('classic');
   const [preview, setPreview] = useState(false);
   const [input, setInput] = useState('');
 
@@ -305,7 +305,7 @@ export default function App() {
 
           <Template id='container-template' className='scroll'>
             <Switch>
-              <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } />
+              <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
 
               {/* to redirect to /classic with props, the <Route> with props must be defined first */}

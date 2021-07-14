@@ -71,8 +71,9 @@ const Paragraph = styled.p`
 export default function Classic(props) {
   // const input = props.data.input;
   const input = props.input;
+  const togglePreview = props.isChecked;
   const data = props.data.values;
-  const dummyValues = props.data;
+  const dummyValues = props.data.dummyValues;
 
   const [school, setSchool] = useState("");
   const [company, setCompany] = useState("");
@@ -110,8 +111,11 @@ export default function Classic(props) {
             <SubHeader>Education</SubHeader>
             <Row>
               <Paragraph>
-                {data.school.schoolName}, {data.school.schoolState},{" "}
-                {data.school.schoolCity}
+                {togglePreview === true ? (dummyValues.school.schoolName) : (data.school.schoolName, data.school.schoolState,
+                data.school.schoolCity)}
+
+                {/* {data.school.schoolName}, {data.school.schoolState},{" "}
+                {data.school.schoolCity} */}
               </Paragraph>
               <Paragraph>
                 {data.school.schoolYearStart} - {data.school.schoolYearEnd}
