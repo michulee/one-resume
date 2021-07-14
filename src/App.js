@@ -35,6 +35,25 @@ const Nav = styled.div`
   }
 `;
 
+const StyledNavLink = styled(NavLink)`
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #0087e2;
+  border-color: #0087e2;
+  transition: 0.3s;
+
+  // have to define activeClassName .active on parent <Nav>
+  :hover {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+`
+
 const FixedArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -99,22 +118,9 @@ const Card = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
 `;
 
-const StyledNavLink = styled(NavLink)`
-  padding: 5px 10px;
-  border-radius: 15px;
-  border: 1px solid black;
-  background-color: #fff;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-decoration: none;
 
-  // have to define activeClassName .active on parent not here
-
-  :hover {
-    opacity: 0.6;
-  }
-`
 export default function App() {
+  const [template, setTemplate] = useState('classic');
   const [preview, setPreview] = useState(true);
   const [input, setInput] = useState('');
 
