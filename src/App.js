@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import { PreClassic, Classic } from "templates/@index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
@@ -121,7 +121,7 @@ const Card = styled.div`
 
 export default function App() {
   const [template, setTemplate] = useState('classic');
-  const [preview, setPreview] = useState(true);
+  const [preview, setPreview] = useState(false);
   const [input, setInput] = useState('');
 
   // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
@@ -305,10 +305,15 @@ export default function App() {
 
           <Template id='container-template' className='scroll'>
             <Switch>
-              <Route path='/' exact component={PreClassic} />
-              {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
               <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input}/> } />
-              {/* <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input}/> } /> */}
+              {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
+
+              {/* to redirect to /classic with props, the <Route> with props must be defined first */}
+              <Route path='/' >
+                <Redirect to='/classic' />
+              </Route>
+
+              {/* <Route path='/' exact component={PreClassic} /> */}
             </Switch>
           </Template>
         </Container>
