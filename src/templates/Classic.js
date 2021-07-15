@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 const Layout = styled.div`
@@ -102,6 +103,7 @@ export default function Classic(props) {
 
   const [school, setSchool] = useState("");
   const [company, setCompany] = useState("");
+  let { path, url } = useRouteMatch();
 
   const Objective = () => {
     const text = data.objective;
@@ -183,9 +185,9 @@ export default function Classic(props) {
 
   return (
     <>
-      {/* <Nav>
-        <button>heys</button>
-      </Nav> */}
+      <Nav>
+        <Link to={`${url}/preview`}>Preview</Link>
+      </Nav>
 
       <Layout>
         {/* <Container id="container-template"> */}

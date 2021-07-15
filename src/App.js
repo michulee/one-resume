@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link, NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, NavLink, Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { PreClassic, Classic, Classic2 } from "templates/@index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
@@ -36,7 +36,7 @@ const Nav = styled.div`
 `;
 
 const TemplateNav = styled(Nav)`
-  position: unset;
+  position: sticky;
 `
 
 const StyledNavLink = styled(NavLink)`
@@ -128,6 +128,7 @@ export default function App() {
   // const [template, setTemplate] = useState('classic');
   const [preview, setPreview] = useState(false);
   const [input, setInput] = useState('');
+  // let { path, url } = useRouteMatch();
 
   // monster.com resume mdata https://www.monster.com/career-advice/article/sample-resume-entry-level-admin
   const dummyValues = {
@@ -311,11 +312,12 @@ export default function App() {
           </Section>
 
           <Template id='container-template' className='scroll'>
-            <TemplateNav>
+            {/* <TemplateNav>
               <button>test</button>
-            </TemplateNav>
+            </TemplateNav> */}
             <Switch>
               <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
+              <Route path='/classic/preview' exact render={ (props) => <PreClassic {...props} data={dummyValues} /> } />
               <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
 
