@@ -35,6 +35,10 @@ const Nav = styled.div`
   }
 `;
 
+const TemplateNav = styled(Nav)`
+  position: unset;
+`
+
 const StyledNavLink = styled(NavLink)`
   padding: 5px 10px;
   border-radius: 15px;
@@ -86,6 +90,7 @@ const Section = styled.div`
 `;
 
 const Template = styled(Section)`
+  padding: 0;
   align-items: center;
   // background-color: #282828;
   // background-color: #4E4E4E;
@@ -306,6 +311,9 @@ export default function App() {
           </Section>
 
           <Template id='container-template' className='scroll'>
+            <TemplateNav>
+              <button>test</button>
+            </TemplateNav>
             <Switch>
               <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
               <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
@@ -319,6 +327,7 @@ export default function App() {
               {/* <Route path='/' exact component={PreClassic} /> */}
             </Switch>
           </Template>
+
         </Container>
       </Router>
     </>

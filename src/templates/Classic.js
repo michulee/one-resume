@@ -68,6 +68,31 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
+const Nav = styled.div`
+  // position: fixed;
+  top: 0;
+  background-color: #fff;
+  // background-color: blue;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  gap: 32px;
+
+  .active {
+    // background-color: #0071BC;
+    background-color: #0087e2;
+    // color: #E1E1E1;
+    color: white;
+    border-color: #0087e2;
+  }
+`;
+
 export default function Classic(props) {
   // const input = props.data.input;
   const input = props.input;
@@ -158,6 +183,10 @@ export default function Classic(props) {
 
   return (
     <>
+      {/* <Nav>
+        <button>heys</button>
+      </Nav> */}
+
       <Layout>
         {/* <Container id="container-template"> */}
         <Container>
