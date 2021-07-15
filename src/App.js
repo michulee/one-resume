@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Route, Switch } from 'react-router-dom';
-import { PreClassic, Classic } from "templates/@index";
+import { PreClassic, Classic, Classic2 } from "templates/@index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
 // must import directly from file bc import from index will return undefined which causes run time error
@@ -251,9 +251,11 @@ export default function App() {
             {/* <AiFillPrinter/> */}
 
             {/* <ToggleButton onClick={checkPreview} isChecked={preview}/> */}
-            <ToggleButton onChange={checkPreview} isChecked={preview}/>
+
+            {/* use this */}
+            {/* <ToggleButton onChange={checkPreview} isChecked={preview}/> */}
           </FixedArea>
-          <VerticalLine />
+          {/* <VerticalLine /> */}
           <ButtonArea>
             <StyledNavLink to='/classic' activeClassName="active">Classic</StyledNavLink>
             <StyledNavLink to='/classic2' activeClassName="active">Classic2</StyledNavLink>
@@ -306,6 +308,7 @@ export default function App() {
           <Template id='container-template' className='scroll'>
             <Switch>
               <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
+              <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
 
               {/* to redirect to /classic with props, the <Route> with props must be defined first */}
