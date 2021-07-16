@@ -9,7 +9,7 @@
 ## Table of content
 
 - [Installation](#installation)
-    - [Node.js](#node.js)
+    - [Node.js](#Node.js)
 - [Available Scripts](#available-scripts)
     - [`npm run deploy`](#npm-run-deploy)
     - [`npm start`](#npm-start)
@@ -23,7 +23,7 @@ This document is for **v2 pre-release**.
 
 ### Node.js
 
-Install Node.js 
+Install [Node.js](https://nodejs.org/en/download/)
 
 ## Available Scripts
 
