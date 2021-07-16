@@ -263,8 +263,11 @@ export default function App() {
           </FixedArea>
           {/* <VerticalLine /> */}
           <ButtonArea>
-            <StyledNavLink to='/classic' activeClassName="active">Classic</StyledNavLink>
-            <StyledNavLink to='/classic2' activeClassName="active">Classic2</StyledNavLink>
+            {/* <StyledNavLink to={`${url}/classic`} activeClassName="active">Classic</StyledNavLink> */}
+            <StyledNavLink to='/one-resume/classic' activeClassName="active">Classic</StyledNavLink>
+
+            {/* <StyledNavLink to={`${url}/classic2`} activeClassName="active">Classic2</StyledNavLink> */}
+            <StyledNavLink to='/one-resume/classic2' activeClassName="active">Classic2</StyledNavLink>
           </ButtonArea>
         </Nav>
 
@@ -316,14 +319,14 @@ export default function App() {
               <button>test</button>
             </TemplateNav> */}
             <Switch>
-              <Route path='/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
-              <Route path='/classic/preview' exact render={ (props) => <PreClassic {...props} data={dummyValues} /> } />
-              <Route path='/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
+              <Route path='/one-resume/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
+              <Route path='/one-resume/classic/preview' exact render={ (props) => <PreClassic {...props} data={dummyValues} /> } />
+              <Route path='/one-resume/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
 
               {/* to redirect to /classic with props, the <Route> with props must be defined first */}
               <Route path='/' >
-                <Redirect to='/classic' />
+                <Redirect to='/one-resume/classic' />
               </Route>
 
               {/* <Route path='/' exact component={PreClassic} /> */}
