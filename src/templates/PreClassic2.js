@@ -112,7 +112,7 @@ export default function PreClassic2(props) {
   return (
     <>
       <TemplateNav>
-        <StyledLink to={'one-resume/classic2'}>Live</StyledLink>
+        <StyledLink to={'/one-resume/classic2'}>Live</StyledLink>
       </TemplateNav>
 
       <Layout>
