@@ -3,9 +3,9 @@ import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 const Layout = styled.div`
-  // display: flex;
   // display: grid;
   // grid-template-columns: repeat(2, 1fr);
+  font-family: Arial;
 `
 
 const Container = styled.div`
@@ -15,19 +15,12 @@ const Container = styled.div`
   height: 66rem;
   background-color: white;
   font-size: 1em;
-
-  @media (min-width: 764px) {
-    // TODO resize for responsive design
-  }
-`;
-
-const Margin = styled.div`
-  margin: 6rem;
-  overflow: hidden;
 `;
 
 const Header = styled.div`
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const VerticalLine = styled.div`
@@ -37,25 +30,27 @@ const VerticalLine = styled.div`
 const Title = styled.h1`
   margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
+  align-items: flex-end;
+  gap: 10px;
 `;
 
 const Contact = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
 `;
 
-const InfoItem = styled.div``;
+const ContactItem = styled.div`
+`;
 
 const Body = styled.div``;
 
 const SubHeader = styled.h2`
   border-bottom: 1px solid black;
   margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 `;
 
 const Section = styled.section``;
@@ -63,11 +58,17 @@ const Row = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`;
+`
 
 const Paragraph = styled.p`
   margin: 0;
+  padding: 0 20px;
 `;
+
+const Margin = styled.div`
+  margin: 6rem;
+  overflow: hidden;
+`
 
 const Nav = styled.div`
   // position: fixed;
@@ -208,19 +209,17 @@ export default function Classic2(props) {
       </TemplateNav>
 
       <Layout>
-        {/* <Container id="container-template"> */}
         <Container>
           <Margin>
             <Header>
               <Title>
                 {data.firstName} {data.middleName} {data.lastName}
-
-                {/* exclusive - use one or the other to test with dummy data or actual data */}
-                {/* {dummyValues.firstName} {dummyValues.middleName} {dummyValues.lastName} */}
               </Title>
               <Contact>
-                {data.personal.personalEmail} {data.personal.personalPhone}{" "}
-                {data.personal.personalWebsite} {data.personal.personalLinkedin}
+                <ContactItem>{data.personal.personalEmail}</ContactItem>
+                <ContactItem>{data.personal.personalPhone}</ContactItem>
+                <ContactItem>{data.personal.personalWebsite}</ContactItem>
+                <ContactItem>{data.personal.personalLinkedin}</ContactItem>
               </Contact>
             </Header>
             <Body>

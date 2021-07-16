@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Layout = styled.div`
   // display: grid;
   // grid-template-columns: repeat(2, 1fr);
+  font-family: Arial;
 `
 
 const Container = styled.div`
@@ -18,6 +19,8 @@ const Container = styled.div`
 
 const Header = styled.div`
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const VerticalLine = styled.div`
@@ -27,25 +30,27 @@ const VerticalLine = styled.div`
 const Title = styled.h1`
   margin: 0;
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-`;
-
-const Info = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: flex-end;
   gap: 10px;
 `;
 
-const InfoItem = styled.div``;
+const Contact = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+`;
+
+const ContactItem = styled.div`
+`;
 
 const Body = styled.div``;
 
 const SubHeader = styled.h2`
   border-bottom: 1px solid black;
   margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 `;
 
 const Section = styled.section``;
@@ -57,6 +62,7 @@ const Row = styled.section`
 
 const Paragraph = styled.p`
   margin: 0;
+  padding: 0 20px;
 `;
 
 const Margin = styled.div`
@@ -119,18 +125,12 @@ export default function PreClassic2(props) {
         <Container>
           <Margin>
             <Header>
-              <Title>
-                <Paragraph>First</Paragraph>
-                <Paragraph>Middle</Paragraph>
-                <Paragraph>Last</Paragraph>
-              </Title>
-              <Info>
-                <InfoItem>johndoe@gmail.com</InfoItem>
-                <VerticalLine/>
-                <InfoItem>(123) 4567 - 7890</InfoItem>
-                <VerticalLine/>
-                <InfoItem>www.website.com</InfoItem>
-              </Info>
+              <Title> First Middle Last</Title>
+              <Contact>
+                <ContactItem>johndoe@gmail.com</ContactItem>
+                <ContactItem>(123) 4567 - 7890</ContactItem>
+                <ContactItem>www.website.com</ContactItem>
+              </Contact>
             </Header>
             <Body>
               <Section>
@@ -148,7 +148,7 @@ export default function PreClassic2(props) {
                   <Paragraph>SchoolName, State, City</Paragraph>
                   <Paragraph>YearStart - YearEnd</Paragraph>
                 </Row>
-                <Paragraph>BS Computer Science</Paragraph>
+                  <Paragraph>BS Computer Science</Paragraph>
               </Section>
               <Section>
                 <SubHeader>Work Experience</SubHeader>
