@@ -89,20 +89,31 @@ const Nav = styled.div`
   }
 `;
 
+const TemplateNav = styled(Nav)`
+  padding: 5px 15px;
+`
+
 const StyledLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   color: #0087e2;
   padding: 5px 10px;
+  border: 1px solid #0087e2;
+  border-radius: 5px;
+
+  :hover {
+    opacity: 0.6;
+    transition: 0.3s
+  }
 `
 
 export default function PreClassic(props) {
   let { path, url } = useRouteMatch();
   return (
     <>
-      <Nav>
+      <TemplateNav>
         <StyledLink to={'one-resume/classic'}>Live</StyledLink>
-      </Nav>
+      </TemplateNav>
 
       <Layout>
         <Container>

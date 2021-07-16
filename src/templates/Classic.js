@@ -92,11 +92,22 @@ const Nav = styled.div`
   }
 `;
 
+const TemplateNav = styled(Nav)`
+  padding: 5px 15px;
+`
+
 const StyledLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   color: #0087e2;
   padding: 5px 10px;
+  border: 1px solid #0087e2;
+  border-radius: 5px;
+
+  :hover {
+    opacity: 0.6;
+    transition: 0.3s
+  }
 `
 
 export default function Classic(props) {
@@ -190,9 +201,9 @@ export default function Classic(props) {
 
   return (
     <>
-      <Nav>
+      <TemplateNav>
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
-      </Nav>
+      </TemplateNav>
 
       <Layout>
         {/* <Container id="container-template"> */}
