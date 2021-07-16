@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 const Layout = styled.div`
@@ -68,6 +69,49 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
+const Nav = styled.div`
+  // position: fixed;
+  top: 0;
+  background-color: #fff;
+  // background-color: blue;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  gap: 32px;
+
+  .active {
+    // background-color: #0071BC;
+    background-color: #0087e2;
+    // color: #E1E1E1;
+    color: white;
+    border-color: #0087e2;
+  }
+`;
+
+const TemplateNav = styled(Nav)`
+  padding: 5px 15px;
+`
+
+const StyledLink = styled(Link)`
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0087e2;
+  padding: 5px 10px;
+  border: 1px solid #0087e2;
+  border-radius: 5px;
+
+  :hover {
+    opacity: 0.6;
+    transition: 0.3s
+  }
+`
+
 export default function Classic2(props) {
   // const input = props.data.input;
   const input = props.input;
@@ -77,6 +121,7 @@ export default function Classic2(props) {
 
   const [school, setSchool] = useState("");
   const [company, setCompany] = useState("");
+  let { path, url } = useRouteMatch();
 
   const Objective = () => {
     const text = data.objective;
@@ -158,6 +203,10 @@ export default function Classic2(props) {
 
   return (
     <>
+      <TemplateNav>
+        <StyledLink to={`${url}/preview`}>Preview</StyledLink>
+      </TemplateNav>
+
       <Layout>
         {/* <Container id="container-template"> */}
         <Container>
@@ -175,10 +224,10 @@ export default function Classic2(props) {
               </Contact>
             </Header>
             <Body>
-              {/* <Objective/> */}
+              <Objective/>
               <Education />
               <Company />
-              {/* <Skills/> */}
+              <Skills/>
             </Body>
           </Margin>
         </Container>

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { PreClassic, Classic, Classic2 } from "templates/@index";
+import { PreClassic, Classic, Classic2, PreClassic2 } from "templates/@index";
 
 // https://github.com/styled-components/styled-components/issues/1449#issuecomment-360331968
 // must import directly from file bc import from index will return undefined which causes run time error
@@ -322,6 +322,7 @@ export default function App() {
               <Route path='/one-resume/classic' exact render={ (props) => <Classic {...props} data={state} input={input} isChecked={preview} /> } />
               <Route path='/one-resume/classic/preview' exact render={ (props) => <PreClassic {...props} data={dummyValues} /> } />
               <Route path='/one-resume/classic2' exact render={ (props) => <Classic2 {...props} data={state} input={input} isChecked={preview} /> } />
+              <Route path='/one-resume/classic2/preview' exact render={ (props) => <PreClassic2 {...props} data={dummyValues} /> } />
               {/* <Route path='/classic' exact render={ (props) => <Classic {...props} data={dummyValues} /> } /> */}
 
               {/* to redirect to /classic with props, the <Route> with props must be defined first */}
