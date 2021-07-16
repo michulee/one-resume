@@ -49,8 +49,6 @@ const Contact = styled.div`
   gap: 10px;
 `;
 
-const InfoItem = styled.div``;
-
 const Body = styled.div``;
 
 const SubHeader = styled.h2`

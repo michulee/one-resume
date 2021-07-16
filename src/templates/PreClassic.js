@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Redirect, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
 const Layout = styled.div`
@@ -63,9 +64,39 @@ const Margin = styled.div`
   overflow: hidden;
 `
 
+const Nav = styled.div`
+  // position: fixed;
+  top: 0;
+  background-color: #fff;
+  // background-color: blue;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  gap: 32px;
+
+  .active {
+    // background-color: #0071BC;
+    background-color: #0087e2;
+    // color: #E1E1E1;
+    color: white;
+    border-color: #0087e2;
+  }
+`;
+
 export default function PreClassic(props) {
+  let { path, url } = useRouteMatch();
   return (
     <>
+      <Nav>
+        <Link to={'one-resume/classic'}>Live</Link>
+      </Nav>
+
       <Layout>
         <Container>
           <Margin>
