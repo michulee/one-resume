@@ -89,12 +89,19 @@ const Nav = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0087e2;
+  padding: 5px 10px;
+`
+
 export default function PreClassic(props) {
   let { path, url } = useRouteMatch();
   return (
     <>
       <Nav>
-        <Link to={'one-resume/classic'}>Live</Link>
+        <StyledLink to={'one-resume/classic'}>Live</StyledLink>
       </Nav>
 
       <Layout>
