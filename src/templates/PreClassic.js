@@ -115,22 +115,6 @@ export default function PreClassic(props) {
                 <SubHeader>Skills</SubHeader>
                 <Paragraph>HTML, CSS, JavaScript</Paragraph>
               </Section>
-              <Section>
-                <SubHeader>Skills</SubHeader>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-                <Paragraph>HTML, CSS, JavaScript</Paragraph>
-              </Section>
             </Body>
           </Margin>
         </Container>
