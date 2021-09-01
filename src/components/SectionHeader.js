@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const Header = styled.h2`
     padding-top: 20px;
     font-weight: 400;
-    font-variant: small-caps;
+    color: #0071BC;
+    // font-variant: small-caps;
     margin: 0;
 `
 

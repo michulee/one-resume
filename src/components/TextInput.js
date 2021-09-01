@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Label = styled.label`
-    color: #0071BC;
+    // color: #0071BC;
+    color: #000;
     text-transform: uppercase;
     letter-spacing: 1px;
     width: 100%;
