@@ -79,7 +79,8 @@ const ButtonArea = styled.div`
 
 const Section = styled.div`
   //nav is 50px height
-  // margin-top: 50px;
+  margin-top: 50px;
+
   display: flex;
   flex-direction: column;
   gap: 35px;
@@ -98,9 +99,26 @@ const Template = styled(Section)`
 `;
 
 const Container = styled.div`
-  margin-top: 50px;
+  // need to remove margintop of Section for print
+  // margin-top: 50px;
+
   @media (min-width: 768px) {
     display: flex;
+  }
+  @media print {
+    #container-info, #main-nav {
+      display: none;
+    }
+    .template-nav {
+      display: none;
+    }
+    // must wrap <Container> in another div or... global
+    // #app-container {
+    //   margin-top: 0;
+    // }
+    #container-template {
+      margin: 0;
+    }
   }
 `;
 
@@ -252,26 +270,19 @@ export default function App() {
     <>
       <Router>
 
-        <Nav>
-          <FixedArea>
-            {/* <AiFillPrinter/> */}
+        {/* CSS print doesn't work with this over here */}
+        <Container id="app-container">
 
-            {/* <ToggleButton onClick={checkPreview} isChecked={preview}/> */}
+          {/* CSS print works over here */}
+          <Nav id="main-nav">
+            <FixedArea>
+            </FixedArea>
+            <ButtonArea id="test">
+              <StyledNavLink to='/one-resume/classic' activeClassName="active">Classic</StyledNavLink>
+              <StyledNavLink to='/one-resume/classic2' activeClassName="active">Classic2</StyledNavLink>
+            </ButtonArea>
+          </Nav>
 
-            {/* use this */}
-            {/* <ToggleButton onChange={checkPreview} isChecked={preview}/> */}
-          </FixedArea>
-          {/* <VerticalLine /> */}
-          <ButtonArea>
-            {/* <StyledNavLink to={`${url}/classic`} activeClassName="active">Classic</StyledNavLink> */}
-            <StyledNavLink to='/one-resume/classic' activeClassName="active">Classic</StyledNavLink>
-
-            {/* <StyledNavLink to={`${url}/classic2`} activeClassName="active">Classic2</StyledNavLink> */}
-            <StyledNavLink to='/one-resume/classic2' activeClassName="active">Classic2</StyledNavLink>
-          </ButtonArea>
-        </Nav>
-
-        <Container>
           <Section id="container-info" className="scroll">
             <Form>
               <SectionHeader name="Name" />

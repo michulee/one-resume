@@ -204,7 +204,7 @@ export default function Classic2(props) {
 
   return (
     <>
-      <TemplateNav>
+      <TemplateNav className="template-nav">
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
       </TemplateNav>
 

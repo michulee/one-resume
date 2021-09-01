@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Switch, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
+import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 
 const Layout = styled.div`
   // display: flex;
@@ -19,6 +20,7 @@ const Container = styled.div`
   @media (min-width: 764px) {
     // TODO resize for responsive design
   }
+
 `;
 
 const Margin = styled.div`
@@ -199,15 +201,21 @@ export default function Classic(props) {
     );
   };
 
+  const handlePrint = () => {
+
+  }
+
   return (
     <>
-      <TemplateNav>
+      <TemplateNav className="template-nav">
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
+        <AiFillPrinter onClick={handlePrint}/>
       </TemplateNav>
 
       <Layout>
         {/* <Container id="container-template"> */}
-        <Container>
+        <Container id="print">
+        {/* <Container> */}
           <Margin>
             <Header>
               <Title>

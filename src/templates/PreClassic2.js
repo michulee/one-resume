@@ -117,7 +117,7 @@ export default function PreClassic2(props) {
   let { path, url } = useRouteMatch();
   return (
     <>
-      <TemplateNav>
+      <TemplateNav className="template-nav">
         <StyledLink to={'/one-resume/classic2'}>Live</StyledLink>
       </TemplateNav>
 
