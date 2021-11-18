@@ -210,7 +210,7 @@ export default function Classic(props) {
     <>
       <TemplateNav className="template-nav">
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
-        <AiFillPrinter onClick={() => window.print()}/>
+        <AiFillPrinter className="btn" onClick={() => window.print()}/>
       </TemplateNav>
 
       <Layout>
