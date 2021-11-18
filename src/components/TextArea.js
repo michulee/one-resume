@@ -42,6 +42,10 @@ const Input = styled.textarea`
   // padding: 10px 15px;
   padding: 10px 0px;
   // border-radius: 5px;
+  // outline: none;
+
+  // font-family: Calibri, Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+  font-size: 1rem;
 
   :focus {
     outline: none;

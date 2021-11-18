@@ -20,6 +20,8 @@ const Input = styled.input`
     padding: 10px 0px;
     // border-radius: 5px;
 
+    font-size: 1rem;
+
     :focus {
         outline: none;
         border-color: #0071BC;

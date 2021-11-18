@@ -26,6 +26,11 @@ const Container = styled.div`
 const Margin = styled.div`
   margin: 6rem;
   overflow: hidden;
+
+  //BUG different margins preprint and in print preview
+  @media print {
+    margin: 0 6rem;
+  }
 `;
 
 const Header = styled.div`
@@ -201,21 +206,17 @@ export default function Classic(props) {
     );
   };
 
-  const handlePrint = () => {
-
-  }
-
   return (
     <>
       <TemplateNav className="template-nav">
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
-        <AiFillPrinter onClick={handlePrint}/>
+        <AiFillPrinter onClick={() => window.print()}/>
       </TemplateNav>
 
       <Layout>
         {/* <Container id="container-template"> */}
-        <Container id="print">
         {/* <Container> */}
+        <Container>
           <Margin>
             <Header>
               <Title>
