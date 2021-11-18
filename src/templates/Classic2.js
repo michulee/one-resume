@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AiFillPrinter } from "react-icons/ai";
 import { Link, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
 
@@ -68,6 +69,11 @@ const Paragraph = styled.p`
 const Margin = styled.div`
   margin: 6rem;
   overflow: hidden;
+  
+  //BUG different margins preprint and in print preview
+  @media print {
+    margin: 0 6rem;
+  }
 `
 
 const Nav = styled.div`
@@ -206,6 +212,7 @@ export default function Classic2(props) {
     <>
       <TemplateNav className="template-nav">
         <StyledLink to={`${url}/preview`}>Preview</StyledLink>
+        <AiFillPrinter className="btn" onClick={() => window.print()}/>
       </TemplateNav>
 
       <Layout>
