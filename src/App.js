@@ -77,6 +77,14 @@ const ButtonArea = styled.div`
   font-size: 36px;
 `;
 
+const Edit = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+`;
+
 const Section = styled.div`
   //nav is 50px height
   margin-top: 50px;
@@ -86,7 +94,7 @@ const Section = styled.div`
   gap: 35px;
   padding: 0 20px 50px 20px;
 
-  // background-color: pink;
+  // background-color: rgba(0,0,0,0.1);
   // align-items: center;
 `;
 
@@ -234,7 +242,7 @@ export default function App() {
           values: {
             ...state.values,
             [obj]: {
-              ...state.values.[obj],
+              ...state.values[obj],
               [e.target.name]: e.target.value,
             },
           },
@@ -280,6 +288,7 @@ export default function App() {
             <ButtonArea id="test">
               <StyledNavLink to='/one-resume/classic' activeClassName="active">Classic</StyledNavLink>
               <StyledNavLink to='/one-resume/classic2' activeClassName="active">Classic2</StyledNavLink>
+              {/* <Edit className="material-symbols-outlined">edit</Edit> */}
             </ButtonArea>
           </Nav>
 
