@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Redirect, useRouteMatch } from "react-router-dom";
 import styled from "styled-components";
+import { AiFillPrinter, AiOutlinePlus } from "react-icons/ai";
 
 const Layout = styled.div`
   // display: grid;
@@ -119,6 +120,7 @@ export default function PreClassic2(props) {
     <>
       <TemplateNav className="template-nav">
         <StyledLink to={'/one-resume/classic2'}>Live</StyledLink>
+        <AiFillPrinter className="btn" onClick={() => window.print()}/>
       </TemplateNav>
 
       <Layout>
@@ -128,7 +130,7 @@ export default function PreClassic2(props) {
               <Title> First Middle Last</Title>
               <Contact>
                 <ContactItem>johndoe@gmail.com</ContactItem>
-                <ContactItem>(123) 4567 - 7890</ContactItem>
+                <ContactItem>(123) 456 - 7890</ContactItem>
                 <ContactItem>www.website.com</ContactItem>
               </Contact>
             </Header>
