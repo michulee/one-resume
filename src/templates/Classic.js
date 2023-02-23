@@ -7,6 +7,11 @@ const Layout = styled.div`
   // display: flex;
   // display: grid;
   // grid-template-columns: repeat(2, 1fr);
+  @media print {
+    overflow: hidden;
+    background-color: pink;
+    scroll: hidden;
+  }
 `
 
 const Container = styled.div`
@@ -29,7 +34,8 @@ const Margin = styled.div`
 
   //BUG different margins preprint and in print preview
   @media print {
-    margin: 0 6rem;
+    // margin: 0 6rem;
+    // overflow: hidden;
   }
 `;
 
@@ -63,7 +69,8 @@ const SubHeader = styled.h2`
   margin-bottom: 0;
 `;
 
-const Section = styled.section``;
+const Section = styled.section`
+`;
 const Row = styled.section`
   display: flex;
   flex-direction: row;
